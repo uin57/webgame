@@ -1,0 +1,2 @@
+int vipLevel; [notNull=false,minValue=0]//vip等级
+int times;[notNull=false,minValue=0]//刷新次数

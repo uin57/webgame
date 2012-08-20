@@ -1,0 +1,2 @@
+int shanghai;		//造成的伤害
+int buffType;		//产生的buff类型

@@ -1,0 +1,5 @@
+int vocation; [notNull=true] //职业
+int level; [notNull=true] //人物等级
+String positions; [notNull=true] //开放位置
+boolean buffValid; [notNull=false] //功能是否生效
+int maxPos; [notNull=true] //最大上阵人数

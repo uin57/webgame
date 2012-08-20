@@ -1,0 +1,8 @@
+short buzhou;[notNull=false,minValue=0]	//步骤
+short nextbuzhou;[notNull=false,minValue=0]		//上一步骤
+int level;								//等级
+int onlinetime;							//在线时间
+int getVit;								//获得体力
+String itemSN;[notNull=false]								//道具sn
+String tip;								//提示
+String prizeTip;						//奖励说明

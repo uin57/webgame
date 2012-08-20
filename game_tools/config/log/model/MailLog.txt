@@ -1,0 +1,9 @@
+message com.pwrd.war.logserver.model.MailLog(
+	String senderId;// 发件人ID
+	String senderName;// 发件人姓名
+	String recieverId;// 收件人ID
+	String recieverName;// 收件人姓名
+	String title;// 标题
+	int readStatus;// 阅读状态
+	long sendTime;// 发件时间
+)

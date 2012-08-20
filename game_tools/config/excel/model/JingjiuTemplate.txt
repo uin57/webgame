@@ -1,0 +1,5 @@
+String name; //酒名 
+int vip;[notNull=false,minValue=0]	//所需vip等级
+int coin;[notNull=false,minValue=0]	//所需铜钱
+int gold;[notNull=false,minValue=0]	//所需元宝
+int popularity;[notNull=false,minValue=0]	//所需声望

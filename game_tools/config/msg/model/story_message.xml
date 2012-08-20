@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<messages xmlns="http://com.pwrd.war.message" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://com.pwrd.war.message message.xsd" module="story">
+
+	<message type="CG_STORY_LIST" comment="请求剧情列表">
+	</message>
+	
+	<message type="GC_STORY_LIST" comment="返回剧情列表">
+		<field type="String" name="canShowList" list="true" comment="可播放剧情id列表"></field>
+	</message>
+	
+	<message type="GC_STORY_SHOW" comment="播放剧情">
+		<field type="String" name="storyId" comment="剧情Id"></field>
+	</message>
+	
+</messages>

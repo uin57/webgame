@@ -1,0 +1,7 @@
+message com.pwrd.war.logserver.model.FriendLog(
+	int flag;				//1添加 2删除
+	String friendId;		//好友id
+	String friendName;		//好用名称
+	long time;				//添加或者删除时间
+	int totalNum;			//当前好友数量
+)

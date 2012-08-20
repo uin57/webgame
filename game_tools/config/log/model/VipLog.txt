@@ -1,0 +1,4 @@
+message com.pwrd.war.logserver.model.VipLog(
+	int curVipLevel;	//vip等级
+	long completeTime;// 完成时间
+)

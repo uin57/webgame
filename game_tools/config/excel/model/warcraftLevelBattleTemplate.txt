@@ -1,0 +1,15 @@
+String warcraftId;[notNull=false]		//兵法ID
+String name;[notNull=false]		//兵法名称
+Integer level;		//兵法等级
+Double atk;//攻击				
+Double def;//防御
+Double skAtk;//绝技攻击
+Double skDef;//绝技防御
+Double maxHp;//生命
+Double shanbi;//闪避
+Double mingzhong;//命中
+Double cri;//暴击
+Double renXing;//韧性
+Double jitui;//增加击退
+Double mianji;//减少击退
+Double criShanghai;//暴击伤害

@@ -1,0 +1,7 @@
+String name;[notNull=true]	//成就名称
+String desc;[notNull=true]	//成就描述
+int moneyPrize;[notNull=false;minValue=0]		//金钱奖励
+int presitgePrize;[notNull=false;minValue=0]		//声望奖励
+int winNeed;[notNull=false;minValue=0]		//需要连胜次数
+int totalWinNeed;[notNull=false;minValue=0]	//需要累积胜利次数
+int rankNeed;[notNull=false;minValue=0]		//需要竞技场排名

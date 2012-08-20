@@ -1,0 +1,24 @@
+package protobuff;  
+option java_package = "com.pwrd.war.gameserver.battle.protobuff";
+option java_outer_classname = "BattleEndProtobuff";
+
+message BattleRoleResult{
+	required string roleSn=1;
+	optional int32 exp=2;
+	optional int32 money=3;
+}
+
+message LostItem{
+    required string  sn=1;
+	optional int32 num=2;
+	optional int32 perfect=3;
+}
+
+message BattleEnd{
+	required uint64 battleTime=1;
+	required bool isWin=2;
+	repeated BattleRoleResult battleRoleResults=3;
+	repeated LostItem lostItems=4;
+	required double attackLeftRatio=5;
+	required double defenseLeftRatio=6;
+}

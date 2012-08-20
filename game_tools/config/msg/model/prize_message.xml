@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<messages xmlns="http://com.pwrd.war.message" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://com.pwrd.war.message message.xsd" module="prize">
+	
+	<message type="CG_PRIZE_PLATFORM_LIST" comment="查询平台玩家奖励列表">	
+	</message>
+	
+	<message type="GC_PRIZE_PLATFORM_LIST" comment="返回平台玩家奖励列表">
+		<field type="com.pwrd.war.gameserver.prize.PlatformPrizeHolder"
+			name="prizes" list="true" comment="奖励列表">
+			<field type="Integer" name="uniqueId" comment="平台奖励唯一编号"></field>
+			<field type="Integer" name="prizeId" comment="奖励编号"></field>
+			<field type="String" name="prizeName" comment="奖励名称"></field>
+		</field>
+	</message>
+
+	<message type="CG_PRIZE_PLATFORM_GET" comment="领取奖励">
+		<field type="Integer" name="uniqueId" comment="平台奖励唯一编号"></field>
+		<field type="Integer" name="prizeId" comment="奖励编号"></field>
+	</message>
+
+	<message type="GC_PRIZE_PLATFORM_GET_SUCCESS" comment="领取平台奖励成功">
+		<field type="Integer" name="uniqueId" comment="平台奖励唯一编号"></field>
+	</message>
+	
+	<message type="CG_PRIZE_USER_LIST" comment="查询GM补偿的奖励列表">	
+	</message>
+	
+	<message type="GC_PRIZE_USER_LIST" comment="玩家奖励列表">
+		<field type="com.pwrd.war.gameserver.prize.UserPrizeInfo"
+			name="prizes" list="true" comment="奖励列表">
+			<field type="Integer" name="prizeId" comment="奖励ID"></field>
+			<field type="String" name="prizeName" comment="奖励名称"></field>
+		</field>
+	</message>
+	
+	<message type="CG_PRIZE_USER_GET" comment="领取玩家奖励">
+		<field type="Integer" name="prizeId" comment="奖励编号"></field>
+	</message>
+	
+	<message type="GC_PRIZE_USER_GET_SUCCESS" comment="领取奖励成功">
+		<field type="Short" name="prizeType" comment="奖励类型，1-系统补偿"></field>
+		<field type="Integer" name="prizeId" comment="奖励ID"></field>
+	</message>
+	
+	
+
+</messages>

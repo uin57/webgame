@@ -1,0 +1,7 @@
+int rank;	//排行
+int coins1;[notNull=false,minValue=0]		//铜钱
+int shengwang1;[notNull=false,minValue=0]	//声望
+int coins2;[notNull=false,minValue=0]		//铜钱
+int shengwang2;[notNull=false,minValue=0]	//声望
+int coins3;[notNull=false,minValue=0]		//铜钱
+int shengwang3;[notNull=false,minValue=0]	//声望

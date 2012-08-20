@@ -1,0 +1,245 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<scripts>
+	<file name="firstsend.xls">
+		<sheet class="com.pwrd.war.gameserver.human.template.FirstSendTemplate" />
+	</file>
+	<file name="timeevent.xls">
+		<sheet class="com.pwrd.war.common.model.template.TimeEventTemplate" />
+		<sheet
+			class="com.pwrd.war.gameserver.timeevent.template.TimeWaveChangeTemplate" />
+	</file>
+	<file name="dirtywords.xls">
+		<sheet class="com.pwrd.war.common.model.template.DirtyWordsTemplate" />
+		<sheet class="com.pwrd.war.common.model.template.NameDirtyWordsTemplate" />
+	</file>
+	<file name="pets.xls">
+		<sheet class="com.pwrd.war.gameserver.pet.template.PetTemplate" />
+	</file>
+	<file name="items.xls"
+		parser="com.pwrd.war.gameserver.item.template.ItemTemplateFileParser" />
+	<file name="quest.xls">
+		<sheet class="com.pwrd.war.gameserver.quest.template.QuestTemplate" />
+		<sheet class="com.pwrd.war.gameserver.quest.template.DailyQuestStarTemplate" />
+	</file>
+	<file name="story.xls">
+		<sheet class="com.pwrd.war.gameserver.story.template.StoryTemplate" />
+	</file>
+	<file name="behavior.xls">
+		<sheet class="com.pwrd.war.gameserver.behavior.template.BehaviorTemplate" />
+	</file>
+	<file name="prize.xls">
+		<sheet class="com.pwrd.war.gameserver.charge.template.ChargePrizeTemplate" />
+	</file>
+	<file name="mail.xls">
+		<sheet class="com.pwrd.war.gameserver.mail.template.MailContentTemplate" />
+	</file>
+
+	<file name="initprops.xls">
+		<sheet class="com.pwrd.war.gameserver.human.template.HumanInitPropTemplate" />
+	</file>
+
+	<file name="monster.xls">
+		<sheet class="com.pwrd.war.gameserver.monster.template.MonsterTemplate" />
+		<sheet class="com.pwrd.war.gameserver.monster.template.MonsterChatTemplate" />
+	</file>
+	<file name="visiblemonster.xls">
+		<sheet
+			class="com.pwrd.war.gameserver.monster.template.VisibleMonsterTemplate" />
+	</file>
+	<file name="rolerules.xls">
+		<sheet
+			class="com.pwrd.war.gameserver.role.template.RolePropertyFactorTemplate" />
+		<sheet
+			class="com.pwrd.war.gameserver.role.template.RoleGrowTypeFactorTemplate" />
+	</file>
+	<file name="skill.xls">
+		<sheet class="com.pwrd.war.gameserver.skill.template.SkillTemplate" />
+		<sheet class="com.pwrd.war.gameserver.skill.template.SkillPasvTemplate" />
+		<sheet class="com.pwrd.war.gameserver.skill.template.SkillSpecTemplate" />
+		<sheet class="com.pwrd.war.gameserver.skill.template.SkillBuffTemplate" />
+		<sheet class="com.pwrd.war.gameserver.buff.template.StatusTemplate" />
+	</file>
+
+	<file name="monsterAl.xls">
+		<sheet class="com.pwrd.war.gameserver.monster.template.MonsterAITemplate" />
+	</file>
+
+	<file name="mall.xls">
+		<sheet class="com.pwrd.war.gameserver.mall.template.MallTemplate" />
+		<sheet class="com.pwrd.war.gameserver.mall.template.MallToNpcTemplate" />
+	</file>
+
+	<file name="levelUpExp.xls">
+		<sheet class="com.pwrd.war.gameserver.human.template.LevelUpExpTemplate" />
+	</file>
+
+	<file name="rep.xls">
+		<sheet class="com.pwrd.war.gameserver.rep.template.RepTemplate" />
+	</file>
+
+	<file name="hirePet.xls">
+		<sheet class="com.pwrd.war.gameserver.pet.template.HirePetTemplate" />
+		<sheet class="com.pwrd.war.gameserver.pet.template.JingjiuTemplate" />
+		<sheet class="com.pwrd.war.gameserver.pet.template.NpcToHirePetPubTemplate" />
+		<sheet class="com.pwrd.war.gameserver.pet.template.JingjiuPriceTemplate" />
+	</file>
+	<file name="form.xls">
+		<sheet class="com.pwrd.war.gameserver.form.template.FormTemplate" />
+		<sheet class="com.pwrd.war.gameserver.form.template.FormSnTemplate" />
+	</file>
+
+
+	<file name="equipEnhance.xls">
+		<sheet class="com.pwrd.war.gameserver.item.template.EquipEnhanceLevel" />
+		<sheet class="com.pwrd.war.gameserver.item.template.EquipEnhancePosRate" />
+		<sheet
+			class="com.pwrd.war.gameserver.item.template.EquipEnhanceSuccesRateTemplate" />
+		<sheet class="com.pwrd.war.gameserver.item.template.EquipEnhanceLevelRate" />
+		<sheet class="com.pwrd.war.gameserver.item.template.EquipEnhancePosPrice" />
+	</file>
+
+	<file name="vip.xls">
+		<sheet class="com.pwrd.war.gameserver.vitality.template.VipToVitTemplate" />
+	</file>
+
+	<file name="buff.xls">
+		<sheet class="com.pwrd.war.gameserver.buff.template.BufferTemplate" />
+	</file>
+
+	<file name="growUpLevel.xls">
+		<sheet class="com.pwrd.war.gameserver.role.template.GrowUpLevelTemplate" />
+	</file>
+
+	<file name="dropitems.xls">
+		<sheet
+			class="com.pwrd.war.gameserver.monster.template.MonsterDropItemsTemplate" />
+		<sheet class="com.pwrd.war.gameserver.monster.template.DropBagItemsTemplate" />
+	</file>
+
+	<file name="bagExpand.xls">
+		<sheet
+			class="com.pwrd.war.gameserver.item.template.BagExpandTemplateTemplate" />
+	</file>
+
+	<file name="cooldowncost.xls">
+		<sheet class="com.pwrd.war.gameserver.human.template.CoolDownCostTemplate" />
+	</file>
+
+	<file name="advance.xls">
+		<sheet class="com.pwrd.war.gameserver.transferVocation.template.TransferVocationStarTemplate" /> 
+		<sheet 	class="com.pwrd.war.gameserver.transferVocation.template.TransferVocationTemplate" />
+	</file>
+	<file name="advanceskills.xls">
+		<sheet class="com.pwrd.war.gameserver.role.template.RoleToSkillTemplate" />
+	</file>
+	<file name="yanjiu.xls">
+		<sheet class="com.pwrd.war.gameserver.human.template.ResearchTemplate" />
+		<sheet class="com.pwrd.war.gameserver.human.template.ResearchTypeTemplate" />
+	</file>
+
+	<file name="xiulian.xls">
+		<sheet class="com.pwrd.war.gameserver.human.template.XiulianTemplate" />
+		<sheet class="com.pwrd.war.gameserver.human.template.XiulianLevelTemplate" />
+		<sheet class="com.pwrd.war.gameserver.human.template.XiulianLevelExpTemplate" />
+		<sheet class="com.pwrd.war.gameserver.human.template.XiulianSymbolTemplate" />
+	</file>
+	<file name="secretShop.xls">
+		<sheet class="com.pwrd.war.gameserver.secretShop.template.SecretShopTemplate" />
+	</file>
+	<file name="vipCharge.xls">
+		<sheet class="com.pwrd.war.gameserver.vip.template.VipTemplate" />
+	</file>	
+	<file name="vipfunction.xls">
+		<sheet class="com.pwrd.war.gameserver.vip.template.VipFunctionTemplate" />
+	</file>			
+	
+	<file name="duobaorandom.xls">
+		<sheet class="com.pwrd.war.gameserver.robbery.template.RobberyWeightTemplate" />
+		<sheet class="com.pwrd.war.gameserver.robbery.template.RobberyPrizeTemplate" />
+		<sheet class="com.pwrd.war.gameserver.robbery.template.RobberyRobTemplate" />
+	</file>
+	<file name="dayTask.xls">
+		<sheet class="com.pwrd.war.gameserver.dayTask.template.DayTaskTemplate" />
+		<sheet class="com.pwrd.war.gameserver.dayTask.template.TaskProbabilityTemplate" />
+	</file>
+	
+	<file name="jingjichang.xls">
+		<sheet class="com.pwrd.war.gameserver.arena.template.ArenaOrderPrizeTemplate" />
+		<sheet class="com.pwrd.war.gameserver.arena.template.ArenaAchievementTemplate" />
+		<sheet class="com.pwrd.war.gameserver.arena.template.ArenaBattlePrizeTemplate" />
+		<sheet class="com.pwrd.war.gameserver.arena.template.ArenaAddCostTemplate" />
+	</file>
+	
+	<file name="nanmanruqin.xls">
+		<sheet class="com.pwrd.war.gameserver.activity.template.ActivityBossAttackBuffTemplate" />
+		<sheet class="com.pwrd.war.gameserver.activity.template.ActivityBossGuwuBuffTemplate" />
+		<sheet class="com.pwrd.war.gameserver.activity.template.ActivityBossGroupNameTemplate" />
+		<sheet class="com.pwrd.war.gameserver.activity.template.ActivityBossTowerTemplate" />
+	</file>	
+	<file name="activity.xls">
+		<sheet class="com.pwrd.war.gameserver.activity.template.ActivityTemplate" />
+	</file>	
+	<file name="battlebonus.xls">
+		<sheet class="com.pwrd.war.gameserver.activity.template.ActivityWorldWarBonusTemplate" /> 
+	</file>	
+	<file name="vipTower.xls">
+		<sheet class="com.pwrd.war.gameserver.vip.template.VipTowerTemplate" />
+	</file>	
+	<file name="tower.xls">
+		<sheet class="com.pwrd.war.gameserver.tower.template.TowerTemplate" />
+		<sheet class="com.pwrd.war.gameserver.tower.template.TowerRefreshTemplate" />
+		<sheet class="com.pwrd.war.gameserver.tower.template.TowerRefreshChargeTemplate" />
+	</file>	
+	<file name="xinghun.xls">
+		<sheet class="com.pwrd.war.gameserver.item.template.XinghunParaTemplate" />
+		<sheet class="com.pwrd.war.gameserver.item.template.XinghunXilianTemplate" />
+		<sheet class="com.pwrd.war.gameserver.item.template.XinghunParaProTemplate" />
+	</file>	
+	<file name="warcraft.xls">
+		<sheet class="com.pwrd.war.gameserver.warcraft.template.WarcraftStage1Template" />
+		<sheet class="com.pwrd.war.gameserver.warcraft.template.WarcraftStage2Template" />
+		<sheet class="com.pwrd.war.gameserver.warcraft.template.WarcraftTemplate" />
+		<sheet class="com.pwrd.war.gameserver.warcraft.template.WarcraftExpTemplate" />
+		<sheet class="com.pwrd.war.gameserver.warcraft.template.WarcraftPositionLevelTemplate" />
+		<sheet class="com.pwrd.war.gameserver.warcraft.template.WarcraftPrizeTemplate" />
+		<sheet class="com.pwrd.war.gameserver.warcraft.template.WarcraftLevelBattleTemplate" />
+		<sheet class="com.pwrd.war.gameserver.warcraft.template.WarcraftRatioTemplate" />
+	</file>	
+	<file name="jingjie.xls">
+		<sheet class="com.pwrd.war.gameserver.role.template.JingjieTemplate" />
+	</file>
+	<file name="tree.xls">
+		<sheet class="com.pwrd.war.gameserver.tree.template.TreeTemplate" />
+		<sheet class="com.pwrd.war.gameserver.tree.template.TreeCostTemplate" />
+		<sheet class="com.pwrd.war.gameserver.tree.template.TreeExpTemplate" />
+		<sheet class="com.pwrd.war.gameserver.tree.template.TreeFruitTemplate" />
+		<sheet class="com.pwrd.war.gameserver.tree.template.TreeWaterTemplate" />
+	</file>		
+	
+	<file name="guoguanzhanjiang.xls">
+		<sheet class="com.pwrd.war.gameserver.activity.template.ActivityGGZJRankPrizeTemplate" />
+		<sheet class="com.pwrd.war.gameserver.activity.template.ActivityGGZJPositionTemplate" />
+		<sheet class="com.pwrd.war.gameserver.activity.template.ActivityGGZJTowerRankPrizeTemplate" />
+		<sheet class="com.pwrd.war.gameserver.activity.template.ActivityGGZJpfczTemplate" />
+		<sheet class="com.pwrd.war.gameserver.activity.template.ActivityGgzjGuwuBuffTemplate" />
+	</file>
+	<file name="openfunction.xls">
+		<sheet class="com.pwrd.war.gameserver.human.template.OpenFunctionTemplate" />
+	</file>
+	<file name="newplayerprize.xls">
+		<sheet class="com.pwrd.war.gameserver.human.template.NewPlayerPrizeTemplate" />
+	</file>
+	<file name="maps.xls">
+		<sheet class="com.pwrd.war.gameserver.map.template.MapTemplate" />
+		<sheet class="com.pwrd.war.gameserver.map.template.MapBattleBgTemplate" />
+	</file>
+	<file name="growlevel.xls">
+		<sheet class="com.pwrd.war.gameserver.role.template.GrowLevelTemplate" />
+	</file>
+	<file name="dayloginprize.xls">
+		<sheet class="com.pwrd.war.gameserver.human.template.DayLoginPrizeTemplate" />
+	</file>
+	<file name="giftbag.xls">
+		<sheet class="com.pwrd.war.gameserver.giftBag.template.GiftBagTemplate" />
+	</file>
+</scripts>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<messages xmlns="http://com.pwrd.war.message" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://com.pwrd.war.message message.xsd" module="interactive">
+	<message type="CG_Look_Up_Message" comment="查看别人的信息消息">
+		<field type="String" name="playUUID" comment="玩家的UUID"></field>
+	</message>
+	<message type="GC_Look_Up_Message" comment="查看别人的信息的返回消息">
+		<field type="String" name="playUUID" comment="玩家的UUID"></field>
+		<field type="String" name="name" comment="玩家名称"></field>
+		<field type="Integer" name="sex" comment="性别"></field>
+		<field type="Integer" name="vocation" comment="性别"></field>
+		<field type="Integer" name="level" comment="性别"></field>
+		<field type="Integer" name="openFunction"
+			comment="开启功能（聊天功能: 0x0001,基本信息:0x0002,切磋功能:0x0004,加好友功能:0x0008）"></field>
+	</message>
+
+	<message type="CG_Role_List_Message" comment="查看装备基本信息">
+		<field type="String" name="playUUID" comment="玩家的UUID"></field>
+	</message>
+
+
+	<message type="GC_Role_List_Message" comment="查看装备基本信息">
+		<field type="String" name="playUUID" comment="玩家的UUID"></field>
+		<field type="com.pwrd.war.gameserver.interactive.domain.PetInfomation"
+			name="petInformation" clientType="PetInformation" list="true"
+			macro="PetInformation"></field>
+	</message>
+	
+	<message type="CG_Equipment_Infomation_Message" comment="查看装备基本信息">
+		<field type="String" name="playUUID" comment="玩家的UUID"></field>
+		<field type="String" name="roleSn" comment="角色UUID"></field>
+	</message>
+
+	<message type="CG_Infomation_Message" comment="查看信息">
+		<field type="String" name="playUUID" comment="玩家的UUID"></field>
+		<field type="String" name="roleSn" comment="角色UUID"></field>
+	</message>
+
+	<message type="GC_Infomation_Message" comment="查看信息">
+		<field type="String" name="playUUID" comment="玩家的UUID"></field>
+		<field type="String" name="roleSn" comment="角色UUID"></field>
+	</message>
+
+	<message type="CG_Transfer_Vocation_Information_Message" comment="查看转职信息">
+		<field type="String" name="playUUID" comment="玩家的UUID"></field>
+		<field type="String" name="roleSn" comment="角色UUID"></field>
+	</message>
+</messages>

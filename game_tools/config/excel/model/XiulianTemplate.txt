@@ -1,0 +1,3 @@
+int level;[notNull=false;minValue=0]			//等级
+int maxTime;[notNull=false;minValue=0]			//最长时间
+int perAddExp;[notNull=false;minValue=0]		//每20秒增加经验

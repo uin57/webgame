@@ -1,0 +1,5 @@
+int levelDiff;	//等级差
+float coinRatePlus;	//铜钱比例  拦截者等级>被拦截者等级
+float popuRatePlus;		//声望比例  拦截者等级>被拦截者等级
+float coinRateNegative ;	//铜钱比例  拦截者等级<被拦截者等级
+float popuRateZNegative ;		//声望比例  拦截者等级<被拦截者等级

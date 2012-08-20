@@ -1,0 +1,7 @@
+Integer jingjie; //境界值
+String name; //境界名称
+Integer grow; //需要成长值
+Double atk; //攻击
+Double def; //防御
+Double hp; //血量
+Double shanghai; //伤害

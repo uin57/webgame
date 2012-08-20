@@ -1,0 +1,5 @@
+message com.pwrd.war.logserver.model.ChatLog(
+   int scope; //聊天范围
+   String recCharName; // 如果为私聊，则记录私聊消息的接收玩家角色名称,否则该字段无意义
+   String content; //聊天的内容
+)

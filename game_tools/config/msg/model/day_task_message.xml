@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<messages xmlns="http://com.pwrd.war.message" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://com.pwrd.war.message message.xsd" module="dayTask">
+
+	<message type="CG_DAY_TASK_INFO" comment="查询任务列表">
+	</message>
+	
+	<message type="GC_DAY_TASK_INFO" comment="返回任务列表">
+		<field type="Integer" name="number" comment="剩余弹药数"></field>
+		<field type="Boolean" name="isInTask" comment="是否在任务中"></field>
+		<field type="String" name="taskId" comment="任务id"></field>
+		<field type="Integer" name="curTimes" comment="当前次数"></field>
+	</message>
+	
+	<message type="CG_GET_NEW_TASK" comment="领取新任务">
+	</message>
+	
+	<message type="GC_GET_NEW_TASK" comment="返回任务信息">
+		<field type="Boolean" name="success" comment="是否领取成功"></field>
+		<field type="String" name="desc" comment="失败原因描述"></field>
+		<field type="Integer" name="number" comment="剩余弹药数"></field>
+		<field type="String" name="taskId" comment="任务id"></field>
+		<field type="Integer" name="curTimes" comment="当前次数"></field>
+	</message>
+	
+	<message type="CG_DAY_TASK_DROP" comment="放弃任务">
+		<field type="String" name="taskId" comment="任务id"></field>
+	</message>
+	
+	<message type="GC_DAY_TASK_DROP" comment="返回放弃任务信息">
+		<field type="Boolean" name="result" comment="结果"></field>
+		<field type="String" name="description" comment="描述"></field>
+	</message>
+	
+	<message type="GC_DAY_TASK_COMPLETE" comment="返回任务完成信息">
+		<field type="String" name="taskId" comment="任务id"></field>
+	</message>
+</messages>

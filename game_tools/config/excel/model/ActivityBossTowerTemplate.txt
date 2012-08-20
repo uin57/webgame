@@ -1,0 +1,3 @@
+int level;		//等级
+int addExp;		//增加经验
+int addHurt;	//增加伤害

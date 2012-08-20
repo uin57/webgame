@@ -1,0 +1,3 @@
+int times;//刷新次数
+int charge;[notNull=false,minValue=0]//花费元宝数
+double nomalPro;//刷新概率

@@ -1,0 +1,20 @@
+Integer skillSn; [notNull=true]			// 技能id
+String skillName; [notNull=false]		// 技能名称
+Integer vocationType; [notNull=false]	// 职业，技能类型为2时有用
+Integer skillType;[notNull=true]		// 技能类型，1为普通武将技，2为职业普通攻击，3为锁屏武将技
+String skillDescription; [notNull=false]	// 技能说明
+String skillIcon; [notNull=false]		// 技能图标
+Integer skillLevel;[notNull=false]		// 技能等级
+Integer attackType;[notNull=false]		// 攻击类型，0为近战，1为远程
+Integer moraleCost;[notNull=false]		// 士气消耗
+Integer attackScope;[notNull=false]		// 攻击范围
+Integer lineScope;[notNull=false] 		// 列范围，0为所在列，1为全部列
+Integer maxTargets;[notNull=false]		// 目标数量
+Integer targetScope;[notNull=false]		// 目标半径
+Integer targetType;[notNull=false]		// 目标方，0敌方人，1敌方障碍，2敌方全体，3我方人，4我方障碍，5我方全体，6仅自己
+Integer targetFilter;[notNull=false]	// 目标排序规则，0随机，1血量从少到多，2血量从多到少，3优先职业1，4优先职业2，5优先职业3，6优先职业4
+Integer coolDown;[notNull=false]		// 冷却回合
+Integer hasAttack;[notNull=false]		// 是否带攻击
+String[] skillEffects;[Collection(5,1)]	// 效果数组
+Boolean hasCoolDown;[notNull=false]		// 是否触发攻击后行动冷却，1为触发
+Boolean iamCenter;[notNull=false]		// 是否以自己为中心寻找目标，1为自己为中心

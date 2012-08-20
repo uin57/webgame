@@ -1,0 +1,6 @@
+message com.pwrd.war.logserver.model.XinghunLog(
+	String xinghunId;	  //星魂id
+	String xinghunName; //星魂名称
+	String feature;		//星魂属性 
+	long completeTime;// 完成时间
+)

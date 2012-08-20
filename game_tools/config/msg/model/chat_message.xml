@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<messages xmlns="http://com.pwrd.war.message" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://com.pwrd.war.message message.xsd" module="chat">
+
+	<message type="CG_CHAT_MSG" comment="客户端向服务器端发送的聊天消息">
+		<field type="Integer" name="scope" comment="聊天范围" />
+		<field type="String" name="destRoleName" comment="聊天消息接收的玩家" />
+		<field type="String" name="destRoleUUID" comment="消息接收玩家的UUID" />
+		<field type="String" name="content" comment="聊天消息" />
+		<field type="Boolean" name="block" comment="是否阻止向接收者发送消息，如在玩家黑名单中，true为不发" />
+		<field type="Integer" name="color" comment="聊天文字颜色"></field>
+	</message>
+
+	<message type="GC_CHAT_MSG" comment="服务器向客户端发送过滤后的聊天信息">
+		<field type="Integer" name="scope" comment="聊天范围" />
+		<field type="String" name="fromRoleUUID" comment="聊天消息发送者角色UUID"></field>
+		<field type="String" name="fromRoleName" comment="聊天消息发送者角色名称" />
+		<field type="Integer" name="fromRoleCamp" comment="聊天消息发送者阵营"></field>
+		<field type="Integer" name="fromRoleSex" comment="聊天消息发送者性别"></field>
+		<field type="String" name="content" comment="经过过滤后的聊天消息" />
+		<field type="String" name="toRoleUUID" comment="聊天消息接受者角色UUID"></field>
+		<field type="String" name="toRoleName" comment="聊天消息接受者角色名称"></field>
+		<field type="Integer" name="color" comment="聊天文字颜色"></field>
+	</message>
+	
+</messages>

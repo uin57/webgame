@@ -1,0 +1,15 @@
+#macro(showList $val)
+#foreach( $attr in $val )
+		/** $attr.comment */
+		public static const ${attr.prefix}_${attr.key}:int = $attr.value;
+#end
+#end
+package com.pwrd.pwgame.service.data
+{
+	public class RoleProperties
+	{
+#showList($intAttrs)
+
+#showList($strAttrs)     
+	}
+}

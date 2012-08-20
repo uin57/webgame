@@ -1,0 +1,33 @@
+String petSn; //武将ID 
+String name;	//武将名
+int level;[minValue=1;notNull=true]    //武将等级
+int sex;[minValue=1;maxValue=2;notNull=true] // 性别
+int vocation;  //阵营
+String skeletonId; //骨骼Id
+int camp;[minValue=0;notNull=false] //势力
+int star;[minValue=0;notNull=false] //武将星级
+int growType;[minValue=0;notNull=false] //成长等级
+int specialGrow;[minValue=0;notNull=false] //武将特有成长
+double spd;[minValue=0;notNull=false] //初始速度
+double shanbi;[minValue=0;notNull=false]	//初始闪避
+double cri;[minValue=0;notNull=false]	//初始暴击
+double hit;[minValue=0;notNull=false]	//初始命中
+double hp;[minValue=0;notNull=false]//初始生命
+double hpVocationFactor;[minValue=0;notNull=false]//生命系数
+double atk;[minValue=0;notNull=false]//初始攻击
+double atkVocationFactor;[minValue=0;notNull=false]//攻击系数
+double def;[minValue=0;notNull=false] //初始防御
+double defVocationFactor;[minValue=0;notNull=false]//防御系数
+String tree;[notNull=false]		//激活天赋树
+int treePoint;[minValue=0;notNull=false] //天赋点数
+double jianshang;[minValue=0;notNull=false] //初始减伤概率
+double mianshang;[minValue=0;notNull=false] //初始免伤百分比
+double lianji;[minValue=0;notNull=false]		//初始连击率
+double fanji;[minValue=0;notNull=false]		//初始反击率
+String deadChat;[notNull=false]								//死亡说话内容
+String description;[notNull=false] 		//武将列传
+int cooldownRound;[notNull=false;minValue=0]	//被击后攻击方冷却回合数
+String castAnim;[notNull=false]		//攻击弹道动画
+String attackedAnim;[notNull=false]	//被击光效
+String vocationAnim;[notNull=false]	//职业特性弹道动画
+int maxMorale;[notNull=true]		//最大士气

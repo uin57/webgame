@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration
+    PUBLIC "-//Hibernate/Hibernate Configuration DTD//EN"
+    "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<property name="hibernate.dialect"> org.hibernate.dialect.MySQL5InnoDBDialect 
+		</property>
+		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="hibernate.transaction.factory_class">
+			org.hibernate.transaction.JDBCTransactionFactory </property>
+		<property name="hibernate.cache.provider_class"> org.hibernate.cache.NoCacheProvider 
+		</property>
+		<property name="hibernate.cache.use_query_cache"> false </property>
+		
+		<mapping class="com.pwrd.war.db.model.TimeNoticeInfo" />
+		<mapping class="com.pwrd.war.db.model.UserInfo" />
+		<mapping class="com.pwrd.war.db.model.HumanEntity" />
+		<mapping class="com.pwrd.war.db.model.PrizeInfo" />
+		<mapping class="com.pwrd.war.db.model.PetEntity" />
+		<mapping class="com.pwrd.war.db.model.UserPrize"/>
+		<mapping class="com.pwrd.war.db.model.ItemEntity" />
+		<mapping class="com.pwrd.war.db.model.MailEntity" />
+		<mapping class="com.pwrd.war.db.model.DoingQuestEntity" />
+		<mapping class="com.pwrd.war.db.model.FinishedQuestEntity" />
+		<mapping class="com.pwrd.war.db.model.DailyQuestEntity" />
+		<mapping class="com.pwrd.war.db.model.DbVersion"/>
+		<mapping class="com.pwrd.war.db.model.SceneEntity" />
+		<mapping class="com.pwrd.war.db.model.ChargeInfo" />
+		<mapping class="com.pwrd.war.db.model.SkillGroupEntity" />
+		<mapping class="com.pwrd.war.db.model.VocationSkillEntity" />
+		<mapping class="com.pwrd.war.db.model.FormEntity" />
+		<mapping class="com.pwrd.war.db.model.HumanRepInfoEntity" />
+		<mapping class="com.pwrd.war.db.model.ServerInfoEntity" />
+		<mapping class="com.pwrd.war.db.model.UserArchiveEntity" />
+		<mapping class="com.pwrd.war.db.model.BufferEntity" />
+		<mapping class="com.pwrd.war.db.model.CooldownEntity" />
+		<mapping class="com.pwrd.war.db.model.battle.BattleInitEntity" />
+		<mapping class="com.pwrd.war.db.model.battle.BattleReportEntity" />
+		<mapping class="com.pwrd.war.db.model.battle.BattleEndEntity" />
+		<mapping class="com.pwrd.war.db.model.FinishedStoryEntity" />
+		<mapping class="com.pwrd.war.db.model.SecretShopInfoEntity" />
+		<mapping class="com.pwrd.war.db.model.FriendEntity" />
+		<mapping class="com.pwrd.war.db.model.RobberyEntity" />
+		<mapping class="com.pwrd.war.db.model.DayTaskInfoEntity" />
+		<mapping class="com.pwrd.war.db.model.ArenaEntity" />
+		<mapping class="com.pwrd.war.db.model.ArenaHistoryEntity" />
+		<mapping class="com.pwrd.war.db.model.ArenaAchievementEntity" />
+		<mapping class="com.pwrd.war.db.model.TowerInfoEntity" />
+		<mapping class="com.pwrd.war.db.model.HeroWarActivityEntity" />
+		<mapping class="com.pwrd.war.db.model.FamilyEntity" />
+		<mapping class="com.pwrd.war.db.model.FamilyLogEntity" />
+		<mapping class="com.pwrd.war.db.model.FamilyMemberEntity" />
+		<mapping class="com.pwrd.war.db.model.GiftBagEntity" />
+		<mapping class="com.pwrd.war.db.model.WarcraftEntity" />
+		<mapping class="com.pwrd.war.db.model.WarcraftInfoEntity" />
+		<mapping class="com.pwrd.war.db.model.PlayerGuideEntity" />
+		<mapping class="com.pwrd.war.db.model.ProbEntity" />
+		<mapping class="com.pwrd.war.db.model.TreeInfoEntity" />
+		<mapping class="com.pwrd.war.db.model.TreeWaterEntity" />
+		<mapping class="com.pwrd.war.db.model.HumanXiulianEntity" />
+		<mapping class="com.pwrd.war.db.model.HumanRobberyEntity" />
+		<mapping class="com.pwrd.war.db.model.FamilyApplyMemberEntity" />
+		<mapping class="com.pwrd.war.db.model.RepAgainstEntity" />
+		<mapping class="com.pwrd.war.db.model.PromptButtonEntity" />
+	</session-factory>
+</hibernate-configuration>

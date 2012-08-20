@@ -1,0 +1,10 @@
+#macro(showList $val)
+#foreach( $attr in $val )
+${attr.prefix}_${attr.key} = $attr.value; // $attr.comment
+#end
+#end
+// $Acomment
+#showList($AAttrs)
+
+// $Bcomment
+#showList($BAttrs)

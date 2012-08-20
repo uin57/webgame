@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<messages xmlns="http://com.pwrd.war.message" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://com.pwrd.war.message message.xsd" module="family">
+	<!-- 请求家族列表 -->
+	<message type="CG_FAMILY_INFO_LIST" comment="家族列表">
+		<field type="String" name="familyName" comment="家族名称" />
+		<field type="String" name="leaderName" comment="族长名称" />
+	</message> 
+	<!-- 返回家族列表结果 -->
+	<message type="GC_FAMILY_INFO_LIST" comment="返回家族列表">
+		<field type="com.pwrd.war.gameserver.family.model.vo.FamilyInfo" 
+			clientType="FamilyInfoListData" name="familyInfoList" list="true" comment="家族信息列表" macro="familyInfoList" ></field>
+	</message>
+	<!-- 请求家族详细信息 -->
+	<message type="CG_FAMILY_DETAIL_INFO" comment="请求家族详细信息">
+		<field type="String" name="id" comment="家族id" />
+	</message>
+	<!-- 返回家族详细信息 -->
+	<message type="GC_FAMILY_DETAIL_INFO" comment="返回家族详细信息">
+		<field type="String" name="id" comment="家族id" />
+		<field type="String" name="name" comment="家族名称" />
+		<field type="Integer" name="level" comment="家族等级" />
+		<field type="Integer" name="rank" comment="家族排名" />
+		<field type="Integer" name="memberNum" comment="家族成员数量" />
+		<field type="Integer" name="maxMemberNum" comment="家族成员上限" />
+		<field type="String" name="qq" comment="家族群号" />
+		<field type="String" name="announcement" comment="家族公告" />
+		<field type="String" name="desc" comment="家族介绍" />
+		<field type="Integer" name="isAutoAdd" comment="是否自动加入:0是1否" />
+		<field type="com.pwrd.war.gameserver.family.model.FamilyMemberInfo"
+			clientType="FamilyHumanInfoData" name="FamilyHumanInfos" list="true" comment="家族成员" macro="familyHumanInfos">
+		</field>
+		<field type="Integer" name="exp" comment="家族声望" />
+		<field type="String" name="leaderName" comment="族长名称" />
+		<field type="Integer" name="isCanApplyLeader" comment="是否可以申请/弹劾族长0：不可以1：可以" />
+	</message>    
+	<!-- 创建家族 -->
+	<message type="CG_CREATE_FAMILY" comment="玩家创建家族">
+		<field type="String" name="name" comment="家族名称" />
+	</message>
+	<!-- 返回创建家族结果 -->
+	<message type="GC_CREATE_FAMILY" comment="返回创建家族结果">
+		<field type="Integer" name="isSuccess" comment="创建家族结果0:失败1:成功" />
+	</message>  
+	<!-- 请求修改家族基本信息-->
+	<message type="CG_UPDATE_FAMILY_INFO" comment="请求修改基本家族信息：群号，内部公告，描述">
+		<field type="String" name="id" comment="家族id"></field>
+		<field type="String" name="qq" comment="家族群号"></field>
+		<field type="String" name="announcement" comment="家族公告"></field>
+		<field type="String" name="desc" comment="家族描述"></field>
+		<field type="Integer" name="isAutoAdd" comment="是否自动加入:0是1否" />
+	</message> 
+	<!-- 转让族长 -->
+	<message type="CG_TRANSFER_LEADER" comment="转让组长">
+		<field type="String" name="id" comment="家族id"></field>
+		<field type="String" name="roleId" comment="被转让的角色id"></field>
+	</message> 
+	<!-- 申请族长 -->
+	<message type="CG_APPLY_LEADER" comment="申请族长">
+		<field type="String" name="id" comment="家族id"></field>
+	</message>
+	<!-- 审核成员 -->
+	<message type="CG_EXAMINE_MEMBER" comment="审核成员">
+		<field type="Integer" name="operaton" comment="操作:0允许1拒绝"></field>
+		<field type="String" name="uuidlist" list="true" comment="要审核的所有成员uuid"></field>
+	</message>
+	<!-- 修改权限 -->
+	<message type="CG_UPDATE_FAMILY_ROLE" comment="修改家族成员权限">
+		<field type="String" name="id" comment="家族id"></field>
+		<field type="String" name="roleId" comment="被修改的成员id"></field>
+		<field type="Integer" name="familyRole" comment="授予的权限:0无家族1族长2副族长3上将4成员"></field>
+	</message>
+	<!-- 解散家族-->
+	<message type="CG_DELETE_FAMILY" comment="解散家族">
+		<field type="String" name="id" comment="家族id"></field>
+	</message>
+	<!-- 退出家族 -->
+	<message type="CG_LEAVE_FAMILY" comment="退出家族:包括自己退出和请离">
+		<field type="String" name="id" comment="家族id"></field>
+		<field type="String" name="roleId" comment="退出的玩家id"></field>
+	</message>
+	<!-- 申请家族 -->
+	<message type="CG_APPLY_FAMILY" comment="申请家族">
+		<field type="String" name="id" comment="家族id"></field>
+	</message>
+	<!-- 请求申请玩家列表 -->
+	<message type="CG_APPLY_MEMBER_LIST" comment="请求申请的玩家列表">
+		<field type="String" name="id" comment="家族id"></field>
+	</message>
+	<!-- 返回申请玩家列表 -->
+	<message type="GC_APPLY_MEMBER_LIST" comment="返回申请的玩家列表">
+		<field type="com.pwrd.war.gameserver.family.model.vo.FamilyApplyMember"
+			clientType="FamilyApplyHumanInfoData" name="FamilyApplyHumanInfos" list="true" comment="申请家族成员" macro="familyApplyHumanInfos">
+		</field>
+	</message>
+	<!-- 请求家族日志 -->
+	<message type="CG_FAMILY_LOG" comment="请求家族日志">
+		<field type="String" name="id" comment="家族id"></field>
+	</message> 
+	<message type="GC_FAMILY_LOG" comment="返回家族日志">
+		<field type="com.pwrd.war.gameserver.family.model.FamilyLog"
+			clientType="FamilyLogData" name="FamilyLog" list="true" comment="家族日志" macro="familyLog">
+		</field>
+	</message>
+	<message type="GC_APPlY_FAMILY_SUCCESS" comment="返回申请家族成功结果">
+		<field type="String" name="id" comment="家族id"></field>
+	</message>
+</messages>

@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+Created-By: xf
+Main-Class: com.pwrd.war.tools.excel.ExcelToXmlNew
+Class-Path: dom4j-1.6.jar poi-3.6-20091214.jar poi-ooxml-3.7.jar
+

@@ -1,0 +1,11 @@
+package ${packageName};
+/**
+ * This is an auto generated source,please don't modify it.
+ * 
+ * @author ${generator}
+ */
+public interface EntityMessageType{
+	#foreach($type in $types)
+	public final short $type.name = $type.value;	
+	#end	
+}

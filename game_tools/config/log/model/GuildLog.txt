@@ -1,0 +1,8 @@
+message com.pwrd.war.logserver.model.GuildLog(
+	String guildId;// 军团ID
+	String guildName;// 军团名
+	int guildLevel;// 军团等级
+	int guildSymbolLevel;// 军团军徽等级
+	int memberNums;// 军团人数
+	int status;// 军团状态
+)

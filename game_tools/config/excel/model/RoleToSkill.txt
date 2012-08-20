@@ -1,0 +1,9 @@
+String roleSn;[notNull=true]// 角色编号
+String name; // 角色名称
+String petSkill;[notNull=false] // 武将技
+String passiveSkill1;[notNull=false] // 被动技1
+String passiveSkill2;[notNull=false] // 被动技2
+String passiveSkill3;[notNull=false]// 被动技3
+String passiveSkill4;[notNull=false] // 被动技4
+String passiveSkill5;[notNull=false] // 被动技5
+String passiveSkill6;[notNull=false] // 被动技6

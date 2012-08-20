@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<messages xmlns="http://com.pwrd.war.message" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://com.pwrd.war.message message.xsd" module="tree">
+	<message type="CG_TREE_INFO" comment="摇钱树信息">
+	</message>
+	
+	<message type="GC_TREE_INFO" comment="摇钱">
+		<field type="Integer" name="shakeTimes" comment="当天摇钱次数"></field>
+		<field type="Integer" name="totalTimes" comment="最大摇钱次数"></field>
+		<field type="Integer" name="costGold" comment="一次花多少元宝"></field>
+		<field type="Integer" name="getCoin" comment="一次得多少铜钱"></field>
+		<field type="Boolean" name="batchFlag" comment="能够进行批量摇钱"></field>
+		<field type="Integer" name="costBatch" comment="批量一次花多少元宝"></field>
+		
+	</message>
+	
+	<message type="CG_TREE_SHAKE" comment="摇钱">
+	</message>
+	<message type="CG_TREE_SHAKE_BATCH" comment="批量摇钱">
+	</message>
+	<message type="GC_TREE_SHAKE" comment="返回摇钱信息">
+		<field type="Boolean" name="result" comment="返回结果"></field>
+		<field type="String" name="desc" comment="返回结果描述"></field>
+	</message>	
+	
+	<message type="CG_WATER_INFO" comment="浇水和果实信息">
+	</message>
+	
+	<message type="GC_WATER_INFO" comment="返回浇水和果实信息">
+		<field type="Integer" name="waterTimes" comment="给自己的浇水次数"></field>
+		<field type="Integer" name="waterTime" comment="浇水的冷却时间"></field>
+		<field type="Integer" name="friendWaterTimes" comment="给好友的浇水次数"></field>
+		<field type="Integer" name="curTreeExp" comment="摇钱树当前经验"></field>
+		<field type="Integer" name="maxTreeExp" comment="摇钱树升级经验"></field>
+		<field type="Integer" name="treeLevel" comment="摇钱树等级"></field>
+		<field type="Integer" name="fruitLevel" comment="已经领取的果实等级"></field>		
+	</message>
+	
+	<message type="CG_WATER_MYSELF" comment="给自己浇水">
+	</message>
+	
+	<message type="CG_WATER_FRIEND" comment="给好友浇水">
+		<field type="String" name="friendName" comment="好友名称" />
+		<field type="String" name="friendUUID" comment="好友UUID" />
+	</message>
+	
+	<message type="GC_WATER_RESULT" comment="浇水结果">
+		<field type="Boolean" name="result" comment="返回结果"></field>
+		<field type="String" name="desc" comment="返回结果描述"></field>
+	</message>
+	
+	<message type="CG_GET_FRUIT" comment="获取果实">
+		<field type="Integer" name="fruitLevel" comment="获取果实等级"></field>
+	</message>
+	
+	<message type="GC_GET_FRUIT" comment="返回获取果实结果">
+		<field type="Boolean" name="result" comment="返回结果"></field>
+		<field type="String" name="desc" comment="返回结果描述"></field>
+	</message>
+	
+	<message type="CG_GET_WATER_RECORD" comment="获取浇水记录">
+	</message>
+	
+	<message type="GC_GET_WATER_RECORD" comment="获取浇水记录">
+		<field type="com.pwrd.war.gameserver.tree.HumanTreeWaterInfo"  
+		        clientType="HumanTreeWaterInfo" name="humanTreeWaterInfo" list="true" comment="好友信息列表" macro="humanTreeWaterInfo">  
+		</field>
+	</message>
+	
+	<message type="CG_WATER_FRIEND_BATCH" comment="一键浇水">
+		
+	</message>
+	
+	<message type="CG_FRIEND_WATER_INFO" comment="浇水和果实信息">
+		<field type="String" name="friendUuid" comment="好友uuid"></field>
+		<field type="String" name="friendName" comment="好友名称"></field>
+	</message>
+	
+	<message type="GC_FRIEND_WATER_INFO" comment="返回浇水和果实信息">
+		<field type="Integer" name="vocation" comment="玩家职业"></field>
+		<field type="Integer" name="curTreeExp" comment="摇钱树当前经验"></field>
+		<field type="Integer" name="maxTreeExp" comment="摇钱树升级经验"></field>
+		<field type="Integer" name="treeLevel" comment="摇钱树等级"></field>
+	</message>
+	
+	<message type="CG_GET_FRIEND_WATER_RECORD" comment="获取浇水记录">
+		<field type="String" name="friendUuid" comment="好友uuid"></field>
+		<field type="String" name="friendName" comment="好友名称"></field>
+	</message>
+	
+	<message type="GC_GET_FRIEND_WATER_RECORD" comment="获取浇水记录">
+		<field type="com.pwrd.war.gameserver.tree.HumanTreeWaterInfo"  
+		        clientType="HumanTreeWaterInfo" name="humanTreeWaterInfo" list="true" comment="好友信息列表" macro="humanTreeWaterInfo">  
+		</field>
+	</message>
+</messages>

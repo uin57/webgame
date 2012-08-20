@@ -1,0 +1,11 @@
+int vipLevel;[minValue=0;notNull=false] //vip等级
+int buyTimes; //最大购买次数
+int price;	//上个vip等级购买最大次数到当前最大次数的够买价格
+int value; //购买的数量
+int collectTimes;[notNull=false;minValue=0]	//采集次数
+int beCollectTimes;[notNull=false;minValue=0]	//被采集次数
+int jingjiu1;[notNull=false;minValue=0]//酒1敬酒次数
+int jingjiu2;[notNull=false;minValue=0]
+int jingjiu3;[notNull=false;minValue=0]
+int shakeTimes;[notNull=false;minValue=0]//摇钱次数
+int xiulianTime;[notNull=false;minValue=0]	//修炼时常

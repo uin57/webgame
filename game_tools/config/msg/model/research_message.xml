@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<messages xmlns="http://com.pwrd.war.message" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://com.pwrd.war.message message.xsd" module="research">
+	<!-- 研究 -->
+	<message type="CG_RESEARCH_LIST" comment="取得可研究列表"> 
+	</message>
+	<message type="GC_RESEARCH_LIST" comment="返回研究列表"> 
+		<field type="com.pwrd.war.gameserver.human.domain.ResearchInfo" name="list" clientType="ResearchInfo" list="true">
+			<field type="Integer" name="researchType" comment="研究类型" /> 
+			<field type="String" name="researchName" comment="研究名称" /> 
+			<field type="Integer" name="level" comment="等级" /> 
+			<field type="Integer" name="needLevel" comment="升级需求等级" /> 
+			<field type="Integer" name="needSee" comment="需要阅历" /> 
+			<field type="Integer" name="coolTime" comment="冷却时间" /> 
+			<field type="String" name="levelAddDesc" comment="描述" /> 
+			<field type="String" name="icon" comment="图标" /> 
+		</field> 
+	</message>
+	<message type="CG_RESEARCH_START" comment="开始研究"> 
+		<field type="Integer" name="researchType" comment="研究类型" /> 
+	</message>
+</messages>

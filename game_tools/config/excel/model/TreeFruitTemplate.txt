@@ -1,0 +1,8 @@
+int level;[minValue=0;notNull=false] //果实等级
+int coins;[minValue=0;notNull=false] //获得铜钱
+int vipCoins;[minValue=0;notNull=false] //vip获得铜钱
+int glod;[minValue=0;notNull=false] //获得元宝
+int vipGlod;[minValue=0;notNull=false] //vip获得元宝
+String item; //获得道具
+String vipItem;//vip获得道具
+

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<messages xmlns="http://com.pwrd.war.message" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://com.pwrd.war.message message.xsd" module="tower">
+
+	<message type="CG_TOWER_INIT" comment="将星云路信息">
+	</message>
+	
+	<message type="CG_TOWER_INFO" comment="将星云路信息">
+		<field type="Integer" name="constellationId" comment="星座id"></field>
+	</message>
+	
+	<message type="GC_TOWER_INFO" comment="返回将星云路信息">
+		<field type="Integer" name="constellationId" comment="星座id"></field>
+		<field type="Integer" name="starNumber" comment="第几星"></field>
+		<field type="Integer" name="maxStarNumber" comment="当前星座最大星"></field>
+		<field type="Integer" name="refreshTimes" comment="刷新次数"></field>	
+		<field type="Boolean" name="secretFlag" comment="是否有神秘星"></field>	
+	</message>
+	
+	<message type="CG_TOWER_REFRESH" comment="将星云路刷新">
+		<field type="Integer" name="constellationId" comment="星座id"></field>
+	</message>
+	
+	<message type="GC_TOWER_REFRESH" comment="返回将星云路刷新">
+		<field type="Boolean" name="result" comment="刷新结果"></field>
+		<field type="String" name="desc" comment="结果描述"></field>		
+	</message>
+	
+	<message type="CG_TOWER_SPEEDUP" comment="将星云路加速">
+		<field type="Integer" name="constellationId" comment="星座id"></field>
+	</message>
+	
+	<message type="GC_TOWER_SPEEDUP" comment="返回将星云路加速">
+		<field type="Boolean" name="result" comment="加速结果"></field>
+		<field type="String" name="desc" comment="结果描述"></field>		
+	</message>
+	
+	<message type="CG_TOWER_BATTLE" comment="将星云路战斗">
+		<field type="Integer" name="constellationId" comment="星座id"></field>
+		<field type="Integer" name="starNumber" comment="第几星"></field>
+		<field type="Boolean" name="secretFlag" comment="是否为神秘星"></field>
+	</message>
+	
+	<message type="GC_TOWER_BATTLE" comment="返回将星云路能否战斗结果">
+		<field type="Boolean" name="result" comment="战斗结果"></field>
+		<field type="String" name="desc" comment="结果描述"></field>	
+	</message>
+	
+	<message type="GC_TOWER_BATTLE_RESULT" comment="返回将星云路战斗结果">
+		<field type="Boolean" name="result" comment="战斗结果"></field>
+		<field type="String" name="starSoul" comment="获得星魂"></field>	
+	</message>
+	
+	<message type="GC_TOWER_SECRETE" comment="返回神秘星">
+		<field type="Integer" name="constellationId" comment="星座id"></field>
+		<field type="String" name="secretId" comment="神秘星id"></field>
+	</message>
+	
+	<message type="GC_TOWER_BAG" comment="返回星魂背包容量">
+		<field type="Integer" name="capacity" comment="容量"></field>
+	</message>
+	
+	<message type="CG_TOWER_AUTO_START" comment="开始自动挑战">
+		<field type="Integer" name="constellationId" comment="星座id"></field>
+	</message>
+	
+	<message type="GC_TOWER_AUTO_START" comment="返回开始自动挑战">
+		<field type="Boolean" name="result" comment="自动挑战结果"></field>
+		<field type="String" name="desc" comment="结果描述"></field>
+	</message>
+	
+	<message type="GC_TOWER_AUTO_COMPLETE_ONE" comment="自动挑战完成一层">
+		<field type="Integer" name="constellationId" comment="星座id"></field>
+		<field type="Integer" name="starNumber" comment="当前星"></field>
+		<field type="String" name="starSoul" comment="获得星魂"></field>	
+	</message>
+	
+	<message type="GC_TOWER_AUTO_COMPLETE" comment="自动挑战完成">
+		<field type="String" name="desc" comment="完成原因"></field>	
+	</message>
+	
+	<message type="CG_TOWER_AUTO_CANCEL" comment="取消自动挑战">
+		<field type="Integer" name="constellationId" comment="星座id"></field>
+	</message>
+	
+	<message type="GC_TOWER_AUTO_CANCEL" comment="取消自动挑战">
+		<field type="Integer" name="starNumber" comment="当前星"></field>	
+	</message>
+	
+</messages>

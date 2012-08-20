@@ -1,0 +1,9 @@
+message com.pwrd.war.logserver.model.ItemGenLog(
+    int templateId; // 道具模板ID
+    String itemName; // 道具名称
+    int count; // 道具数量
+    int bind; // 绑定类型
+    long deadline; // 使用有限期限
+    String properties 512; // 物品其他属性
+    String itemGenId; //物品产生ID
+)

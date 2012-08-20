@@ -1,0 +1,197 @@
+package com.pwrd.war.gameserver.common.i18n.constants;
+
+import com.pwrd.war.core.annotation.SysI18nString;
+
+public class PlayerLangConstants_30000 {
+	
+	/** 玩家登录退出切换场景相关常量 30000 ~ 31000 */
+	public static Integer PlAYER_BASE = 30000;
+	@SysI18nString(content = "未知错误")
+	public static final Integer LOGIN_UNKOWN_ERROR = ++PlAYER_BASE;
+	@SysI18nString(content = "服务器暂时不能登陆，请稍后再试")
+	public static final Integer LOGIN_CANT_LOGIN = ++PlAYER_BASE;
+	@SysI18nString(content = "服务器暂时不能登陆，请稍后再试")
+	public static final Integer LOGIN_ERROR_LOCALNET_BREAK = ++PlAYER_BASE;
+	@SysI18nString(content = "用户名不存在或者密码错误")
+	public static final Integer LOGIN_VALIDATE_ERROR = ++PlAYER_BASE;
+	@SysI18nString(content = "服务器暂时还没有开放，请稍后再试")
+	public static final Integer LOGIN_ERROR_WALL_CLOSED = ++PlAYER_BASE;
+	@SysI18nString(content = "您的账号正在其他地方登陆")
+	public static final Integer LOGIN_ONLINE_ERROR = ++PlAYER_BASE;
+	@SysI18nString(content = "角色数量达到上限")
+	public static final Integer ROLE_CREATE_ERROR_MAX = ++PlAYER_BASE;
+	@SysI18nString(content = "角色名称已经存在")
+	public static final Integer DUPLICATE_ROLE_NAME = ++PlAYER_BASE;
+	@SysI18nString(content = "名称不能为空")
+	public static final Integer EMPTY_ROLE_NAME = ++PlAYER_BASE;
+	@SysI18nString(content = "您已经被GM禁言")
+	public static final Integer CANNOT_CHAT = ++PlAYER_BASE;
+	@SysI18nString(content = "您的账号已经锁定，暂时无法登录.原因({0})")
+	public static final Integer LOGIN_ERROR_ACCOUNT_LOCKED = ++PlAYER_BASE;
+	@SysI18nString(content = "您的账号状态异常，暂时无法登录")
+	public static final Integer LOGIN_ERROR_ACCOUNT_STATE = ++PlAYER_BASE;
+	@SysI18nString(content = "当前服务器繁忙，请稍后再试")
+	public static final Integer LOGIN_ERROR_SERVER_FULL = ++PlAYER_BASE;
+	@SysI18nString(content = "您是防沉迷用户，无法登录")
+	public static final Integer LOGIN_ERROR_WALLOW = ++PlAYER_BASE;
+	@SysI18nString(content = "您累计在线时间已满{0}小时{1}分钟,如果你在线满3小时，将被系统强制断开游戏连接下线休息。", comment = "{0}小时数{1}分钟数")
+	public static final Integer WALLOW_SAFE_STATUS = ++PlAYER_BASE;
+	@SysI18nString(content = "您即将进入游戏疲劳期，请立即下线休息，3小时后即可再次上线。断开连接倒计时：{0}分钟。")
+	public static final Integer WALLOW_ENTERING_WARN_STATUS = ++PlAYER_BASE;	
+	@SysI18nString(content = "您即将进入游戏疲劳期，请立即下线休息，3小时后即可再次上线。与服务器断开时间小于5分钟。")
+	public static final Integer WALLOW_BEING_KICK_OFF_STATUS = ++PlAYER_BASE;	
+	@SysI18nString(content = "您正处于疲劳时间,不能登录游戏,直到您累计的下线时间满5小时,才能恢复正常。享受健康游戏。")
+	public static final Integer WALLOW_CANNOT_LOGIN_STATUS = ++PlAYER_BASE;
+	@SysI18nString(content = "防沉迷系统提示：您的游戏累计连续在线时间已经达到1小时。")
+	public static final Integer WALLOW_WARN_1 = ++PlAYER_BASE;
+	@SysI18nString(content = "防沉迷系统提示：您的游戏累计连续在线时间已经达到2小时。")
+	public static final Integer WALLOW_WARN_2 = ++PlAYER_BASE;
+	@SysI18nString(content = "防沉迷系统提示：您已处于亚健康游戏时间，请离线休息。")
+	public static final Integer WALLOW_DANGE_STATUS = ++PlAYER_BASE;
+	@SysI18nString(content = "防沉迷控制关闭，您已经恢复正常收益")
+	public static final Integer WALLOW_CLOSE_NORMAL = ++PlAYER_BASE;
+	@SysI18nString(content = "防沉迷控制开启，您累计在线时间已满3小时，收益降为正常值的50％，为了您的健康，请尽快下线休息，做适当身体活动，合理安排学习生活")
+	public static final Integer WALLOW_OPEN_WARN = ++PlAYER_BASE;
+	@SysI18nString(content = "防沉迷控制开启，您累计在线时间已满5小时,您的收益已降为零，直到您的累计下线时间满5小时后,才能恢复正常。")
+	public static final Integer WALLOW_OPEN_DANGER = ++PlAYER_BASE;
+	@SysI18nString(content = "您的年龄未满18岁，正受到“防沉迷系统”的限制。")
+	public static final Integer WALLOW_FILL_INFOR = ++PlAYER_BASE;
+	@SysI18nString(content = "您正处于健康游戏时间，祝您游戏愉快！")
+	public static final Integer WALLOW_HEALTH = ++PlAYER_BASE;
+	@SysI18nString(content = "防沉迷认证成功")
+	public static final Integer WALLOW_CERTIFIED_SUCC = ++PlAYER_BASE;
+	@SysI18nString(content = "Cookie验证失败")
+	public static final Integer DC_COOKIE_VALID_FAIL = ++PlAYER_BASE;
+	@SysI18nString(content = "{0}升级了")
+	public static final Integer ROLE_LEVEL_UP = ++PlAYER_BASE;
+	@SysI18nString(content = "上次登陆IP：{0}，上次登陆时间：{1}<br/>抵制不良游戏 拒绝盗版游戏 <br/>注意自我保护 谨防受骗上当<br/>适度游戏益脑 沉迷游戏伤身<br/>合理安排时间 享受健康生活")
+	public static final Integer LAST_LOGIN_INFO = ++PlAYER_BASE;
+	@SysI18nString(content = "恭喜您获得{0}体力，{1}道具")
+	public static final Integer GET_ONLINE_PRIZE = ++PlAYER_BASE;
+	@SysI18nString(content = "恭喜您获得{0}体力")
+	public static final Integer GET_ONLINE_PRIZE1 = ++PlAYER_BASE;
+	@SysI18nString(content = "该天奖励已经领取")
+	public static final Integer GET_LOGIN_PRIZE1 = ++PlAYER_BASE;
+	@SysI18nString(content = "还没有到领取该天奖励时间")
+	public static final Integer GET_LOGIN_PRIZE2 = ++PlAYER_BASE;
+	
+	
+	public static Integer PlAYER_BASE_31000 = 30000 + 1000;
+	/****强化装备****/
+	@SysI18nString(content = "已经达到最大可开启的的装备强化队列数目")
+	public static final Integer MAX_EQUIP_ENHANCE_QUEUE_NUM = ++PlAYER_BASE_31000;
+	@SysI18nString(content = "无需清除该冷却队列")
+	public static final Integer NO_NEED_TO_CLEAR_QUEUE = ++PlAYER_BASE_31000;
+	@SysI18nString(content = "已达成长上限")
+	public static final Integer GROW_UP_TO_LIMIT = ++PlAYER_BASE_31000;
+	@SysI18nString(content = "队列正在冷却中...")
+	public static final Integer CD_QUEUE_CDING = ++PlAYER_BASE_31000;
+	@SysI18nString(content = "当前状态无法修炼...")
+	public static final Integer CUR_STATE_CANNOT_XIULIAN = ++PlAYER_BASE_31000;
+	@SysI18nString(content = "当前无法修炼...")
+	public static final Integer IN_XIULIANING = ++PlAYER_BASE_31000;
+	@SysI18nString(content = "当前不再修炼中...")
+	public static final Integer NOT_IN_XIULIANING = ++PlAYER_BASE_31000;
+	@SysI18nString(content = "下手过慢,已经被采集完了")
+	public static final Integer COLLECT_NOTHING = ++PlAYER_BASE_31000;
+	@SysI18nString(content = "采集正在冷却中,剩余{0}分钟")
+	public static final Integer COLLECT_COOLDOWN_ING = ++PlAYER_BASE_31000;
+	@SysI18nString(content = "没有可采集次数了")
+	public static final Integer COLLECT_TODAY_FULL_TIME = ++PlAYER_BASE_31000;
+	@SysI18nString(content = "今日对方采集次数已经满了")
+	public static final Integer COLLECT_TARGET_TODAY_FULL_TIME = ++PlAYER_BASE_31000;
+	@SysI18nString(content = "对方不再修炼中")
+	public static final Integer TARGET_NOT_IN_XIULIAN = ++PlAYER_BASE_31000;
+	@SysI18nString(content = "已经达到最高修炼等级")
+	public static final Integer XIULIAN_MAX_LEVEL = ++PlAYER_BASE_31000;
+	@SysI18nString(content = "已经达到研究最高等级")
+	public static final Integer RESEARCH_MAX_LEVEL = ++PlAYER_BASE_31000;
+	@SysI18nString(content = "体力已满")
+	public static final Integer VIT_FULL = ++PlAYER_BASE_31000;
+	@SysI18nString(content = "只有达到vip{0}及以上才能开启元宝提升")
+	public static final Integer GOLD_GROW_MIN_NEED_VIP_LEVEL = ++PlAYER_BASE_31000;
+	@SysI18nString(content = "请先停止扫荡")
+	public static final Integer STOP_AGAINST_FIRST = ++PlAYER_BASE_31000;
+	
+	//好友
+	public static Integer PlAYER_BASE_32000 = 30000 + 2000;
+	@SysI18nString(content = "对方不是您的好友")
+	public static final Integer NOT_YOUR_FRIEND = ++PlAYER_BASE_32000;
+	@SysI18nString(content = "删除好友成功")
+	public static final Integer DELETE_FRIEND_OK = ++PlAYER_BASE_32000;
+	@SysI18nString(content = "加到黑名单成功")
+	public static final Integer ADD_BLACK_OK = ++PlAYER_BASE_32000;
+	@SysI18nString(content = "取消黑名单成功")
+	public static final Integer CANCEL_BLACK_OK = ++PlAYER_BASE_32000;
+	@SysI18nString(content = "您的好友数量已达上限")
+	public static final Integer MAX_FRIEND = ++PlAYER_BASE_32000;
+	@SysI18nString(content = "该玩家已经是您的好友")
+	public static final Integer IS_YOUR_FRIEND = ++PlAYER_BASE_32000;
+	@SysI18nString(content = "添加好友成功")
+	public static final Integer ADD_FRIEND_OK = ++PlAYER_BASE_32000;
+	@SysI18nString(content = "您搜索的玩家不存在")
+	public static final Integer ADD_FRIEND_PLAYER_NOT_EXIST = ++PlAYER_BASE_32000;
+	@SysI18nString(content = "已经在黑名单中")
+	public static final Integer IS_IN_BLACKS = ++PlAYER_BASE_32000;
+	@SysI18nString(content = "不在黑名单中")
+	public static final Integer NOT_IN_BLACKS = ++PlAYER_BASE_32000;
+	@SysI18nString(content = "对放在你的黑名单中,无法添加为好友")
+	public static final Integer IN_BLACKS = ++PlAYER_BASE_32000;
+	@SysI18nString(content = "自己不能添加自己为好友")
+	public static final Integer CANNOT_ADD_SELF = ++PlAYER_BASE_32000;
+	@SysI18nString(content = "个性签名不能超过20个字符")
+	public static final Integer PERSONSIGN_LONG = ++PlAYER_BASE_32000;
+	@SysI18nString(content = "修改个性签名成功!")
+	public static final Integer PERSONSIGN_MODIFYOK = ++PlAYER_BASE_32000;
+	
+	//夺宝
+	public static Integer PlAYER_BASE_33000 = 30000 + 3000;
+	@SysI18nString(content = "{0}召唤了楼船开始借箭")
+	public static final Integer ROBBERY_NOTICE_ALL = ++PlAYER_BASE_33000;	
+	@SysI18nString(content = "当前正在夺宝中")
+	public static final Integer ROBBERY_ING = ++PlAYER_BASE_33000;
+	@SysI18nString(content = "{0}(正在协助别人)")
+	public static final Integer ROBBERY_HELP_OTHER = ++PlAYER_BASE_33000;
+	@SysI18nString(content = "{0}(协助次数已满)")
+	public static final Integer ROBBERY_NO_TIMES = ++PlAYER_BASE_33000;	
+	@SysI18nString(content = "目标已经取消护送请求")
+	public static final Integer ROBBERY_CANCEL_INVITE = ++PlAYER_BASE_33000;
+	@SysI18nString(content = "护送邀请发送成功")
+	public static final Integer ROBBERY_INVITE_SEND_OK = ++PlAYER_BASE_33000;
+	@SysI18nString(content = "尚未初始化夺宝信息")
+	public static final Integer ROBBERY_NOT_INIT = ++PlAYER_BASE_33000;
+	@SysI18nString(content = "夺宝正在进行中")
+	public static final Integer ROBBERY_COOLDOWNING = ++PlAYER_BASE_33000;
+	@SysI18nString(content = "拦截正在冷却中")
+	public static final Integer ROBBERY_ROB_COOLDOWNING = ++PlAYER_BASE_33000;
+	@SysI18nString(content = "目标不再夺宝中")
+	public static final Integer ROBBERY_NOT_ROB = ++PlAYER_BASE_33000;
+	@SysI18nString(content = "您的拦截次数已经用完")
+	public static final Integer ROBBERY_ROB_NO_COUNT = ++PlAYER_BASE_33000;
+	@SysI18nString(content = "不能拦截自己的协助对象")
+	public static final Integer ROBBERY_ROB_NOT_SELF = ++PlAYER_BASE_33000;
+	@SysI18nString(content = "已经拦截过此人,不能再次拦截")
+	public static final Integer ROBBERY_ROB_ALLREADY = ++PlAYER_BASE_33000;
+	@SysI18nString(content = "目标被截光")
+	public static final Integer ROBBERY_ROB_EMPTY = ++PlAYER_BASE_33000;
+	@SysI18nString(content = "您的夺宝次数已经用完")
+	public static final Integer ROBBERY_NO_COUNT = ++PlAYER_BASE_33000;
+	@SysI18nString(content = "开始借箭")
+	public static final Integer ROBBERY_STARTED = ++PlAYER_BASE_33000;
+	@SysI18nString(content = "该次夺宝协助被取消")
+	public static final Integer ROBBERY_INVITE_CANCEL = ++PlAYER_BASE_33000;
+	
+	public static Integer PlAYER_BASE_36000 = 30000 + 6000;
+	@SysI18nString(content = "转职队列正在冷却中")
+	public static final Integer TRANSFER_CD_QUEUE = ++PlAYER_BASE_36000;
+	@SysI18nString(content = "先完成前置转职")
+	public static final Integer TRANSFER_BEFORE = ++PlAYER_BASE_36000;
+	@SysI18nString(content = "获得被动技能{0}")
+	public static final Integer GET_PASS_SKILL = ++PlAYER_BASE_36000;
+	
+	public static Integer PlAYER_BASE_36200 = 30000 + 6200;
+	@SysI18nString(content = "等级未到，不可领取…")
+	public static final Integer ONLINE_PRIZE_LEVEL = ++PlAYER_BASE_36200;
+	@SysI18nString(content = "时间未到，请稍后领取…")
+	public static final Integer ONLINE_PRIZE_TIME = ++PlAYER_BASE_36200;
+}

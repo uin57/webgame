@@ -1,0 +1,61 @@
+package ${packageName};
+import com.pwrd.war.core.msg.BaseEntityMsg;
+/**
+ * This is an auto generated source,please don't modify it.
+ * 
+ * @author ${generator}
+ */
+public final class ${className} extends BaseEntityMsg<${entityType}>{
+	private ${entityType}  _entity;
+	
+	@Override
+	@SuppressWarnings("unchecked")
+	public Class getEntityClass(){
+		return ${entityType}.class;	
+	}
+	
+	
+	@Override
+	public ${entityType} getEntity() {
+		return _entity;
+	}
+	
+	@Override
+	public void setEntity(${entityType} entity) {
+		this._entity = entity;
+	}
+	
+	@Override
+	public  void initEntity(){
+		if(this._entity ==null){
+			this._entity = new ${entityType}();
+		}else{
+			throw new IllegalStateException("The entity is set.");
+		}
+	}
+	
+	@Override
+	protected final boolean _read(final byte sequence) {
+		switch (sequence) {
+${readCaseCode}
+		}
+		return false;
+	}	
+	
+	@Override
+	protected final boolean _write(){
+${writeCode}
+		return true;
+	}
+	
+	@Override
+	public final short getType() {
+		return EntityMessageType.${typeName};
+	}
+
+
+	@Override
+	public final String getTypeName() {
+		return "${typeName}";
+	}
+}

@@ -1,0 +1,7 @@
+message com.pwrd.war.logserver.model.LoginLog(
+	long loginTime;// 用户登录时间
+	String ip;//用户登录ip
+	String senceId;// 登录地图
+	int onlineTime; // 当前总在线时间
+	int loginFlag; // 登录或者登出标志 1登录 2登出
+)

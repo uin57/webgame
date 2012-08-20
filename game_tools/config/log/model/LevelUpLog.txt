@@ -1,0 +1,5 @@
+message com.pwrd.war.logserver.model.LevelUpLog(
+	int curLevel;// 玩家当前等级
+	long levelUpTime;// 升级时间
+	int onlineTime; // 当前在线时间
+)

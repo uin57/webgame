@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<messages xmlns="http://com.pwrd.war.message" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://com.pwrd.war.message message.xsd" module="player">
+
+ 
+	
+	<message type="CG_PLAYER_COOKIE_LOGIN" comment="用户cookie登录">
+		<field type="String" name="cookieValue" comment="cookie值"></field>
+	</message>
+	
+	<message type="GC_LOGIN_SUCCESS" comment="通知用户登录成功"/>
+	<message type="GC_LOGIN_FAILED" comment="通知用户登录失败">
+		<field type="String" name="failMsg" comment="失败信息"></field>
+	</message>
+	
+	<message type="GC_ROLE_INFO" comment="角色信息">
+	<!-- 
+		<field type="com.pwrd.war.gameserver.player.RoleInfo" name="roleInfo"  comment="角色信息" macro="RoleInfo"></field>  -->
+		<field type="String" name="roleUUID" comment="角色的uuid"></field> 
+		<field type="String" name="name" comment="角色名字"></field> 
+		<field type="Integer" name="sex" comment="选择的性别"></field>
+		<field type="Integer" name="vocation" comment="选择的职业"></field>
+		<field type="Integer" name="camp" comment="选择的阵营 "></field>
+	</message>
+	
+ 
+	<message type="CG_CREATE_ROLE" comment="创建角色">
+		<field type="String" name="name" comment="角色名字"></field> 
+		<field type="Integer" name="sex" comment="选择的性别"></field>
+		<field type="Integer" name="vocation" comment="选择的职业"></field>
+		<field type="Integer" name="camp" comment="选择的阵营 "></field>
+	</message>	
+	
+	<message type="GC_FAILED_MSG" comment="GS向CLIENT发送操作失败消息">
+		<field type="Short" name="errorNo" comment="错误号"></field>
+		<field type="String" name="msg" comment="错误提示信息"></field>
+	</message>
+	
+	<!-- 加载角色数据 实际就是选角色 -->
+	<message type="CG_PLAYER_ENTER" comment="选择角色进入游戏场景">
+		<field type="String" name="roleUUID" comment="角色的uuid"></field>
+	</message>
+	
+	<!-- 服务器角色信息加载完毕 发送场景信息 客户端加载资源 -->
+	<message type="GC_SCENE_INFO" comment="玩家进入场景的信息">  
+	</message>
+	
+	<!-- 客户端加载资源加载完毕  -->
+	<message type="CG_ENTER_SCENE" comment="玩家可以进入场景">
+		<field type="Integer" name="line" comment="分线号，-1表示随机分配"></field>
+	</message>
+	
+	<!-- 服务器进入gaming状态前,进入场景后,客户端收到消息 -->
+	<message type="GC_ENTER_SCENE" comment="玩家已经进入场景"> 
+	</message>
+	
+	<message type="GC_NOTIFY_EXCEPTION" comment="通知客户端">
+		<field type="Integer" name="code" comment="错误码"></field>
+		<field type="String" name="msg" comment="错误信息，如果为空就显示默认的"></field>
+	</message>
+	<!-- 
+	<message type="CG_PLAYER_CHARGE_DIAMOND" comment="玩家充值平台币">
+		<field type="Integer" name="mmCost" comment="兑换的平台币数量"></field>
+	</message>
+	
+	<message type="GC_PLAYER_CHARGE_DIAMOND" comment="兑换成功">
+		<field type="Integer" name="mmBalance" comment="平台币余额"/>
+	</message>
+	
+	<message type="CG_PLAYER_QUERY_ACCOUNT" comment="查询账户余额">	
+	</message>
+	
+	<message type="GC_PLAYER_QUERY_ACCOUNT" comment="查询账户余额的结果">
+		<field type="Integer" name="mmBalance" comment="MM余额"></field>
+	</message>
+	 -->
+	<message type="CG_PLAYER_GUIDE" comment="新手引导">
+		<field type="String" name="guideId" comment=""></field>
+	</message>
+	
+	<message type="CG_PLAYER_GUIDE_LIST" comment="新手引导查询"> 
+	</message>
+	<message type="GC_PLAYER_GUIDE_LIST" comment="已完成的新手引导">
+		<field type="String" name="guideIds" comment=""></field>
+	</message>
+	 
+</messages>

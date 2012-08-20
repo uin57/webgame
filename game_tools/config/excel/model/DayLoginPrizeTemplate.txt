@@ -1,0 +1,2 @@
+short day;[notNull=false,minValue=0]	//天
+Map<String,String> gifts;[collection(6,2)]//奖励列表

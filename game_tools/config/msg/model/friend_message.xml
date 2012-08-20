@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<messages xmlns="http://com.pwrd.war.message" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://com.pwrd.war.message message.xsd" module="friend">
+
+	<message type="CG_FRIEND_ADD" comment="添加好友"> 
+		<field type="String" name="friendName" comment="名字"></field> 
+	</message>
+ 	
+ 	<message type="CG_FRIEND_GET_LIST" comment="获取好友列表"> 
+	</message>
+	<message type="CG_FRIEND_DEL" comment="删除好友"> 
+		<field type="String" name="friendUUID" comment="好友UUID"></field> 
+	</message>
+	<message type="CG_FRIEND_ADD_BLACK" comment="加入屏蔽"> 
+		<field type="String" name="friendUUID" comment="好友UUID"></field> 
+	</message>
+	<message type="CG_FRIEND_DEL_BLACK" comment="取消屏蔽"> 
+		<field type="String" name="friendUUID" comment="好友UUID"></field> 
+	</message>
+	
+	<message type="GC_FRIEND_LIST" comment="获返回好友列表"> 
+		<field type="com.pwrd.war.gameserver.friend.FriendInfo"  
+		        clientType="FriendInfo" name="friends" list="true" comment="好友信息列表" macro="friendInfo">  
+		</field>
+ 	</message>
+ 	
+ 	<message type="GC_FRIEND_NEW_MESSAGE" comment="有新的离线消息"> 
+ 		<field type="com.pwrd.war.gameserver.friend.FriendInfo"  
+		        clientType="FriendInfo" name="messages" list="true" comment="好友信息列表" macro="friendInfo">    
+		</field>
+ 	</message>
+ 	
+ 	<message type="GC_FRIEND_ADD_OR_UPDATE" comment="好友信息更新"> 
+ 		<field type="com.pwrd.war.gameserver.friend.FriendInfo"  
+		        clientType="FriendInfo" name="info"  comment="好友信息" macro="friendInfo"/>   
+ 	</message> 	
+ 	<message type="GC_FRIEND_DEL" comment="好友信息删除">
+ 		<field type="String" name="friendUUID" comment="好友UUID"></field> 
+ 	</message>
+ 	
+ 	
+ 	<message type="GC_FRIEND_LATEST_LINK" comment="最近联系人列表"> 
+		<field type="com.pwrd.war.gameserver.friend.FriendInfo"  
+		        clientType="FriendInfo" name="players" list="true" comment="用户信息列表" macro="friendInfo">  
+		</field>
+ 	</message>
+ 	<message type="GC_FRIEND_LATEST_ADD_OR_UPDATE" comment="最近联系人信息更新"> 
+ 		<field type="com.pwrd.war.gameserver.friend.FriendInfo"  
+		        clientType="FriendInfo" name="info"  comment="玩家信息" macro="friendInfo"/>   
+ 	</message>
+ 	<message type="GC_FRIEND_LATEST_DEL" comment="最近联系玩家信息删除">
+ 		<field type="String" name="friendUUID" comment="好友UUID"></field> 
+ 	</message>
+ 	
+ 	
+ 	<message type="GC_FRIEND_BLACK_ADD" comment="黑名单增加"> 
+ 		<field type="String" name="friendUUID" comment="好友UUID"></field> 
+		<field type="String" name="friendName" comment="好友名字"></field> 
+ 	</message> 	
+ 	<message type="GC_FRIEND_BLACK_DEL" comment="黑名单信息删除">
+ 		<field type="String" name="friendUUID" comment="好友UUID"></field> 
+ 	</message> 	
+ 	<message type="GC_FRIEND_BLACKS" comment="黑名单列表"> 
+		<field type="com.pwrd.war.gameserver.friend.FriendInfo"  
+		        clientType="FriendBlackInfo" name="players" list="true" comment="用户信息列表" >  
+		        <field type="String" name="friendUUID" comment="好友UUID"></field> 
+		        <field type="String" name="friendName" comment="好友名字"></field> 
+		</field>
+ 	</message>
+ 	
+ 	<message type="CG_FRIEND_GET_INFO" comment="获取玩家信息">
+ 		<field type="String" name="friendUUID" comment="好友UUID"></field> 
+ 	</message> 	
+ 	<message type="GC_FRIEND_GET_INFO" comment="获取玩家信息">
+ 		<field type="com.pwrd.war.gameserver.friend.FriendInfo"  
+		        clientType="FriendInfo" name="info"  comment="玩家信息" macro="friendInfo"/> 
+ 	</message> 	
+ 	<message type="GC_FRIEND_ADD_RES" comment="增加好友结果反馈">
+ 		<field type="Boolean" name="result" comment="结果"></field> 
+ 		<field type="String" name="friendUUID" comment="好友UUID"></field> 
+ 	</message>
+ 	
+</messages>

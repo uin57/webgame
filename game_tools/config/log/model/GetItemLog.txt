@@ -1,0 +1,4 @@
+message com.pwrd.war.logserver.model.GetItemLog(
+    String itemSn;// 物品id
+    long time;//获得时间
+)

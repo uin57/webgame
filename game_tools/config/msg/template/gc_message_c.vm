@@ -1,0 +1,178 @@
+#macro( smallType $type)
+#if($type == "Byte")int#elseif( $type == "Boolean" )int#elseif( $type == "Short" )int#elseif( $type == "Integer" )int#elseif( $type == "Long" )Number#elseif( $type == "Float" )Number#elseif( $type == "Double" )Number#else$type#end
+#end
+#macro( bigType $type)
+#if( $type == "Integer" )Int#elseif( $type == "Boolean" )Byte#elseif( $type == "String" )UTF#else$type#end
+#end
+#macro( upperFirstChar $type)$type.substring(0,1).toUpperCase()$type.substring(1)#end
+package com.pwrd.pwgame.service.message {
+	import flash.utils.IDataInput;
+	import com.pwrd.common.baseClass.Long;
+	import com.pwrd.pwgame.service.MessageType;
+	import com.pwrd.net.TCPService;
+    import com.pwrd.net.AbstractMessageReceiver;
+	import com.pwrd.pwgame.service.data.*;
+	import com.pwrd.pwgame.service.MessageManager;
+	
+#if($constants.size()>0)
+	/**
+	 * 常量定义
+#foreach( $constant in $constants )
+	 *	【$constant.name】$constant.desc
+#end	
+	 */
+#end
+	public class ${module}GCMessage extends AbstractMessageReceiver
+	{
+		override protected function collectObservers():void
+		{
+#foreach( $msg in $msgs )
+				register(MessageType.${msg.type},${msg.type});
+#end
+		}
+#foreach( $msg in $msgs )
+ 
+  		/**
+		 * $msg.comment
+#foreach( $field in $msg.fields )
+		 * @param $field.smallName $field.comment
+#end
+		 */
+		public function ${msg.type}(data:IDataInput,cmd:int):void 
+		{
+#if($msg.hasListField)
+			var i:int,size:int;
+#end
+#foreach( $field in $msg.fields )
+#if ($field.list) 
+			var ${field.smallName}:Array = [];
+			size = data.readShort();
+			for(i=0; i<size; i++)
+			{
+#if($field.isNewType)
+				${field.smallName}[i] = new ${field.type}();
+#if($field.hasListField)
+				var ${field.smallName}_j:int;
+#end
+#foreach( $subfield in $field.subFields )
+				#set($index=$velocityCount - 1)
+#if($subfield.type=="Long")
+					${field.smallName}[i].${subfield.smallName} = Long.read(data);//$subfield.comment
+#elseif($subfield.list) 
+					var ${field.smallName}_${subfield.smallName}:Array = [];
+					var ${field.smallName}_${subfield.smallName}Size:int = data.readShort();
+					for(${field.smallName}_j=0; ${field.smallName}_j<${field.smallName}_${subfield.smallName}Size; ${field.smallName}_j++){
+#if($subfield.isNewType)
+							${field.smallName}_${subfield.smallName}[${field.smallName}_j] = new ${subfield.type}();
+#if($subfield.hasListField)
+				var ${subfield.smallName}_k:int;
+#end
+#foreach( $subsubfield in $subfield.subFields )
+#set($index=$velocityCount - 1)
+#if($subsubfield.type=="Long")
+					${field.smallName}_${subfield.smallName}[${field.smallName}_j].${subsubfield.smallName} = Long.read(data);//$subsubfield.comment
+#elseif($subsubfield.list) 
+					var ${field.smallName}_${subfield.smallName}_${subsubfield.smallName}:Array = [];
+					var ${field.smallName}_${subfield.smallName}_${subsubfield.smallName}Size:int = data.readShort();
+					for(${subfield.smallName}_k=0; ${subfield.smallName}_k<${field.smallName}_${subfield.smallName}_${subsubfield.smallName}Size; ${subfield.smallName}_k++){
+#if($subsubfield.isNewType)
+							${field.smallName}_${subfield.smallName}_${subsubfield.smallName}[${subfield.smallName}_k] = new ${subsubfield.type}();
+#foreach( $subsubsubfield in $subsubfield.subFields )
+							${field.smallName}_${subfield.smallName}_${subsubfield.smallName}[${subfield.smallName}_k].${subsubsubfield.smallName} = data.read#bigType($subsubsubfield.type)();//$subsubsubfield.comment
+#end
+#else
+						${field.smallName}_${subfield.smallName}_${subsubfield.smallName}[${subfield.smallName}_k] = data.read#bigType($subsubfield.type)();//$subsubfield.comment
+#end
+					}
+					${field.smallName}_${subfield.smallName}[${field.smallName}_j].${subsubfield.smallName} = ${field.smallName}_${subfield.smallName}_${subsubfield.smallName};
+#else
+					${field.smallName}_${subfield.smallName}[${field.smallName}_j].${subsubfield.smallName} = data.read#bigType($subsubfield.type)();//$subsubfield.comment
+#end
+#end
+#else
+						${field.smallName}_${subfield.smallName}[${field.smallName}_j] = data.read#bigType($subfield.type)();//$subfield.comment
+#end
+					}
+					${field.smallName}[i].${subfield.smallName} = ${field.smallName}_${subfield.smallName};
+#else
+					${field.smallName}[i].${subfield.smallName} = data.read#bigType($subfield.type)();//$subfield.comment
+#end
+#end
+#elseif($field.type=="Long")
+				${field.smallName}[i] = Long.read(data);
+#else
+				${field.smallName}[i] = data.read#bigType($field.type)();
+#end
+			}
+#elseif($field.isNewType)
+			var ${field.smallName}:${field.type} = new ${field.type}();
+#if($field.hasListField)
+			var j:int;
+#end
+#foreach( $subfield in $field.subFields )
+				#set($index=$velocityCount - 1)
+#if($subfield.type=="Long")
+			${field.smallName}.${subfield.smallName} = Long.read(data);//$subfield.comment
+#elseif($subfield.list) 
+			var ${subfield.smallName}:Array = [];
+			var ${subfield.smallName}Size:int = data.readShort();
+			for(j=0; j<${subfield.smallName}Size; j++){
+#if($subfield.isNewType)
+				${subfield.smallName}[j] = new ${subfield.type}();
+#if($subfield.hasListField)
+				var ${subfield.smallName}_k:int;
+#end
+
+#foreach( $subsubfield in $subfield.subFields )
+							#set($index=$velocityCount - 1)
+#if($subsubfield.type=="Long")
+				${subfield.smallName}[j].${subsubfield.smallName} = Long.read(data);//$subsubfield.comment
+#elseif($subsubfield.list) 
+					var ${subfield.smallName}_${subsubfield.smallName}:Array = [];
+					var ${subfield.smallName}_${subsubfield.smallName}Size:int = data.readShort();
+					for(${subfield.smallName}_k=0; ${subfield.smallName}_k<${subfield.smallName}_${subsubfield.smallName}Size; ${subfield.smallName}_k++){
+#if($subsubfield.isNewType)
+							${subfield.smallName}_${subsubfield.smallName}[${subfield.smallName}_k] = new ${subsubfield.type}();
+#foreach( $subsubsubfield in $subsubfield.subFields )
+							${subfield.smallName}_${subsubfield.smallName}[${subfield.smallName}_k].${subsubsubfield.smallName} = data.read#bigType($subsubsubfield.type)();//$subsubsubfield.comment
+#end
+#else
+						${subfield.smallName}_${subsubfield.smallName}[${subfield.smallName}_k] = data.read#bigType($subsubfield.type)();//$subsubfield.comment
+#end
+					}
+					${subfield.smallName}[j].${subsubfield.smallName} = ${subfield.smallName}_${subsubfield.smallName};
+#else
+				${subfield.smallName}[j].${subsubfield.smallName} = data.read#bigType($subsubfield.type)();//$subsubfield.comment
+#end
+#end					
+#else
+				${subfield.smallName}[j] = data.read#bigType($subfield.type)();//$subfield.comment
+#end
+				
+			}
+			${field.smallName}.${subfield.smallName} = ${subfield.smallName};
+#else
+			${field.smallName}.${subfield.smallName} = data.read#bigType($subfield.type)();//$subfield.comment
+#end
+#end
+#elseif($field.type=="Long")
+			var ${field.smallName}:Long = Long.read(data);
+#else
+			var ${field.smallName}:#smallType($field.type) = data.read#bigType($field.type)();		
+#end
+#end
+#if($msg.fields.size()>0||$msg.subMsgs.size()==0)
+            MessageManager.dispatch(cmd,[#foreach( $field in $msg.fields )${field.smallName}#if($velocityCount != $msg.fields.size()),#end#end]);
+#end
+#foreach( $subMsg in $msg.subMsgs )
+			var i:int,size:int;
+			size = data.readShort();
+			for(i=0; i<size; i++)
+			{
+				${subMsg.type}(data);
+			}
+#end
+		}
+#end
+	}
+}

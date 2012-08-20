@@ -1,0 +1,2 @@
+int level;[minValue=0;notNull=false] //摇钱树等级
+int exp;[minValue=0;notNull=false] //升级经验

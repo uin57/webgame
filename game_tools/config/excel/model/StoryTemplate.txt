@@ -1,0 +1,4 @@
+String storyId;[notNull=true]	//剧情id
+int type;[notNull=true;minValue=1]			//触发类型
+String param;[notNull=true]		//触发参数
+int questId;//绑定任务

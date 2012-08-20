@@ -1,0 +1,70 @@
+package ${packageName};
+import com.imop.tr.logserver.MessageType;
+import com.imop.tr.logserver.BaseLogMessage;
+
+/**
+ * This is an auto generated source,please don't modify it.
+ */
+ 
+public class ${className} extends BaseLogMessage{
+#foreach($field in $fields)
+       private $field.getType() $field.name;
+#end
+    
+    public ${className}() {    	
+    }
+
+    public ${className}(
+#foreach($field in $sharedFields)
+#if($field.name != "logType" )
+                   $field.getType() $field.name,
+#end
+#end
+#foreach($field in $fields)
+			$field.getType() $field.name#if($velocityCount!=$fields.size()),#end
+#end        	    
+            ) {
+        super(MessageType.LOG_${upperClassName}_RECORD,#foreach($field in $sharedFields)#if($field.name != "logType" )$field.name#if($velocityCount!=$sharedFields.size()),#end#end#end);
+#foreach($field in $fields)
+            this.${field.name} =  ${field.name};
+#end
+    }
+
+#foreach($field in $fields)
+       public ${field.type} get${field.getUpperName()}() {
+	       return $field.name;
+       }
+#end
+        
+#foreach($field in $fields)
+       public void set${field.getUpperName()}(${field.type} ${field.name}) {
+	       this.${field.name} = ${field.name};
+       }
+#end
+    
+    @Override
+    protected boolean readLogContent() {
+#foreach($field in $fields)
+	        ${field.name} =  $field.getReadFunc();
+#end
+        return true;
+    }
+
+    @Override
+    protected boolean writeLogContent() {
+#foreach($field in $fields)
+	        ${field.getWriteFunc()}($field.name);
+#end
+        return true;
+    }
+    
+    @Override
+    public short getType() {
+        return MessageType.LOG_${upperClassName}_RECORD;
+    }
+
+    @Override
+    public String getTypeName() {
+        return "LOG_${upperClassName}_RECORD";
+    }
+}

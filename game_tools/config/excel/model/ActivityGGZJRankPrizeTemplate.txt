@@ -1,0 +1,3 @@
+int rank;	//排行
+int coins;		//铜钱
+int shengwang;	//声望

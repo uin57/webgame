@@ -1,0 +1,9 @@
+Integer skillSn; [notNull=true]			// 技能id
+String skillName; [notNull=false]		// 技能名称
+String skillDescription; [notNull=false]	// 技能说明
+String skillIcon; [notNull=false]		// 技能图标
+Integer skillLevel;[notNull=false]		// 技能等级
+Integer targetType;[notNull=false]		// 目标方，0敌方人，1敌方障碍，2敌方全体，3我方人，4我方障碍，5我方全体，6仅自己
+Integer pasvTrigger;[notNull=false]		// 被动技能触发点
+Integer coolDown;[notNull=false]		// 冷却回合
+String[] skillEffects;[Collection(5,1)]	// 效果数组

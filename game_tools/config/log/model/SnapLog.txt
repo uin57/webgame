@@ -1,0 +1,3 @@
+message com.pwrd.war.logserver.model.SnapLog(
+    String snap 20000; //快照信息
+)

@@ -1,0 +1,6 @@
+message com.pwrd.war.logserver.model.FamilyLog(
+	int flag;				//1建立 2加入 3解散 4离开
+	String familyId;		//家族id
+	String familyName;		//家族名称
+	long time;				//操作时间
+)

@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMapConfig PUBLIC "-//iBATIS.com//DTD SQL Map Config 2.0//EN"
+          "http://www.ibatis.com/dtd/sql-map-config-2.dtd" >
+<sqlMapConfig>
+	<settings cacheModelsEnabled="true" enhancementEnabled="true"
+		lazyLoadingEnabled="true" maxRequests="64" maxSessions="30"
+		maxTransactions="100" useStatementNamespaces="false" />
+	<transactionManager type="JDBC">
+		<dataSource type="SIMPLE">
+			<property name="JDBC.Driver" value="com.mysql.jdbc.Driver" />
+			<property name="JDBC.ConnectionURL"
+				value="jdbc:mysql://127.0.0.1:3306/sanguo_log?useUnicode=true&amp;characterEncoding=utf-8" />
+			<property name="JDBC.Username" value="root" />
+			<property name="JDBC.Password" value="root" />
+			<property name="Pool.MaximumActiveConnections" value="50" />
+			<property name="Pool.MaximumIdleConnections" value="1" />
+		</dataSource>
+	</transactionManager>
+	<sqlMap resource="com/pwrd/war/logserver/model/onlinetimeextra.xml" />
+	<!-- 自动生成日志的配置开始 -->
+	<sqlMap resource="com/pwrd/war/logserver/model/item.xml" />
+	<sqlMap resource="com/pwrd/war/logserver/model/cheat.xml" />
+	<sqlMap resource="com/pwrd/war/logserver/model/task.xml" />
+	<sqlMap resource="com/pwrd/war/logserver/model/chat.xml" />
+	<sqlMap resource="com/pwrd/war/logserver/model/snap.xml" />
+	<sqlMap resource="com/pwrd/war/logserver/model/itemgen.xml" />
+	<sqlMap resource="com/pwrd/war/logserver/model/onlinetime.xml" />
+	<sqlMap resource="com/pwrd/war/logserver/model/charge.xml" />
+	<sqlMap resource="com/pwrd/war/logserver/model/level.xml" />
+	<sqlMap resource="com/pwrd/war/logserver/model/gmcommand.xml" />
+	<sqlMap resource="com/pwrd/war/logserver/model/basicplayer.xml" />
+	<sqlMap resource="com/pwrd/war/logserver/model/pet.xml" />
+	<sqlMap resource="com/pwrd/war/logserver/model/mail.xml" />
+	<sqlMap resource="com/pwrd/war/logserver/model/guild.xml" />
+	<sqlMap resource="com/pwrd/war/logserver/model/prize.xml" />
+	<sqlMap resource="com/pwrd/war/logserver/model/battle.xml" />
+	<sqlMap resource="com/pwrd/war/logserver/model/petexp.xml" />
+	<sqlMap resource="com/pwrd/war/logserver/model/petlevel.xml" />
+	<sqlMap resource="com/pwrd/war/logserver/model/activity.xml" />
+	<sqlMap resource="com/pwrd/war/logserver/model/currency.xml" />
+	<sqlMap resource="com/pwrd/war/logserver/model/equipment.xml" />
+	<sqlMap resource="com/pwrd/war/logserver/model/family.xml" />
+	<sqlMap resource="com/pwrd/war/logserver/model/friend.xml" />
+	<sqlMap resource="com/pwrd/war/logserver/model/getitem.xml" />
+	<sqlMap resource="com/pwrd/war/logserver/model/levelup.xml" />
+	<sqlMap resource="com/pwrd/war/logserver/model/login.xml" />
+	<sqlMap resource="com/pwrd/war/logserver/model/official.xml" />
+	<sqlMap resource="com/pwrd/war/logserver/model/quest.xml" />
+	<sqlMap resource="com/pwrd/war/logserver/model/rep.xml" />
+	<sqlMap resource="com/pwrd/war/logserver/model/repdrop.xml" />
+	<sqlMap resource="com/pwrd/war/logserver/model/tower.xml" />
+	<sqlMap resource="com/pwrd/war/logserver/model/vip.xml" />
+	<sqlMap resource="com/pwrd/war/logserver/model/warcraft.xml" />
+	<sqlMap resource="com/pwrd/war/logserver/model/xinghun.xml" />
+	
+	<!-- 自动生成日志的配置结束 -->
+</sqlMapConfig>

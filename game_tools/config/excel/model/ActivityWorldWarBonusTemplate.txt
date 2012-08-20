@@ -1,0 +1,4 @@
+int combwin;	//连胜次数
+int propu;		//声望
+int coins;		//铜钱
+int endAddpropu;	//终结奖励声望

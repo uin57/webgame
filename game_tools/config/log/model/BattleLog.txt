@@ -1,0 +1,8 @@
+message com.pwrd.war.logserver.model.BattleLog(
+	int mapId;// 地图ID
+	String mapName;// 地图名称
+	long battleTime;// 参加战役时间
+	int battleResult;// 胜&负
+	int attackLoss; //攻方损兵
+	int defenceLoss; //守方损兵
+)

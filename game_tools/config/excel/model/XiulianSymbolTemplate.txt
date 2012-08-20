@@ -1,0 +1,6 @@
+int symbolId;[notNull=false;minValue=0]
+String symbolName;[notNull=false]
+String symbolIcon;[notNull=false]
+float expRate;[notNull=false;minValue=0]
+int collectTimes;[notNull=false;minValue=0]				//可被采集次数
+String params;	[notNull=false]					//附加参数,

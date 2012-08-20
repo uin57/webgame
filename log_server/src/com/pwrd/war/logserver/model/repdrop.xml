@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN"
+          "http://www.ibatis.com/dtd/sql-map-2.dtd" >
+<sqlMap>
+    <typeAlias alias="rep_drop_log" type="com.pwrd.war.logserver.model.RepDropLog" />
+    <insert id="insert_rep_drop_log" parameterClass="rep_drop_log">
+insert into $tableName$(log_type,log_time,region_id,server_id,account_id,account_name,char_id,char_name,level,alliance_id,vip_level,reason,scene_id,x,y,param,rep_id,rep_name,drop_id,drop_num,currency_type,currency,drop_time,drop_monster, createTime) values(#logType#,#logTime#,#regionId#,#serverId#,#accountId#,#accountName#,#charId#,#charName#,#level#,#allianceId#,#vipLevel#,#reason#,#sceneId#,#x#,#y#,#param#,#repId#,#repName#,#dropId#,#dropNum#,#currencyType#,#currency#,#dropTime#,#dropMonster#, #createTime#)</insert>
+    <statement id="createTable_rep_drop_log" parameterClass="java.lang.String">
+create table if not exists $tableName$
+(
+id int(11) not null AUTO_INCREMENT primary key,
+	log_type int(11) not null default -100,
+	log_time bigint not null,
+	region_id int(11) ,
+	server_id int(11) ,
+	account_id varchar(128),
+	account_name varchar(128),
+	char_id varchar(128),
+	char_name varchar(128),
+	level int(11) ,
+	alliance_id int(11) ,
+	vip_level int(11) ,
+	reason int(11) ,
+	scene_id varchar(256),
+	x int(11) ,
+	y int(11) ,
+	param varchar(512),
+	rep_id varchar(256),
+	rep_name varchar(256),
+	drop_id varchar(256),
+	drop_num int(11) ,
+	currency_type int(11) ,
+	currency int(11) ,
+	drop_time bigint ,
+	drop_monster varchar(256),
+createTime bigint not null
+	,key account_id (account_id)
+	,key account_name (account_name)
+	,key char_id (char_id)
+	,key char_name (char_name)
+)ENGINE = MyISAM DEFAULT CHARSET UTF8
+    </statement>
+</sqlMap>

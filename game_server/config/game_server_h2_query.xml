@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.pwrd.war.db.model">
+
+	
+	<!-- 根据Name查询RoleInfo -->
+	<query name="queryRoleByName">
+	<![CDATA[
+		from HumanCacheEntity where name = :name
+	]]>
+	</query>
+
+	<!-- 更新 Buffs -->
+	<query name="updateBuffs">
+	<![CDATA[
+		update HumanCacheEntity set buffPack = :buffs where id = :humanUUId
+	]]>
+	</query>
+
+</hibernate-mapping>

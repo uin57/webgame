@@ -1,0 +1,2 @@
+int times;		//增加次数
+int cost;		//元宝消耗

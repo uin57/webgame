@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://com.imop.tr.message"
+	xmlns:tns="http://com.imop.tr.message" elementFormDefault="qualified">
+	<element name="messages" type="tns:messages"></element>
+
+	<complexType name="messages">
+		<sequence>
+			<element name="constants" type="tns:constants" maxOccurs="1"
+				minOccurs="0"></element>
+			<element name="message" type="tns:message" maxOccurs="unbounded"
+				minOccurs="0"></element>
+		</sequence>
+		<attribute name="module" type="string"></attribute>
+		<attribute name="server" type="string"></attribute>
+	</complexType>
+
+	<complexType name="message">
+		<sequence>
+			<element name="field" type="tns:field" maxOccurs="unbounded"
+				minOccurs="0">
+			</element>
+		</sequence>
+		<attribute name="type" type="string"></attribute>
+		<attribute name="comment" type="string"></attribute>
+		<attribute name="friendQueue" type="tns:onlytrue" fixed="true"></attribute>
+		<attribute name="guildQueue" type="tns:onlytrue" fixed="true"></attribute>
+		<attribute name="macro" type="string"></attribute> 
+	</complexType>
+
+	<complexType name="constants">
+		<sequence>
+			<element name="constant" type="tns:constant" maxOccurs="unbounded"
+				minOccurs="0">
+			</element>
+		</sequence>
+	</complexType>
+
+	<complexType name="constant">
+		<simpleContent>
+			<extension base="string">
+				<attribute name="name" type="string"></attribute>
+			</extension>
+		</simpleContent>
+	</complexType>
+
+	<complexType name="field">
+		<sequence>
+			<element name="field" type="tns:field" maxOccurs="unbounded"
+				minOccurs="0">
+			</element>
+		</sequence>
+		<attribute name="type" type="string"></attribute>
+		<attribute name="clientType" type="string"></attribute>
+		<attribute name="name" type="string"></attribute>
+		<attribute name="list" type="tns:onlytrue" fixed="true"></attribute>
+		<attribute name="comment" type="string"></attribute>
+		<attribute name="macro" type="string"></attribute>
+		<attribute name="subMsg" type="tns:onlytrue"></attribute>
+		<attribute name="defalutValue" type="string"></attribute>
+	</complexType>
+
+	<simpleType name="onlytrue">
+		<restriction base="string">
+			<enumeration value="true"></enumeration>
+		</restriction>
+	</simpleType>
+</schema>

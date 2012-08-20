@@ -1,0 +1,509 @@
+package com.pwrd.war.common.constants;
+
+import com.pwrd.war.core.annotation.SysI18nString;
+
+/**
+ * 语言相关的常量定义
+ * 
+ * 
+ */
+public class LangConstants {
+
+	@SysI18nString(content = "")
+	public static final Integer NULL = 0;
+	/** 公用常量 1 ~ 10000 */
+	public static Integer COMMON_BASE = 0;
+	@SysI18nString(content = "冷却时间未到")
+	public static final Integer COMMON_COOLINGDOWN = ++COMMON_BASE;
+	@SysI18nString(content = "您的{0}不足", comment = "{0}某种属性，例如金钱、声望等等")
+	public static final Integer COMMON_NOT_ENOUGH = ++COMMON_BASE;
+	@SysI18nString(content = "连接服务器失败")
+	public static final Integer CONNECT_SERVER_FAIL = ++COMMON_BASE;
+	@SysI18nString(content = "该玩家已下线")
+	public static final Integer PLAYER_OFFLINE = ++COMMON_BASE;
+	@SysI18nString(content = "参数不正确")
+	public static final Integer DEBUG_PARAM_ERROR = ++COMMON_BASE;
+	@SysI18nString(content = "{0}为空", comment = "{0}角色名或宠物名或签名")
+	public static final Integer GAME_INPUT_NULL = ++COMMON_BASE;
+	@SysI18nString(content = "{0}最小长度为{1}个字符", comment = "{0}角色名或宠物名或签名,{1}为长度")
+	public static final Integer GAME_INPUT_TOO_SHORT = ++COMMON_BASE;
+	@SysI18nString(content = "{0}最大长度为{1}个字符", comment = "{0}角色名或宠物名或签名,{1}为长度")
+	public static final Integer GAME_INPUT_TOO_LONG = ++COMMON_BASE;
+	@SysI18nString(content = "{0}包含异常字符", comment = "{0}输入项")
+	public static final Integer GAME_INPUT_ERROR1 = ++COMMON_BASE;
+	@SysI18nString(content = "{0}包含屏蔽字符", comment = "{0}输入项")
+	public static final Integer GAME_INPUT_ERROR2 = ++COMMON_BASE;
+	@SysI18nString(content = "{0}包含非法字符", comment = "{0}输入项")
+	public static final Integer GAME_INPUT_ERROR3 = ++COMMON_BASE;
+	@SysI18nString(content = "角色名")
+	public static final Integer GAME_INPUT_TYPE_CHARACTER_NAME = ++COMMON_BASE;
+	@SysI18nString(content = "称号")
+	public static final Integer GAME_INPUT_TYPE_FLAG_WORD = ++COMMON_BASE;
+	@SysI18nString(content = "留言")
+	public static final Integer GAME_INPUT_TYPE_LEAVE_WORD = ++COMMON_BASE;
+	@SysI18nString(content = "邮件标题")
+	public static final Integer GAME_INPUT_TYPE_MAIL_TITLE = ++COMMON_BASE;
+	@SysI18nString(content = "邮件内容")
+	public static final Integer GAME_INPUT_TYPE_MAIL_CONTENT = ++COMMON_BASE;
+	@SysI18nString(content = "自定义聊天频道")
+	public static final Integer GAME_INPUT_TYPE_CHATCHANNEL = ++COMMON_BASE;
+	@SysI18nString(content = "当前状态下不能这样做")
+	public static final Integer CANNOT_DO_IT_NOW = ++COMMON_BASE;
+	@SysI18nString(content = "您获得了{0}个{1}", comment = "{0}获得事物的个数{1}获得的事物名称")
+	public static final Integer GET_SOMETHING = ++COMMON_BASE;
+	@SysI18nString(content = "服务器退出保存中，请稍候")
+	public static final Integer WAITING_EXIT = ++COMMON_BASE;
+	@SysI18nString(content = "您的账号已经从另一个客户端登录")
+	public static final Integer LOGIN_ON_ANOTHER_CLIENT = ++COMMON_BASE;
+	@SysI18nString(content = "加载角色列表错误")
+	public static final Integer LOAD_PLAYER_ROLES = ++COMMON_BASE;
+	@SysI18nString(content = "加载角色信息错误")
+	public static final Integer LOAD_PLAYER_SELECTED_ROLE = ++COMMON_BASE;
+	@SysI18nString(content = "忙碌中")
+	public static final Integer IS_BUSY = ++COMMON_BASE;
+	@SysI18nString(content = "确定")
+	public static final Integer OK = ++COMMON_BASE;
+	@SysI18nString(content = "取消")
+	public static final Integer CANCEL = ++COMMON_BASE;
+	@SysI18nString(content = "胜利")
+	public static final Integer WIN = ++COMMON_BASE;
+	@SysI18nString(content = "失败")
+	public static final Integer LOSS = ++COMMON_BASE;	
+	@SysI18nString(content = "功能未开放")
+	public static final Integer FUNC_INVALID = ++COMMON_BASE;
+	@SysI18nString(content = "系统")
+	public static final Integer SYSTEM_MAIL_SENDER_NAME = ++COMMON_BASE;	
+	@SysI18nString(content = "军团")
+	public static final Integer GUILD_MAIL_SENDER_NAME = ++COMMON_BASE;
+	@SysI18nString(content = "GM踢人")
+	public static final Integer GM_KICK = ++COMMON_BASE;
+	@SysI18nString(content = "您目前与服务器断开连接")
+	public static final Integer SERVER_ERROR = ++COMMON_BASE;
+	
+	/** 条件常量 10001 ~ 12000 */
+	private static Integer CONDITION_BASE = 10000;
+	@SysI18nString(content = "司令部等级未达到{0}")
+	public static final Integer CONDITION_MINLEVEL_ERROR = ++CONDITION_BASE;
+	@SysI18nString(content = "等级达到{0}")
+	public static final Integer CONDITION_MINLEVEL_EXP_ERROR = ++CONDITION_BASE;
+	@SysI18nString(content = "您还未领取任务{0}")
+	public static final Integer CONDITION_DOINGQUEST_ERROR = ++CONDITION_BASE;
+	@SysI18nString(content = "已接任务‘{0}’")
+	public static final Integer CONDITION_DOINGQUEST_EXP_ERROR = ++CONDITION_BASE;
+	@SysI18nString(content = "司令部等级已超过{0}")
+	public static final Integer CONDITION_MAXLEVEL_ERROR = ++CONDITION_BASE;
+	@SysI18nString(content = "您的职业不是{0}")
+	public static final Integer CONDITION_JOB_ERROR = ++CONDITION_BASE;
+	@SysI18nString(content = "职业是{0}")
+	public static final Integer CONDITION_JOB_EXP_ERROR = ++CONDITION_BASE;	
+
+	/** 道具、背包相关的常量 12001 ~ 15000 */
+	public static Integer ITEM_BASE = 12000;
+	@SysI18nString(content = "道具包")
+	public static final Integer BAG_NAME_PRIM = ++ITEM_BASE;
+	@SysI18nString(content = "临时包裹")
+	public static final Integer BAG_NAME_TEMP = ++ITEM_BASE;
+	@SysI18nString(content = "军官身上装备")
+	public static final Integer BAG_NAME_PET_EQUIP = ++ITEM_BASE;
+	@SysI18nString(content = "仓库")
+	public static final Integer BAG_NAME_DEPOT = ++ITEM_BASE;
+	@SysI18nString(content = "此道具当前不可用")
+	public static final Integer ITEM_NOT_AVAILABLE = ++ITEM_BASE;
+	@SysI18nString(content = "您的背包没有足够的空间")
+	public static final Integer ITEM_NOT_ENOUGH_SPACE = ++ITEM_BASE;
+	@SysI18nString(content = "{0}中需要{1}个空位", comment = "{0}需要腾出空间的包的名字{1}留出空位个数")
+	public static final Integer ITEM_MAKE_SPACE = ++ITEM_BASE;
+	@SysI18nString(content = "该道具不能丢弃")
+	public static final Integer ITEM_CANNOT_DROP = ++ITEM_BASE;
+	@SysI18nString(content = "该军官等级不够，无法装备")
+	public static final Integer ITEM_USEFAIL_LEVEL = ++ITEM_BASE;
+	@SysI18nString(content = "该军官阵营不符合要求")
+	public static final Integer ITEM_USEFAIL_JOB = ++ITEM_BASE;
+	@SysI18nString(content = "该军官性别不符合要求")
+	public static final Integer ITEM_USEFAIL_SEX = ++ITEM_BASE;
+	@SysI18nString(content = "装备已经损坏，请修理后再使用")
+	public static final Integer ITEM_NEED_REPIRE = ++ITEM_BASE;
+	@SysI18nString(content = "当前不需要恢复")
+	public static final Integer ITEM_NO_NEED_TO_RECOVER = ++ITEM_BASE;
+	@SysI18nString(content = "该物品不存在")
+	public static final Integer ITEM_NOT_EXIST = ++ITEM_BASE;
+	@SysI18nString(content = "您的{0}因过使用期限而被删除", comment = "{0}道具名称")
+	public static final Integer ITEM_DELETE_SINCE_EXPIRED = ++ITEM_BASE;
+	@SysI18nString(content = "还可以使用{0}天", comment = "{0}剩余使用天数")
+	public static final Integer ITEM_LEFT_DAYS = ++ITEM_BASE;
+	@SysI18nString(content = "还可以使用不足1天")
+	public static final Integer ITEM_LESS_THAN_ONE_DAY = ++ITEM_BASE;
+	@SysI18nString(content = "已过期，即将被删除")
+	public static final Integer ITEM_EXPIRED = ++ITEM_BASE;
+	@SysI18nString(content = "当前状态不可以拆分道具")
+	public static final Integer ITEM_CANNOT_SLIT = ++ITEM_BASE;
+	@SysI18nString(content = "当前状态不可以整理背包")
+	public static final Integer ITEM_CANNOT_TIDY_BAG = ++ITEM_BASE;
+	@SysI18nString(content = "当前状态不可以丢弃道具")
+	public static final Integer ITEM_CANNOT_DROP_NOW = ++ITEM_BASE;
+	@SysI18nString(content = "该道具已经绑定")
+	public static final Integer ITEM_BIND_YET = ++ITEM_BASE;
+	@SysI18nString(content = "该道具不可以在此处使用")
+	public static final Integer ITEM_CANNOT_USE = ++ITEM_BASE;
+	@SysI18nString(content = "该道具不可以交易")
+	public static final Integer ITEM_CANNOT_TRADE = ++ITEM_BASE;
+	@SysI18nString(content = "您当前的状态不能开始交易")
+	public static final Integer YOU_CANNOT_TRADE = ++ITEM_BASE;
+	@SysI18nString(content = "对方当前的状态不能开始交易")
+	public static final Integer TARGET_CANNOT_TRADE = ++ITEM_BASE;
+	@SysI18nString(content = "移动道具失败")
+	public static final Integer MOVE_ITEM_FAIL = ++ITEM_BASE;
+	@SysI18nString(content = "扩充背包")
+	public static final Integer OPEN_BAG_SIZE = ++ITEM_BASE;
+	@SysI18nString(content = "钻石不足，无法扩充背包")
+	public static final Integer OPEN_BAG_MONEY_NOT_ENOUGTH = ++ITEM_BASE;
+	@SysI18nString(content = "该装备强化等级过高,不可卖出,请先降级到新兵1级后再卖")
+	public static final Integer CAN_NOT_SELL_ENHANCE_LEVEL = ++ITEM_BASE;
+	@SysI18nString(content = "绑定物品不可以出售")
+	public static final Integer CAN_NOT_SELL_FREEZE = ++ITEM_BASE;
+	@SysI18nString(content = "没有足够的勋章")
+	public static final Integer NOT_ENOUGH_MEDAL = ++ITEM_BASE;
+	
+	/** 货币相关的常量15001 ~ 16000 */
+	public static Integer CURRENCY_BASE = 15000;
+	@SysI18nString(content = "元宝")
+	public static final Integer CURRENCY_NAME_GOLD = ++CURRENCY_BASE; 
+	@SysI18nString(content = "点券")
+	public static final Integer CURRENCY_NAME_COUPON = ++CURRENCY_BASE;
+	@SysI18nString(content = "铜钱")
+	public static final Integer CURRENCY_NAME_COINS = ++CURRENCY_BASE;
+	@SysI18nString(content = "铜币")
+	public static final Integer CURRENCY_NAME_SLIVER = ++CURRENCY_BASE;
+	
+	/** 职业相关常量 16001 ~ 17000 */
+	public static Integer ALLIANCE_BASE = 16000;	
+	@SysI18nString(content = "无阵营")
+	public static final Integer ALLIANCE_LESS = ++ALLIANCE_BASE;
+	@SysI18nString(content = "盟国")
+	public static final Integer ALLIANCE_TONGMENG = ++ALLIANCE_BASE;
+	@SysI18nString(content = "德国")
+	public static final Integer ALLIANCE_ZHOUXIN = ++ALLIANCE_BASE;
+	@SysI18nString(content = "苏联")
+	public static final Integer ALLIANCE_GONGCHANGUOJI = ++ALLIANCE_BASE;
+	
+	
+	/** 玩家登录退出切换场景相关常量 17001 ~ 18000 */
+	public static Integer PlAYER_BASE = 17000;
+	@SysI18nString(content = "未知错误")
+	public static final Integer LOGIN_UNKOWN_ERROR = ++PlAYER_BASE;
+	@SysI18nString(content = "服务器暂时不能登陆，请稍后再试")
+	public static final Integer LOGIN_CANT_LOGIN = ++PlAYER_BASE;
+	@SysI18nString(content = "服务器暂时不能登陆，请稍后再试")
+	public static final Integer LOGIN_ERROR_LOCALNET_BREAK = ++PlAYER_BASE;
+	@SysI18nString(content = "用户名不存在或者密码错误")
+	public static final Integer LOGIN_VALIDATE_ERROR = ++PlAYER_BASE;
+	@SysI18nString(content = "服务器暂时还没有开放，请稍后再试")
+	public static final Integer LOGIN_ERROR_WALL_CLOSED = ++PlAYER_BASE;
+	@SysI18nString(content = "您的账号正在其他地方登陆")
+	public static final Integer LOGIN_ONLINE_ERROR = ++PlAYER_BASE;
+	@SysI18nString(content = "角色数量达到上限")
+	public static final Integer ROLE_CREATE_ERROR_MAX = ++PlAYER_BASE;
+	@SysI18nString(content = "角色名称已经存在")
+	public static final Integer DUPLICATE_ROLE_NAME = ++PlAYER_BASE;
+	@SysI18nString(content = "军官模版不存在")
+	public static final Integer PET_TEMPLATE_ERROR = ++PlAYER_BASE;
+	@SysI18nString(content = "军官属性选择不正确")
+	public static final Integer PET_ATTR_SELECTION_ERROR = ++PlAYER_BASE;
+	@SysI18nString(content = "您的账号已经锁定，暂时无法登录.原因({0})")
+	public static final Integer LOGIN_ERROR_ACCOUNT_LOCKED = ++PlAYER_BASE;
+	@SysI18nString(content = "您的账号状态异常，暂时无法登录")
+	public static final Integer LOGIN_ERROR_ACCOUNT_STATE = ++PlAYER_BASE;
+	@SysI18nString(content = "当前服务器繁忙，请稍后再试")
+	public static final Integer LOGIN_ERROR_SERVER_FULL = ++PlAYER_BASE;
+	@SysI18nString(content = "您是防沉迷用户，无法登录")
+	public static final Integer LOGIN_ERROR_WALLOW = ++PlAYER_BASE;
+	@SysI18nString(content = "您累计在线时间已满{0}小时{1}分钟,如果你在线满3小时，将被系统强制断开游戏连接下线休息。", comment = "{0}小时数{1}分钟数")
+	public static final Integer WALLOW_SAFE_STATUS = ++PlAYER_BASE;
+	@SysI18nString(content = "您即将进入游戏疲劳期，请立即下线休息，3小时后即可再次上线。断开连接倒计时：{0}分钟。")
+	public static final Integer WALLOW_ENTERING_WARN_STATUS = ++PlAYER_BASE;	
+	@SysI18nString(content = "您即将进入游戏疲劳期，请立即下线休息，3小时后即可再次上线。与服务器断开时间小于5分钟。")
+	public static final Integer WALLOW_BEING_KICK_OFF_STATUS = ++PlAYER_BASE;	
+	@SysI18nString(content = "您正处于疲劳时间,不能登录游戏,直到您累计的下线时间满3小时,才能恢复正常。享受健康游戏。")
+	public static final Integer WALLOW_CANNOT_LOGIN_STATUS = ++PlAYER_BASE;
+	@SysI18nString(content = "您累计在线时间已满3小时，请您下线休息，做适当身体活动,您已经进入疲劳游戏时间，您的游戏收益将降为正常值的50％，为了您的健康，请尽快下线休息，做适当身体活动，合理安排学习生活")
+	public static final Integer WALLOW_ENTER_WARN_STATUS = ++PlAYER_BASE;
+	@SysI18nString(content = "您已经进入疲劳游戏时间，您的游戏收益将降为正常值的50％，为了您的健康，请尽快下线休息，做适当身体活动，合理安排学习生活")
+	public static final Integer WALLOW_WARN_STATUS = ++PlAYER_BASE;
+	@SysI18nString(content = "您已进入不健康游戏时间，为了您的健康，请您立即下线休息。如不下线，您的身体将受到损害，您的收益已降为零，直到您的累计下线时间满5小时后,才能恢复正常。")
+	public static final Integer WALLOW_DANGE_STATUS = ++PlAYER_BASE;
+	@SysI18nString(content = "防沉迷控制关闭，您已经恢复正常收益")
+	public static final Integer WALLOW_CLOSE_NORMAL = ++PlAYER_BASE;
+	@SysI18nString(content = "防沉迷控制开启，您累计在线时间已满3小时，收益降为正常值的50％，为了您的健康，请尽快下线休息，做适当身体活动，合理安排学习生活")
+	public static final Integer WALLOW_OPEN_WARN = ++PlAYER_BASE;
+	@SysI18nString(content = "防沉迷控制开启，您累计在线时间已满5小时,您的收益已降为零，直到您的累计下线时间满5小时后,才能恢复正常。")
+	public static final Integer WALLOW_OPEN_DANGER = ++PlAYER_BASE;
+	@SysI18nString(content = "您的账号已经被纳入防沉迷系统,在游戏内的收益将会受到限制,请到{0}立即完善您的防沉迷认证资料,通过防沉迷系统论证后,您的收益限制将会被解除")
+	public static final Integer WALLOW_FILL_INFOR = ++PlAYER_BASE;
+	@SysI18nString(content = "认证平台")
+	public static final Integer WALLOW_AUTH_PLAT = ++PlAYER_BASE;
+	@SysI18nString(content = "防沉迷认证成功")
+	public static final Integer WALLOW_CERTIFIED_SUCC = ++PlAYER_BASE;
+
+	/** 人物相关的常量 18001 ~ 19000 */
+	public static Integer HUMAN_BASE = 18000;	
+	@SysI18nString(content = "再充值{0}钻石，可获得{1}钻石奖励")
+	public static final Integer TODAY_TRANSFER_PRIZE_INFO = ++HUMAN_BASE;
+
+	/** 武将相关常量  19001 ~ 20000 */
+	public static Integer PET_BASE = 19000;
+
+	/** 任务相关常量 20001 ~ 21000 */
+	public static Integer QUEST_BASE = 20000;
+	@SysI18nString(content = "任务不存在")
+	public static final Integer QUEST_NOT_FOUND = ++QUEST_BASE;
+	@SysI18nString(content = "任务[{0}]不在进行中", comment = "{0}任务名称")
+	public static final Integer QUEST_NOT_IN_PROCESS = ++QUEST_BASE;
+	@SysI18nString(content = "任务[{0}]正在进行中", comment = "{0}任务名称")
+	public static final Integer QUEST_IN_PROCESS = ++QUEST_BASE;
+	@SysI18nString(content = "任务[{0}]已经完成", comment = "{0}任务名称")
+	public static final Integer QUEST_IS_FINISHED = ++QUEST_BASE;
+	@SysI18nString(content = "您还没有达到任务要求的最小等级")
+	public static final Integer QUEST_LEVEL_NOT_REACH = ++QUEST_BASE;
+	@SysI18nString(content = "每日任务完成数超过了最大上限")
+	public static final Integer DAILY_QUEST_ACCEPT_ERR_TODAY_FULL = ++QUEST_BASE;
+	@SysI18nString(content = "您还没有杀死足够数量的怪物")
+	public static final Integer QUEST_NO_ENOUGH_MONSTERS_KILLED = ++QUEST_BASE;
+	@SysI18nString(content = "完成任务所需要的道具不足")
+	public static final Integer QUEST_NO_ENOUGH_ITEM = ++QUEST_BASE;
+	@SysI18nString(content = "您还没有完成该任务的前置任务")
+	public static final Integer QUEST_PREQUEST_NOT_FINISHED = ++QUEST_BASE;
+
+
+	/** 聊天相关常量 21001 ~ 21200 */
+	public static Integer CHAT_BASE = 21000;
+	@SysI18nString(content = "您说话太快")
+	public static final Integer CHAT_TOO_FAST = ++CHAT_BASE;
+	@SysI18nString(content = "玩家已下线或者不存在")
+	public static final Integer CHAT_PLAYER_NOTEXIST = ++CHAT_BASE;
+	@SysI18nString(content = "司令部等级达到{0}级后才可以使用世界频道 ", comment = "{0}世界聊天需要的最小级别")
+	public static final Integer CHAT_WORLD_MIN_LEVEL = ++CHAT_BASE;
+	@SysI18nString(content = "世界频道 ")
+	public static final Integer CHAT_WORLD_CHANNEL = ++CHAT_BASE;
+	@SysI18nString(content = "{0}的最小发言间隔为{1}秒 ")
+	public static final Integer CHAT_WORLD_TOO_FAST = ++CHAT_BASE;
+
+
+	/** 季节相关常量 21201~21500 */
+	public static Integer SEASON_BASE = 21200;
+	@SysI18nString(content = "春")
+	public static final Integer SEASON_SPRING = ++SEASON_BASE;
+	@SysI18nString(content = "夏")
+	public static final Integer SEASON_SUMMER = ++SEASON_BASE;
+	@SysI18nString(content = "秋")
+	public static final Integer SEASON_AUTUMN = ++SEASON_BASE;
+	@SysI18nString(content = "冬")
+	public static final Integer SEASON_WINTER = ++SEASON_BASE;
+	@SysI18nString(content = "{0}年{1}", comment = "{0}年{1}春夏秋冬")
+	public static final Integer SEASON_TOSTRING = ++SEASON_BASE;
+	
+	/** 商店商城相关的常量 21501 ~ 22000 */
+	public static Integer SHOP_BASE = 21500;
+	@SysI18nString(content = "您购买了{0}个{1}", comment = "{0}购买物品数量{1}购买物品名称")
+	public static final Integer SHOP_BUY_ITEM = ++SHOP_BASE;
+	@SysI18nString(content = "您出售了{0}个{1}", comment = "{0}出售物品数量{1}出售物品名称")
+	public static final Integer SHOP_SELL_ITEM = ++SHOP_BASE;
+	@SysI18nString(content = "购买失败")
+	public static final Integer SHOP_BUY_FAIL = ++SHOP_BASE;
+	@SysI18nString(content = "出售失败")
+	public static final Integer SHOP_SELL_FAIL = ++SHOP_BASE;
+	@SysI18nString(content = "该物品不能出售")
+	public static final Integer SHOP_ITEM_CANNOT_SELL = ++SHOP_BASE;
+	@SysI18nString(content = "修理成功")
+	public static final Integer SHOP_ITEM_REPAIR = ++SHOP_BASE;
+	@SysI18nString(content = "没有可修理的装备")
+	public static final Integer SHOP_NO_NEED_REPAIR = ++SHOP_BASE;
+	@SysI18nString(content = "购买物品")
+	public static final Integer SHOP_BUY_COST = ++SHOP_BASE;
+	@SysI18nString(content = "用金币购买该物品")
+	public static final Integer SHOP_BUY_DESC = ++SHOP_BASE;
+	@SysI18nString(content = "金币不足,不能购买")
+	public static final Integer SHOP_BUY_ERR_ENOUGH_GOLD = ++SHOP_BASE;
+	@SysI18nString(content = "购买该装备需要商店等级达到{0}级")
+	public static final Integer SHOP_BUY_NEED_LEVEL = ++SHOP_BASE;
+	@SysI18nString(content = "背包已满,不能购卖")
+	public static final Integer SHOP_BUY_ERR_INVENTORY_IS_FULL = ++SHOP_BASE;
+	@SysI18nString(content = "用钻石购买该物品")
+	public static final Integer SHOPMALL_BUY_DESC = ++SHOP_BASE;
+	@SysI18nString(content = "未知原因不能购买该物品")
+	public static final Integer SHOPMALL_BUY_ERR = ++SHOP_BASE;
+	@SysI18nString(content = "购买该物品需要商店等级达到{0}级")
+	public static final Integer SHOPMALL_BUY_NEED_LEVEL = ++SHOP_BASE;
+	@SysI18nString(content = "购买该物品需要VIP等级达到{0}级")
+	public static final Integer SHOPMALL_BUY_NEED_VIP_LEVEL = ++SHOP_BASE;
+	@SysI18nString(content = "物品库存为零")
+	public static final Integer COUNT_IS_ZERO = ++SHOP_BASE;
+	@SysI18nString(content = "钻石不足,不能购买")
+	public static final Integer SHOPMALL_BUY_ERR_ENOUGH_DIAMOND = ++SHOP_BASE;
+	@SysI18nString(content = "背包已满,不能购卖")
+	public static final Integer SHOPMALL_BUY_ERR_INVENTORY_IS_FULL = ++SHOP_BASE;
+
+	/** 邮件系统相关常量 22001 ~ 22500 */
+	public static Integer MAIL_BASE = 22000;
+	@SysI18nString(content = "未知类型邮件", comment = "未知类型邮件")
+	public static final Integer MAIL_TYPE_NONE = ++MAIL_BASE;
+	@SysI18nString(content = "玩家邮件", comment = "玩家邮件")
+	public static final Integer MAIL_TYPE_PRIVATE = ++MAIL_BASE;
+	@SysI18nString(content = "军团邮件", comment = "军团邮件")
+	public static final Integer MAIL_TYPE_GUILD = ++MAIL_BASE;
+	@SysI18nString(content = "系统邮件", comment = "系统邮件")
+	public static final Integer MAIL_TYPE_SYSTEM = ++MAIL_BASE;
+	@SysI18nString(content = "战报邮件", comment = "战报邮件")
+	public static final Integer MAIL_TYPE_BATTLE = ++MAIL_BASE;
+	@SysI18nString(content = "史实邮件", comment = "史实邮件")
+	public static final Integer MAIL_TYPE_STORY = ++MAIL_BASE;
+	@SysI18nString(content = "未读", comment = "未读状态")
+	public static final Integer MAIL_STATUS_UNREAD = ++MAIL_BASE;
+	@SysI18nString(content = "已读", comment = "已读状态")
+	public static final Integer MAIL_STATUS_READED = ++MAIL_BASE;
+	@SysI18nString(content = "已保存", comment = "已保存状态")
+	public static final Integer MAIL_STATUS_SAVED = ++MAIL_BASE;
+	@SysI18nString(content = "已删除", comment = "已删除状态")
+	public static final Integer MAIL_STATUS_DELETED = ++MAIL_BASE;
+	@SysI18nString(content = "收件人不存在", comment = "收件人不存在")
+	public static final Integer MAIL_SEND_ERROR_RECID_NOEXIST = ++MAIL_BASE;
+	@SysI18nString(content = "收件人阵营不同,不能通讯", comment = "收件人阵营不同")
+	public static final Integer MAIL_SEND_ERROR_ALLIANCE = ++MAIL_BASE;
+	@SysI18nString(content = "保存邮件箱已满", comment = "保存邮件箱已满")
+	public static final Integer SAVE_MAIL_BOX_IS_FULL = ++MAIL_BASE;
+	@SysI18nString(content = "成功发送了一封邮件", comment = "发送成功")
+	public static final Integer MAIL_SEND_SUCCESS_INFO = ++MAIL_BASE;
+	
+	
+	/**战斗相关错误消息*/
+	public static Integer BATTLE_BASE = 23000;
+	public static final Integer NO_ENOUGH_LEVEL_IN_UPGRADE_SKILL = ++BATTLE_BASE;
+	
+	public static final Integer NO_ENOUGH_SEE_IN_UPGRADE_SKILL = ++BATTLE_BASE;
+	
+	public static final Integer NO_ENOUGH_MONEY_IN_UPGRADE_SKILL = ++BATTLE_BASE;
+	
+	public static final Integer NO_SUCH_SKILL_IN_UPGRADE_SKILL = ++BATTLE_BASE;
+	
+	public static final Integer SKILL_INVALID_ORDER = ++BATTLE_BASE;
+	
+	@SysI18nString(content = "非法武将", comment = "非法武将")
+	public static final Integer INVALID_PET = ++BATTLE_BASE;
+	@SysI18nString(content = "玩家正在战斗不能进行新的战斗", comment = "玩家正在战斗不能进行新的战斗")
+	public static final Integer PLAYER_IN_BATTLE = ++BATTLE_BASE;
+	@SysI18nString(content = "玩家等级过高不能进行战斗", comment = "玩家等级过高不能进行战斗")
+	public static final Integer PLAYER_LEVEL_HIGHT_IN_BATTLE = ++BATTLE_BASE;
+	
+	@SysI18nString(content = "玩家等级过低不能进行战斗", comment = "玩家等级过低不能进行战斗")
+	public static final Integer PLAYER_LEVEL_LOWER_IN_BATTLE = ++BATTLE_BASE;
+	
+	@SysI18nString(content = "怪物正在战斗，不能进行战斗", comment = "怪物正在战斗，不能进行战斗")
+	public static final Integer MONSTER_IN_BATTLE = ++BATTLE_BASE;
+	
+	
+//	/** 军团系统相关常量 22501 ~ 23000 */
+//	public static Integer GUILD_BASE = 22500;
+//	
+//	
+//	/** 组队相关常量23001 ~ 23500 */
+//	public static Integer TEAM_BASE = 23000;	
+//
+//
+//	/** buff相关常量23501 ~ 24000 */
+//	private static Integer BUFF_BASE = 23500;
+//	@SysI18nString(content = "无法添加{0}，已经存在更高级的状态")
+//	public static final Integer BUFF_GREAT_GRADE_EXIST = ++BUFF_BASE;
+//	@SysI18nString(content = "状态已满")
+//	public static final Integer BUFF_FULL = ++BUFF_BASE;
+//	@SysI18nString(content = "该状态不可取消")
+//	public static final Integer BUFF_UNCANCELABLE = ++BUFF_BASE;
+//
+//	/** 冷却系统相关24001 ~ 24500 */
+//	public static Integer CD_BASE = 24000;
+
+	
+	/** 充值相关 24501 ~ 25000 */
+	private static Integer CHARGE_BASE = 24500;	
+	@SysI18nString(content = "暂时查不到您的账户余额，请稍候再试")
+	public static final Integer GAME_QUERY_ACCOUNT_FAIL = ++CHARGE_BASE;
+	@SysI18nString(content = "暂时查不到您的账户余额，请稍候再试")
+	public static final Integer GAME_QUERY_ACCOUNT_INVOKE_FAIL = ++CHARGE_BASE;
+	@SysI18nString(content = "兑换失败，账户余额不足")
+	public static final Integer GAME_CHARGE_DIAMOND_FAIL = ++CHARGE_BASE;
+	@SysI18nString(content = "兑换失败，请稍候再试")
+	public static final Integer GAME_CHARGE_DIAMOND_INVOKE_FAIL = ++CHARGE_BASE;
+	@SysI18nString(content = "您成功兑换了{0}钻石")
+	public static final Integer GAME_CHARGE_DIAMOND_SUCCESS = ++CHARGE_BASE;
+	@SysI18nString(content = "您的钻石已经够多了，充不得了")
+	public static final Integer GAME_BEFORE_CHARGE_DIAMOND_OVER_FLOW = ++CHARGE_BASE;
+	@SysI18nString(content = "充值后，钻石已达最大数值")
+	public static final Integer GAME_AFTER_CHARGE_DIAMOND_OVER_FLOW = ++CHARGE_BASE;
+	@SysI18nString(content = "不能一次性兑换太多")
+	public static final Integer GAME_CHARGE_DIAMOND_MM_TOO_MANY = ++CHARGE_BASE;
+	@SysI18nString(content = "兑换的数值不合法 ")
+	public static final Integer GAME_CHARGE_DIAMOND_MM_ILLEGAL = ++CHARGE_BASE;
+	@SysI18nString(content = "充值功能已关闭")
+	public static final Integer GAME_CHARGE_SWITCH_CLOSED = ++CHARGE_BASE;
+
+
+
+	
+	/** 系统全局共享常量 100000 以上 */
+
+	/** Local平台的描述 200001 ~ 200099 */
+	private static Integer LOCAL_BASE = 200001;
+	@SysI18nString(content = "local接口未开启")
+	public static final Integer LOCAL_TURN_OFF = ++LOCAL_BASE;
+	@SysI18nString(content = "签名验证失败")
+	public static final Integer LOCAL_LOGIN_SIGN_AUTH_FAIL = ++LOCAL_BASE;
+	@SysI18nString(content = "时间戳过期")
+	public static final Integer LOCAL_LOGIN_TIMESTAMP_EXPIRSE = ++LOCAL_BASE;
+	@SysI18nString(content = "有参数为空或者格式不正确")
+	public static final Integer LOCAL_LOGIN_PARAM_FORMAT_ERROR = ++LOCAL_BASE;
+	@SysI18nString(content = "用户名密码验证未通过")
+	public static final Integer LOCAL_LOGIN_PASS_ERR = ++LOCAL_BASE;
+	@SysI18nString(content = "用户已经被锁定")
+	public static final Integer LOCAL_LOGIN_ACCOUNT_BLOCK = ++LOCAL_BASE;
+	@SysI18nString(content = "密保未通过")
+	public static final Integer LOCAL_LOGIN_PASS_PROTECT_ERR = ++LOCAL_BASE;
+	@SysI18nString(content = "cookie验证未通过")
+	public static final Integer LOCAL_LOGIN_COOKIE_AUTH_FAIL = ++LOCAL_BASE;
+	@SysI18nString(content = "token验证未通过")
+	public static final Integer LOCAL_LOGIN_TOKEN_AUTH_FAIL = ++LOCAL_BASE;
+	@SysI18nString(content = "大区验证未通过")
+	public static final Integer LOCAL_LOGIN_REGION_AUTH_FAIL = ++LOCAL_BASE;
+	@SysI18nString(content = "账户未激活")
+	public static final Integer LOCAL_LOGIN_INACTIVE_FAIL = ++LOCAL_BASE;
+	@SysI18nString(content = "签名验证失败")
+	public static final Integer LOCAL_CHARGE_SIGN_AUTH_FAIL = ++LOCAL_BASE;
+	@SysI18nString(content = "时间戳过期")
+	public static final Integer LOCAL_CHARGE_TIMESTAMP_EXPIRSE = ++LOCAL_BASE;
+	@SysI18nString(content = "有参数为空或者格式不正确")
+	public static final Integer LOCAL_CHARGE_PARAM_FORMAT_ERROR = ++LOCAL_BASE;
+	@SysI18nString(content = "余额不足")
+	public static final Integer LOCAL_CHARGE_BALANCE_ERR = ++LOCAL_BASE;
+	@SysI18nString(content = "真实姓名不合法")
+	public static final Integer LOCAL_WALLOW_TRUE_NAME_ERROR = ++LOCAL_BASE;
+	@SysI18nString(content = "身份证格式错误")
+	public static final Integer LOCAL_WALLOW_IDCARD_ERROR = ++LOCAL_BASE;
+	@SysI18nString(content = "真实姓名或身份证号不合法")
+	public static final Integer LOCAL_WALLOW_INFO_ERROR = ++LOCAL_BASE;
+
+
+	/** 奖励相关 201000-201200 */
+	private static Integer PRIZE_BASE = 201000;
+	@SysI18nString(content = "系统暂时查询不到您的奖励，请稍候再试")
+	public static final Integer PRIZE_GET_FAIL = ++PRIZE_BASE;
+	@SysI18nString(content = "您没有奖品可以领取")
+	public static final Integer PRIZE_USER_NOT_EXIST = ++PRIZE_BASE;
+	@SysI18nString(content = "该奖励补偿已经领取过了")
+	public static final Integer PRIZE_USER_ALREADY_FETCHED = ++PRIZE_BASE;
+	@SysI18nString(content = "奖励补偿领取成功")
+	public static final Integer PRIZE_USER_FETCH_SUCCESS = ++PRIZE_BASE;
+	@SysI18nString(content = "系统奖励领取成功")
+	public static final Integer PRIZE_PLATFORM_FETCH_SUCCESS = ++PRIZE_BASE;
+	
+
+
+
+
+}

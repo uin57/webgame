@@ -1,0 +1,5 @@
+message com.pwrd.war.logserver.model.PetLog(
+	String petId;	//武将id
+	String petName; //武将名称
+	long hireTime;//获得时间
+)

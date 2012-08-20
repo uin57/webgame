@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<messages xmlns="http://com.pwrd.war.message" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://com.pwrd.war.message message.xsd" module="robbery">
+	
+	<message type="CG_ROBBERY_INDEX" comment="打开夺宝首页"> 
+	</message>
+	<message type="GC_ROBBERY_INDEX" comment="打开夺宝首页返回,包含所有夺宝者信息"> 
+		<field type="com.pwrd.war.gameserver.robbery.RobberyShortInfo"  
+		        clientType="RobberyShortInfo" name="lists" list="true" comment="运镖者信息"  > 
+		    <field type="String" name="playerUUID" comment="夺宝者UUID" /> 			
+			<field type="Short" name="robberyType" comment="运送的宝物类型1-5" />   
+			<field type="Integer" name="allTime" comment="总时间秒" />   
+			<field type="Integer" name="remainTime" comment="剩余时间秒" />  
+			<field type="Integer" name="playerLevel" comment="等级" />   
+			<field type="Short" name="beRobTimes" comment="被拦截次数" />   
+		</field>
+		<field type="Integer" name="robberyTodayTimes" comment="夺宝,今日剩余次数"></field> 
+		<field type="Integer" name="robberyTodayRobTimes" comment="夺宝,今日剩余抢劫次数"></field> 
+		<field type="Integer" name="robberyProtectTimes" comment="夺宝今日剩余护送次数"></field> 
+		<field type="Integer" name="robberyFreeFreshTimes" comment="剩余免费刷新次数"></field> 
+	</message>
+	
+	<message type="GC_ROBBERY_INDEX_ADD" comment="夺宝首页,有新玩家开始夺宝">
+		 <field type="com.pwrd.war.gameserver.robbery.RobberyShortInfo"  
+		        clientType="RobberyShortInfo" name="info"   comment="运镖者信息"  > 
+		    <field type="String" name="playerUUID" comment="夺宝者UUID" /> 			
+			<field type="Short" name="robberyType" comment="运送的宝物类型1-5" />   
+			<field type="Integer" name="allTime" comment="总时间秒" />   
+			<field type="Integer" name="remainTime" comment="剩余时间秒" />   
+			<field type="Integer" name="playerLevel" comment="等级" />   
+			<field type="Short" name="beRobTimes" comment="被拦截次数" />  
+		</field>
+	</message>
+	
+	<message type="CG_ROBBERY_DETAIL_INFO" comment="打开夺宝详细信息"> 
+		<field type="String" name="targetUUID" comment="目标UUID"></field> 
+	</message>
+	<message type="GC_ROBBERY_DETAIL_INFO" comment="打开夺宝详细信息"> 
+		<field type="com.pwrd.war.gameserver.robbery.RobberyInfo"  
+		        clientType="RobberyInfo" name="info"   comment="运镖者信息"  macro="robberyInfo">  
+		</field>
+		<field type="Integer" name="remainTime" comment="剩余时间秒" />   
+		<field type="Integer" name="robMoney" comment="抢劫获得铜钱" />   
+		<field type="Integer" name="robPopularity" comment="抢劫获得声望" />   
+	</message>
+	
+	<message type="CG_ROBBERY_PLYAER_INDEX" comment="打开夺宝页面"> 
+	</message>
+	<message type="GC_ROBBERY_PLYAER_INDEX" comment="打开夺宝页面返回的信息"> 
+		<field type="Boolean" name="isFirst" comment="是否第一次打开该页面,第一次要有动画效果"></field> 
+		<field type="Integer" name="robberyType" comment="运送的宝物类型1-5"></field> 
+		<field type="Integer" name="refreshNeedGold" comment="本次刷新需要的元宝数量"></field> 
+		<field type="Integer" name="needTime" comment="夺宝时间,单位,秒"></field> 
+		<field type="Integer" name="getMoney" comment="铜钱奖励"></field> 
+		<field type="Integer" name="getPopularity" comment="声望奖励"></field> 
+	</message>
+	
+	<message type="CG_ROBBERY_FRIEND_LIST" comment="打开护送好友列表"> 
+	</message>
+	<message type="GC_ROBBERY_FRIEND_LIST" comment="打开护送好友列表返回"> 
+		<field type="com.pwrd.war.gameserver.robbery.RobberyFriendInfo"  
+		        clientType="RobberyFriendInfo" name="lists" list="true"   comment="好有信息"  > 
+		    <field type="String" name="friendUUID" comment="好友UUID"></field> 
+		 	<field type="String" name="friendName" comment="好友名字"></field> 
+		 	<field type="Integer" name="status" comment="好友状态0正常.1护送中,2护送满"></field> 
+		</field>
+	</message>
+	<message type="CG_ROBBERY_INVITE_FRIEND" comment="邀请好友">
+		 <field type="String" name="friendUUID" comment="好友UUID"></field> 
+		  <field type="Integer" name="getPopularity" comment="运送得到声望奖励"></field> 
+	</message>
+	<message type="GC_ROBBERY_BE_FRIEND_INVITE_FRIEND" comment="收到好友护送邀请">
+		 <field type="String" name="friendUUID" comment="好友UUID"></field> 
+		 <field type="String" name="friendNAME" comment="好友名字"></field> 
+		 <field type="Integer" name="prizes" comment="可以得到的声望奖励"></field> 
+		 <field type="Integer" name="leftTimes" comment="剩余护送次数"></field> 
+	</message>
+	<message type="CG_ROBBERY_BE_INVITE_FRIEND" comment="反馈被邀请结果">
+		 <field type="String" name="friendUUID" comment="好友UUID"></field> 
+		 <field type="Boolean" name="opinion" comment="是否同意"></field> 
+	</message>
+	<message type="GC_ROBBERY_INVITE_FRIEND" comment="邀请好友结果返回">
+		 <field type="String" name="friendUUID" comment="好友UUID"></field> 
+		 <field type="Boolean" name="opinion" comment="是否同意"></field>
+	</message>
+	
+	<message type="CG_ROBBERY_REFRESH" comment="刷新夺宝信息">
+	</message>
+	
+	<message type="CG_ROBBERY_START" comment="开始夺宝护送">
+	</message>
+	
+	<message type="GC_ROBBERY_END" comment="夺宝结束获得奖励">
+		<field type="Integer" name="getMoney" comment="铜钱奖励"></field> 
+		<field type="Integer" name="getPopularity" comment="声望奖励"></field>
+	</message>
+	
+	<message type="GC_ROBBERY_PROTECT_END" comment="护送夺宝结束获得奖励">
+		<field type="Integer" name="getPopularity" comment="声望奖励"></field>
+	</message>
+	
+	
+	<message type="CG_ROBBERY_ROB" comment="开始抢夺宝物"> 
+		<field type="String" name="targetUUID" comment="目标UUID"></field> 
+	</message>
+	<message type="GC_ROBBERY_ROB_RESULT" comment="开始抢夺宝物的返回结果"> 
+		<field type="String" name="targetUUID" comment="目标UUID"></field> 
+		<field type="Boolean" name="isOk" comment="是否可以抢劫"></field> 
+		<field type="String" name="err" comment="错误原因"></field> 
+	</message>
+	<message type="GC_ROBBERY_ROB" comment="开始抢夺宝物结果"> 
+		<field type="String" name="targetUUID" comment="目标UUID"></field> 
+		<field type="String" name="targetName" comment="目标名字"></field> 
+		<field type="Boolean" name="isWin" comment="是否成功"></field> 
+		<field type="Integer" name="winMoney" comment="夺得铜钱"></field> 
+		<field type="Integer" name="winPopularity" comment="夺得声望"></field> 
+	</message>
+	
+	<message type="GC_ROBBERY_BE_ROB" comment="被抢夺宝物结果发给自己"> 
+		<field type="String" name="attackUUID" comment="抢夺者UUID"></field> 
+		<field type="String" name="attackName" comment="抢夺者姓名"></field> 
+		<field type="String" name="friendName" comment="护送好友姓名"></field> 
+		<field type="Boolean" name="isLoss" comment="是否被夺去s"></field> 
+		<field type="Integer" name="lossMoney" comment="被夺去铜钱"></field> 
+		<field type="Integer" name="lossPopularity" comment="被夺去声望"></field> 
+	</message>
+	
+	<message type="GC_ROBBERY_PROTECT_BE_ROB" comment="护送被抢劫发给好友的结果">
+		<field type="String" name="attackName" comment="抢夺者姓名"></field> 
+		<field type="String" name="friendName" comment="好友姓名"></field> 
+		<field type="Boolean" name="isLoss" comment="是否被夺去s"></field> 
+		<field type="Integer" name="lossPopularity" comment="声望损失"></field>
+	</message>
+	
+	
+	<message type="GC_ROBBERY_BE_ROB_NEW" comment="该玩家第一次被抢"> 
+		<field type="String" name="uuid" comment="被抢夺者UUID"></field> 
+	</message>
+</messages>

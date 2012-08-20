@@ -1,0 +1,4 @@
+Integer level; //µÈ¼¶
+Double atk; //¹¥»÷
+Double def; //·ÀÓù
+Double maxHp; //ÑªÁ¿ 

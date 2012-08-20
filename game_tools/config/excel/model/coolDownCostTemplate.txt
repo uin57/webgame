@@ -1,0 +1,8 @@
+int coolType;					//强化类型，1装备，2属性成长
+int subType;					//子类型,同一子类型扣除元宝公式一样
+int timeUnit;					//单位时间，总时间/单位时间*单位消耗元宝=总消耗
+int goldUnit;					//单位时间元宝
+int levelParam;[minValue=0;notNull=false]		//等级参数。冷却时间=等级参数*目标养成等级+消耗修正系数
+int fixParam;[minValue=0;notNull=false]		//消耗修正系数
+String otherOpenGold;[notNull=false]		//后面的队列开启需要元宝
+int isShowInQueue;[minValue=0;notNull=false]	//是否显示在队列里

@@ -1,0 +1,1 @@
+int[] rateArray;[collection(3,1);]	//升星不变降星概率

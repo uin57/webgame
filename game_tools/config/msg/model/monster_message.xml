@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<messages xmlns="http://com.pwrd.war.message" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://com.pwrd.war.message message.xsd" module="monster">
+	
+	<!-- 怪物列表 -->
+	<message type="GC_MONSTER_LIST" comment="玩家第一此进入场景，发给玩家的怪物信息列表">
+		<field type="com.pwrd.war.gameserver.monster.VisibleMonsterInfo"
+			clientType="VisibleMonsterInfoData"
+			name="monsterInfo" list="true"  comment="怪物信息"  macro="MonsterInfo">
+		</field>
+	</message> 
+ 	<!-- 增加怪物 -->
+ 	<message type="GC_ADD_MONSTER" comment="发给玩家的增加怪物信息列表">
+		<field type="com.pwrd.war.gameserver.monster.VisibleMonsterInfo"
+			clientType="VisibleMonsterInfoData"
+			name="monsterInfo"   comment="怪物信息" macro="MonsterInfo">
+		</field>
+	</message>  
+ 	<!-- 减少怪物（死亡） -->
+ 	<message type="GC_DEL_MONSTER" comment="怪物死亡消息">
+		<field type="String" name="monsterUUID" comment="明雷UUID" />
+	</message> 
+	<!-- 怪物移动 -->
+	<message type="GC_MONSTER_MOVE" comment="在场景内有移动"> 
+		<field type="String" name="monsterUUID" comment="怪物uuid" />
+		<field type="Boolean" name="bAttack" comment="是否主动追击" />
+		<field type="Integer" name="srcx" comment="当前x位置" />
+		<field type="Integer" name="srcy" comment="当前y位置" />		
+		<field type="Integer" name="tox" comment="目标x位置" />
+		<field type="Integer" name="toy" comment="目标y位置" />		
+		<field type="Integer" name="speed" comment="移动速度每100ms多少像素" />		
+	</message>
+	<!-- 怪物停止移动 -->
+	<message type="GC_MONSTER_STOP_MOVE" comment="在场景内停止移动"> 
+		<field type="String" name="monsterUUID" comment="怪物uuid" />
+		<field type="Integer" name="srcx" comment="当前x位置" />
+		<field type="Integer" name="srcy" comment="当前y位置" />	 	
+	</message>
+	<!-- 踩小动物 -->
+	<message type="CG_STEP_MONSTER" comment="踩小动物">
+		<field type="String" name="monsterUUID" comment="明雷UUID" />
+	</message>
+	<!-- 怪物血量减少，仅对共享怪物发 -->
+	<message type="GC_MONSTER_HP_DEC" comment="怪物血量减少">
+		<field type="String" name="monsterUUID" comment="明雷UUID" />
+		<field type="Integer" name="lossHp" comment="丢失的hp" />
+		<field type="Integer" name="curHp" comment="当前hp" />
+		<field type="Integer" name="allHp" comment="总的hp" />
+	</message>
+</messages>

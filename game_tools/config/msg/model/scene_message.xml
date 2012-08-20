@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<messages xmlns="http://com.pwrd.war.message" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://com.pwrd.war.message message.xsd" module="scene">
+
+	<message type="CG_SCENE_LINE" comment="取得该场景有多少条线">
+		<field type="String" name="sceneId" comment="场景 Id" />
+	</message>
+	<message type="GC_SCENE_LINE" comment="告诉该场景有多少条线">
+		<field type="String" name="sceneId" comment="场景 Id" />
+		<field type="Integer" name="line" comment="总共多少条分线，从1开始" />
+	</message>
+	<message type="CG_SWITCH_SCENE_LINE" comment="切换场景，有分线">
+		<field type="String" name="sceneId" comment="当前场景 Id" /> 
+		<field type="Integer" name="lineNo" comment="分线号" /> 
+	</message>
+	<message type="GC_SWITCH_SCENE_LINE" comment="切换场景，有分线">
+		<field type="String" name="sceneId" comment="当前场景 Id" />   
+	</message>
+	<message type="GC_TEAM_SWITCH_SCENE_LINE" comment="队员开始切换场景，有分线">
+		<field type="String" name="sceneId" comment="当前场景 Id" />   
+		<field type="Integer" name="lineNo" comment="分线号" /> 
+	</message>
+	
+	
+	<message type="CG_SWITCH_SCENE" comment="切换场景，自动分线">
+		<field type="String" name="sceneId" comment="当前切换点 Id" />
+	</message>
+	<message type="GC_SWITCH_SCENE" comment="进入场景结果，队员和队长都是此消息">
+		<field type="String" name="sceneId" comment="目标场景ID"></field> 
+		<field type="String" name="switchId" comment="目标场景切换点id"></field> 
+		<field type="Integer" name="lineNo" comment="分线号" /> 
+	</message>
+	
+ 
+	
+	<message type="CG_PLAYER_POS" comment="告诉服务器玩家当前位置">
+		<field type="String" name="sceneId" comment="场景 Id" />
+		<field type="Integer" name="lineNo" comment="分线号" />  
+		<field type="Integer" name="srcx" comment="当前x位置" />
+		<field type="Integer" name="srcy" comment="当前y位置" />		 	
+	</message>
+	<message type="GC_PLAYER_POS" comment="告诉服务器玩家当前位置">
+		<field type="Boolean" name="result" comment="玩家当前位置是否正确，不准确则按下面的校正" /> 
+		<field type="String" name="sceneId" comment="场景 Id" />  
+		<field type="Integer" name="lineNo" comment="分线号" />
+		<field type="Integer" name="srcx" comment="当前x位置" />
+		<field type="Integer" name="srcy" comment="当前y位置" />		 	
+	</message>
+	
+	<message type="GC_PLAYER_CHANGE_POS" comment="改变玩家位置">
+		<field type="String" name="uuid" comment="玩家uuid" />  
+		<field type="Integer" name="x" comment="当前x位置" />
+		<field type="Integer" name="y" comment="当前y位置" />		 	
+	</message>
+	
+	<message type="CG_PLAYER_MOVE" comment="在场景内有移动">
+		<field type="Integer" name="srcx" comment="当前x位置" />
+		<field type="Integer" name="srcy" comment="当前y位置" />		
+		<field type="Integer" name="tox" comment="目标x位置" />
+		<field type="Integer" name="toy" comment="目标y位置" />		
+	</message>
+	
+	<message type="GC_PLAYER_MOVE" comment="在场景内有移动"> 
+		<field type="String" name="roleUUID" comment="角色uuid" />
+		<field type="Integer" name="srcx" comment="当前x位置" />
+		<field type="Integer" name="srcy" comment="当前y位置" />		
+		<field type="Integer" name="tox" comment="目标x位置" />
+		<field type="Integer" name="toy" comment="目标y位置" />		
+	</message>
+	
+	<message type="CG_PLAYER_JUMP" comment="在场景内有跳动"> 
+		<field type="Integer" name="tox" comment="目标x位置" />
+		<field type="Integer" name="toy" comment="目标y位置" />	
+	</message>
+	<message type="GC_PLAYER_JUMP" comment="在场景内有跳动">
+		 <field type="String" name="roleUUID" comment="角色uuid" />
+		 <field type="Integer" name="tox" comment="目标x位置" />
+		<field type="Integer" name="toy" comment="目标y位置" />	
+	</message>
+	<message type="CG_PLAYER_SIT" comment="在场景内有坐下"> 
+	</message>
+	<message type="GC_PLAYER_SIT" comment="在场景内有坐下">
+		 <field type="String" name="roleUUID" comment="角色uuid" />
+	</message>
+	<message type="CG_PLAYER_STAND" comment="在场景内站立起来"> 
+	</message>
+	<message type="GC_PLAYER_STAND" comment="在场景内站立起来">
+		 <field type="String" name="roleUUID" comment="角色uuid" />
+	</message>
+</messages>

@@ -1,0 +1,10 @@
+message com.pwrd.war.logserver.model.RepDropLog(
+	String repId;		//副本id
+	String repName;		//副本名称
+	String dropId;		//掉落id
+	int dropNum;		//掉落数量
+	int currencyType; 	//掉落货币类型
+	int currency;		//掉落货币
+	long dropTime;		// 完成时间
+	String dropMonster;	//掉落怪物
+)

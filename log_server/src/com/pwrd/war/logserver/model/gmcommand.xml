@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN"
+          "http://www.ibatis.com/dtd/sql-map-2.dtd" >
+<sqlMap>
+    <typeAlias alias="gm_command_log" type="com.pwrd.war.logserver.model.GmCommandLog" />
+    <insert id="insert_gm_command_log" parameterClass="gm_command_log">
+insert into $tableName$(log_type,log_time,region_id,server_id,account_id,account_name,char_id,char_name,level,alliance_id,vip_level,reason,scene_id,x,y,param,operator_name,target_ip,command,command_desc,command_detail,return_result, createTime) values(#logType#,#logTime#,#regionId#,#serverId#,#accountId#,#accountName#,#charId#,#charName#,#level#,#allianceId#,#vipLevel#,#reason#,#sceneId#,#x#,#y#,#param#,#operatorName#,#targetIp#,#command#,#commandDesc#,#commandDetail#,#returnResult#, #createTime#)</insert>
+    <statement id="createTable_gm_command_log" parameterClass="java.lang.String">
+create table if not exists $tableName$
+(
+id int(11) not null AUTO_INCREMENT primary key,
+	log_type int(11) not null default -100,
+	log_time bigint not null,
+	region_id int(11) ,
+	server_id int(11) ,
+	account_id varchar(128),
+	account_name varchar(128),
+	char_id varchar(128),
+	char_name varchar(128),
+	level int(11) ,
+	alliance_id int(11) ,
+	vip_level int(11) ,
+	reason int(11) ,
+	scene_id varchar(256),
+	x int(11) ,
+	y int(11) ,
+	param varchar(512),
+	operator_name varchar(256),
+	target_ip varchar(256),
+	command varchar(256),
+	command_desc varchar(256),
+	command_detail varchar(256),
+	return_result varchar(256),
+createTime bigint not null
+	,key account_id (account_id)
+	,key account_name (account_name)
+	,key char_id (char_id)
+	,key char_name (char_name)
+)ENGINE = MyISAM DEFAULT CHARSET UTF8
+    </statement>
+</sqlMap>

@@ -1,0 +1,3 @@
+Integer buffId; [notNull=true]		// buffid
+Integer buffType; [notNull=true]	// buff类型
+Integer buffValue; [notNull=true]	// buff值

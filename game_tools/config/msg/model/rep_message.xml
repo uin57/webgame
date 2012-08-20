@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<messages xmlns="http://com.pwrd.war.message" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://com.pwrd.war.message message.xsd" module="rep">
+	<!-- 返回用户副本信息列表 -->
+	<message type="CG_REP_INFO_LIST" comment="玩家副本列表">
+		<field type="String" name="sceneId" comment="场景Id" />
+	</message> 
+	<!-- 返回用户副本信息列表结果 -->
+	<message type="GC_REP_INFO_LIST" comment="玩家副本列表">
+		<field type="com.pwrd.war.common.model.rep.RepInfoList" 
+			clientType="RepInfoListData" name="repInfoList" list="true" comment="用户副本信息列表" macro="RepInfoList" ></field>
+	</message> 
+	<!-- 创建副本 -->
+	<message type="CG_CREATE_REP" comment="玩家创建副本">
+		<field type="String" name="repId" comment="副本 Id" />
+		<field type="String" name="switchSenceId" comment="切换点id"></field>
+	</message> 
+ 	<!-- 创建副本结果 -->
+ 	<message type="GC_CREATE_REP" comment="发给玩家创建副本结果">
+ 		<field type="String" name="repUuid" comment="UUID"></field>
+ 	    <field type="String" name="repId" comment="副本 Id" />
+ 	    <field type="String" name="senceId" comment="目标场景id"></field>
+ 	    <field type="String" name="swtichId" comment="目标场景切换点id"></field>
+		<field type="Boolean" name="result" comment="进入结果"></field>
+		<field type="String" name="reason" comment="原因"></field>
+	</message> 
+	<!-- 进入副本-->
+	<message type="CG_ENTRY_REP" comment="进入副本">
+		<field type="String" name="repUuid" comment="副本id"></field>
+	</message> 
+	<!-- 进入副本结果 -->
+	<message type="GC_ENTRY_REP" comment="进入副本结果">
+		<field type="String" name="repId" comment="副本id"></field>
+		<field type="Boolean" name="result" comment="进入结果"></field>
+		<field type="String" name="reason" comment="原因"></field>
+	</message> 
+	<!-- 完成副本 -->
+	<message type="GC_COMPLETE_REP" comment="离开副本">
+		<field type="Boolean" name="result" comment="完成结果"></field>
+	</message>
+	<!-- 副本奖励信息 -->
+	<message type="GC_PRIZE_INFO" comment="副本奖励信息">
+		<field type="Integer" name="atkScore" comment="攻击分"></field>
+		<field type="Integer" name="defScore" comment="防御分"></field>
+		<field type="Integer" name="money" comment="奖励铜钱"></field>
+		<field type="Integer" name="exp" comment="奖励经验"></field>
+		<field type="Integer" name="see" comment="奖励阅历"></field>
+		<field  type="String" name="itemSn" list="true" comment="掉落的物品sn，数量都为1"></field>
+		<field type="Integer" name="gold" comment="奖励元宝"></field>
+	</message>
+	<!-- 获得奖励 -->
+	<message type="CG_GET_PRIZE" comment="离开副本">
+	</message>
+	<!-- 获得奖励 -->
+	<message type="GC_GET_PRIZE" comment="离开副本">
+	</message>
+	<!-- 拾取物品 -->
+	<message type="CG_SHIQU_ITEM" comment="离开副本">
+		<field type="Boolean" name="getPrize" comment="是否领取了奖励"></field>
+	</message>
+	<!-- 拾取物品结果 -->
+	<message type="GC_SHIQU_ITEM" comment="离开副本">
+		<field type="Boolean" name="result" comment="拾取结果"></field>
+		<field type="String" name="desc" comment="结果描述"></field>
+	</message>
+	<!-- 离开副本 -->
+	<message type="CG_LEAVE_REP" comment="离开副本">
+		<field type="Boolean" name="getPrize" comment="是否领取了奖励"></field>
+	</message>
+	<!-- 离开副本结果 -->
+	<message type="GC_LEAVE_REP" comment="离开副本">
+		<field type="String" name="sceneId" comment="原来场景id"></field>
+		<field type="Integer" name="X" comment="X坐标"></field>
+		<field type="Integer" name="Y" comment="Y坐标"></field>
+	</message>
+	<!-- 离开副本结果 -->
+	<message type="GC_ALIVE_MONSTER" comment="剩余怪物数量">
+		<field type="Integer" name="num" comment="剩余怪物数量"></field>
+	</message>
+	
+	<!-- 请求副本扫荡信息 -->
+	<message type="CG_AGAINST_REP_INFO" comment="获取请求扫荡副本信息">
+		<field type="String" name="repId" comment="副本id"></field>
+	</message> 
+	<message type="GC_AGAINST_REP_INFO" comment="返回请求扫荡副本信息">
+		<field type="String" name="repId" comment="副本id"></field>
+		<field type="Integer" name="battleTimes" comment="战斗次数"></field>
+		<field type="Integer" name="zhandouli" comment="战斗力"></field>
+		<field type="Integer" name="bagIdleNum" comment="背包空闲数"></field>
+		<field type="String" name="againstInfo" comment="扫描对象"></field>
+	</message> 
+	<!-- 请求副本挂机 -->
+	<message type="CG_AGAINST_REP_START" comment="开始扫荡副本">
+		<field type="String" name="repId" comment="副本id"></field>
+		<field type="Integer" name="times" comment="轮数，0(消耗全部体力),4(30分钟4轮),8(1小时8轮)"></field>
+	</message>
+	<!-- 开始扫荡挂机 -->
+	<message type="GC_AGAINST_REP_START" comment="开始扫荡副本">
+		<field type="String" name="repId" comment="副本id"></field>
+		<field type="String" name="repName" comment="副本名称"></field>
+		<field type="Integer" name="cycle" comment="轮数"></field>
+		<field type="Integer" name="cycleTime" comment="次数"></field>
+		<field type="Integer" name="leftTimes" comment="剩余战斗次数"></field>
+		<field type="Integer" name="leftTime" comment="剩余时间"></field>
+		<field type="Integer" name="zhandouli" comment="战斗力"></field>
+		<field type="Integer" name="bagIdleNum" comment="背包空闲数"></field>
+		<field type="String" name="againstInfo" comment="扫描对象"></field>
+	</message>
+	<!-- 每次扫荡结果消息 -->
+	<message type="GC_AGAINST_REP_RESULT" comment="扫荡副本结果信息">
+		<field type="String" name="repId" comment="副本id"></field>
+		<field type="Integer" name="leftTime" comment="剩余时间，单位为秒,为0表示结束"></field>
+		<field type="Integer" name="leftTimes" comment="剩余战斗次数"></field>
+		<field type="Integer" name="zhandouli" comment="战斗力"></field>
+		<field type="Integer" name="bagIdleNum" comment="背包空闲数"></field>
+		<field type="Integer" name="cycle" comment="轮"></field>
+		<field type="Integer" name="cycleTime" comment="该轮第几次"></field>
+		<field type="Integer" name="coins" comment="获得铜钱"></field>
+		<field type="com.pwrd.war.gameserver.rep.against.AgainstRepUnitInfo" name="units" comment="每个战斗单位获取经验" list="true" macro="AgainstRepUnitInfo">
+		</field>
+		<field type="com.pwrd.war.gameserver.rep.against.AgainstRepItemInfo" name="items" comment="获得的物品" list="true" macro="AgainstRepItemInfo">
+		</field>
+		<field type="com.pwrd.war.gameserver.rep.against.AgainstRepResultInfo" name="result" comment="副本评价奖励" macro="AgainstRepResultInfo">
+		</field>
+	</message>
+	<!-- 扫荡失败 -->
+	<message type="GC_AGAINST_REP_ERR" comment="扫荡副本错误信息">
+		<field type="Integer" name="errcode" comment="错误代码"></field>
+		<field type="String" name="description" comment="描述"></field>
+	</message>
+	<!-- 结束扫荡 -->
+	<message type="CG_AGAINST_REP_END" comment="结束扫荡副本"> 
+	</message>
+	<message type="GC_AGAINST_REP_END" comment="结束扫荡副本"> 
+	</message>
+	<!-- 请求扫荡加速需要多少元宝 -->
+	<message type="CG_AGAINST_REP_ACC_GOLD" comment="加速扫荡副本需要元宝"> 
+	</message>
+	<message type="GC_AGAINST_REP_ACC_GOLD" comment="加速扫荡副本需要元宝"> 
+		<field type="Integer" name="gold" comment="元宝"></field>
+	</message>
+	<!-- 扫荡加速 -->
+	<message type="CG_AGAINST_REP_ACC" comment="加速扫荡副本"> 
+	</message>
+</messages>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<messages xmlns="http://com.pwrd.war.message" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://com.pwrd.war.message message.xsd" module="mail">
+
+	<message type="CG_MAIL_LIST" comment="查询邮件列表">
+		<field type="Short" name="queryIndex" comment="查询的页面索引"></field>
+		<field type="Short" name="boxType" comment="邮箱类型1-inbox,2-system,3-private,4-battle,5-savebox,6-delbox"></field>
+	</message>
+	
+	<message type="GC_MAIL_UPDATE" comment="单个邮件更新">
+		<field type="com.pwrd.war.common.model.mail.MailInfo" name="mail" comment="邮件" macro="MailInfo" clientType="MailInfoData"></field>
+	</message>	
+	
+	<message type="GC_HAS_NEW_MAIL" comment="新邮件提示">	
+	</message>
+	
+	<message type="GC_MAIL_LIST" comment="邮件列表">
+		<field type="Short" name="boxType" comment="邮箱类型1-inbox,2-system,3-private,4-battle,5-savebox,6-delbox"></field>
+		<field type="Short" name="queryIndex" comment="查询的页面索引"></field>
+		<field type="Short" name="totalNums" comment="总数"></field>
+		<field type="com.pwrd.war.common.model.mail.MailInfo"
+			clientType="MailInfoData" name="mailInfos" list="true" comment="邮件列表" macro="MailInfo">
+		</field>
+	</message>
+	
+	<message type="CG_READ_MAIL" comment="阅读邮件">
+		<field type="String" name="uuid" comment="要阅读的邮件uuid"></field>
+	</message>
+	
+	<message type="CG_SEND_MAIL" comment="发送邮件">
+		<field type="String" name="recName" comment="收件人名称"></field>
+		<field type="String" name="title" comment="邮件标题"></field>
+		<field type="String" name="content" comment="邮件内容"></field>
+		<field type="Boolean" name="isGuildMail" comment="是否为军团邮件"></field>
+	</message>
+
+	<message type="GC_SEND_MAIL" comment="发送邮件结果">
+		<field type="Byte" name="resultCode" comment="发送结果"></field>
+		<field type="String" name="resultMsg" comment="发送结果提示"></field>
+	</message>
+	
+	<message type="CG_DEL_MAIL" comment="删除邮件">
+		<field type="String" name="uuid" comment="要删除的邮件uuid"></field>
+	</message>
+	
+	<message type="CG_DEL_ALL_MAIL" comment="删除所有邮件">
+		<field type="String" name="uuidlist" list="true" comment="要删除的所有邮件uuid"></field>
+	</message>
+	
+	<message type="CG_SAVE_MAIL" comment="保存邮件">
+		<field type="String" name="uuid" comment="要保存的邮件uuid"></field>
+	</message>
+	
+	<message type="CG_SEND_GUILD_MAIL" comment="发送军团邮件">
+		<field type="String" name="title" comment="邮件标题"></field>
+		<field type="String" name="content" comment="邮件内容"></field>
+	</message>
+
+</messages>

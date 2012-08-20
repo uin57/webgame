@@ -1,0 +1,6 @@
+message com.pwrd.war.logserver.model.LevelLog(
+	int buildingId;// 升级建筑ID
+	String buildingName;// 升级建筑名称
+	long upLevelTime;// 升级时间
+	long intervalTime;// 距上级时间
+)

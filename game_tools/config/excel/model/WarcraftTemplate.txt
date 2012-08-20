@@ -1,0 +1,10 @@
+String warcraftId;[notNull=false]		//兵法ID
+String name;[notNull=false]		//兵法名称
+Integer price;	 //兵法价格
+Integer quantity;	//品质，颜色
+Integer drop;		//掉落权重
+Integer level;		//兵法出现等级
+Integer exp;		//兵法经验
+Integer effect;//互斥关系
+Integer grasp;//领悟度
+String img;	[notNull=false]	//图标

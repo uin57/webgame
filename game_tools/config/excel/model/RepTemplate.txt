@@ -1,0 +1,24 @@
+String repId;		//副本id
+int order;//副本顺序
+String repName;		//副本名称
+int repType;[minValue=1]		//副本类型 1普通 2英雄
+int repLevel;[minValue=0]		//副本进入等级
+String sceneId;//副本所在场景
+String frontHeroId;[notNull=false]//前置副本字段 无或副本id
+String frontNomalId;[notNull=false]//前置副本字段 无或副本id
+String costItemSn;[notNull=false]//副本消耗道具id 以逗号分隔
+String costNum;[notNull=false]// 副本消耗道具值 以逗号分隔
+int costVitality;[minValue=0]//消耗活力值
+String repSenceId;//副本场景地图ID 以逗号分隔
+int times;[notNull=false] //每天进入最大次数
+int vipTimes;[notNull=false,minValue=0] //VIP增加次数
+String dropItems;[notNull=false]//掉包ID
+int money;[notNull=false]//奖励铜钱
+int exp;[notNull=false]//奖励铜钱
+int see;[notNull=false]//奖励阅历
+int monsterNums;		//扫荡次数
+String againstDesc;		//扫荡描述
+String againstMonster;	//扫荡怪物配置
+String transID;//副本传送点id
+double goldPro;[notNull=false,minValue=0]//掉落元宝概率
+int gold;[notNull=false,minValue=0]//掉落元宝数量

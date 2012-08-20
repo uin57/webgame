@@ -1,0 +1,1 @@
+String triggerTime;[NotTranslate]//触发时间 HH:mm:ss

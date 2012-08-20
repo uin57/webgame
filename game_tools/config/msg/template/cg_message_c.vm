@@ -1,0 +1,74 @@
+#macro( smallType $type)
+#if($type == "Byte")int#elseif( $type == "Boolean" )int#elseif( $type == "Short" )int#elseif( $type == "Integer" )int#elseif( $type == "Long" )Long#elseif( $type == "Float" )Number#elseif( $type == "Double" )Number#else$type#end
+#end
+#macro( bigType $type)
+#if( $type == "Integer" )Int#elseif( $type == "Boolean" )Byte#elseif( $type == "String" )UTF#else$type#end
+#end
+#macro( upperFirstChar $type)$type.substring(0,1).toUpperCase()$type.substring(1)#end
+package com.pwrd.pwgame.service.message {
+	import flash.utils.ByteArray;
+	
+	import com.pwrd.common.baseClass.Long;
+	import com.pwrd.pwgame.service.MessageType;
+	import com.pwrd.net.TCPService;
+    import com.pwrd.net.AbstractMessageReceiver;
+	import com.pwrd.pwgame.service.data.*;
+	
+	
+#if($constants.size()>0)
+	/**
+	 * 常量定义：
+#foreach( $constant in $constants )
+	 *	【$constant.name】$constant.desc
+#end	
+	 */
+#end
+	public class ${module}CGMessage{
+		public static var msgBody:ByteArray = new ByteArray();
+ #foreach( $msg in $msgs )
+ 
+ 		/**
+		 * $msg.comment
+#foreach( $field in $msg.fields )
+		 * @param $field.smallName $field.comment
+#end
+		 */
+		public static function ${msg.type}(#foreach( $field in $msg.fields )${field.smallName}:#if ($field.list)Array#else#smallType($field.type)$field.defaultValue#end#if($velocityCount != $msg.fields.size()),#end#end):void {
+				msgBody.length = 0;
+#if($msg.hasListField)
+				var i:int;
+#end
+#foreach( $field in $msg.fields )
+#if ($field.list) 
+				msgBody.writeShort(${field.smallName}.length);
+				for(i=0; i<${field.smallName}.length; i++){
+#if( $field.isNewType )
+#foreach( $subfield in $field.subFields )
+#if($subfield.type=="Long")
+					${field.smallName}[i].${subfield.name}.write(msgBody);			
+#else
+					msgBody.write#bigType($subfield.type)(${field.smallName}[i].${subfield.smallName});//$subfield.comment
+#end
+#end
+#else
+#if($field.type=="Long")
+					${field.smallName}[i].write(msgBody);			
+#else
+					msgBody.write#bigType($field.type)(${field.smallName}[i]);
+#end
+#end
+				}
+#else
+#if($field.type=="Long")
+				${field.smallName}.write(msgBody);		
+#else
+				msgBody.write#bigType($field.type)($field.smallName);
+#end
+#end
+#end	
+				//trace("[socket send][${msg.type}]"+msgBody);
+				TCPService.sendPackage(MessageType.${msg.type},msgBody);
+			}
+#end
+	}
+}

@@ -1,0 +1,4 @@
+int guwuType;	//鼓舞类型
+int xiaohao;	//消耗数字
+float rate;		//成功几率
+int buffTYpe;	//获得buff类型

@@ -1,0 +1,2 @@
+int level;[minValue=0;notNull=false] //玩家等级
+int getCoins;[minValue=0;notNull=false] //获得铜钱

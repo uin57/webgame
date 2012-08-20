@@ -1,0 +1,6 @@
+Integer quantity1;	//兵法品质1
+Integer quantity2;	//兵法品质2
+Integer quantity3;	//兵法品质3
+Integer quantity4;	//兵法品质4
+Integer quantity5;	//兵法品质5
+Integer quantity6;	//兵法品质6

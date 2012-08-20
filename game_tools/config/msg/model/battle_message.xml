@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<messages xmlns="http://com.pwrd.war.message" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://com.pwrd.war.message message.xsd" module="fight">
+
+	<message type="CG_Battle_Begin_Message" comment="触发战斗消息">
+		<field type="Boolean" name="isPVP" comment="是否是明雷"></field>
+		<field type="String" name="targetSn" comment="目标Sn"></field>
+		<field type="Integer" name="battleType" comment="战斗类型"></field>
+	</message>
+
+	<message type="GC_Battle_Action_Message" comment="战报消息">
+		<field type="String" name="sceneId" comment="战斗场景"></field>
+		<field type="String" name="attackSn" comment="攻击方玩家id"></field>
+		<field type="String" name="attackMatrixID" comment="攻击方阵法"></field>
+		<field type="String" name="defenceSn" comment="防守方id"></field>
+		<field type="String" name="defenceMatrixID" comment="防守方阵法"></field>
+		<field type="com.pwrd.war.gameserver.fight.domain.FightRoleInfo"
+			name="fightRoleInfo" clientType="FightRoleInfo" comment="角色信息" list="true" macro="FightRoleInfo"></field>
+		<field type="com.pwrd.war.gameserver.fight.domain.FightAction"
+			name="fightActions" clientType="FightAction" comment="回合战报" list="true" macro="FightAction"></field>
+		<field type="Long" name="battleTime" comment="战斗时间"></field>
+		<field type="Boolean" name="isWin" comment="是否战胜"></field>
+		<field type="com.pwrd.war.gameserver.fight.domain.FightLostItem"
+			name="lostItems" clientType="FightLostItem" comment="进攻方掉落" list="true" macro="FightLostItem"></field>
+		<field type="Double" name="attackLeftRatio" comment="攻击方剩余比率"></field>
+		<field type="Double" name="defenseLeftRatio" comment="防御方剩余比率"></field>
+		<field type="String" name="battleSn" comment="战斗sn"></field>
+		<field type="Integer" name="skillResources" list="true" comment="技能资源"></field>
+		<field type="Integer" name="buffResources" list="true" comment="buff资源"></field>
+		<field type="Integer" name="npcId" comment="围观npcid"></field>
+		<field type="String" name="bgId" comment="战斗背景id"></field>
+<!-- 		<field type="Integer" name="expPrize" comment="经验奖励"></field>
+		<field type="Integer" name="moneyPrize" comment="金钱奖励"></field>
+		<field type="Integer" name="shengwangPrize"comment="声望奖励"></field> -->
+	</message>
+
+<!-- 
+	<message type="GC_Battle_Init_Message" comment="触发战斗消息">
+		<field type="String" name="attackSn" comment="攻击方玩家id"></field>
+		<field type="String" name="attackMatrixID" comment="攻击方阵法"></field>
+		<field type="String" name="defenceSn" comment="防守方id"></field>
+		<field type="String" name="defenceMatrixID" comment="防守方阵法"></field>
+		<field type="com.pwrd.war.gameserver.fight.domain.RolePosition"
+			name="rolePositions" clientType="RolePosition" list="true" macro="RolePosition"></field>
+	</message>
+
+
+	<message type="GC_Battle_Action_Message" comment="战报消息">
+		<field type="com.pwrd.war.gameserver.fight.domain.FightAction"
+			name="fightActions" list="true" clientType="FightAction" macro="FightAction"></field>
+	</message>
+
+	<message type="GC_Battle_End_Message" comment="战斗结束">
+		<field type="Long" name="battleTime" comment="战斗时间"></field>
+		<field type="Boolean" name="isWin" comment="是否战胜"></field>
+		<field type="com.pwrd.war.gameserver.fight.domain.BattleRoleResult"
+			name="battleRoleResults" list="true" clientType="BattleRoleResult"
+			macro="BattleRoleResult"></field>
+		<field type="com.pwrd.war.gameserver.fight.domain.LostItem"
+			name="lostItems" clientType="LostItem" list="true" macro="LostItem"></field>
+		<field type="Double" name="attackLeftRatio" comment="攻击方剩余比率"></field>
+		<field type="Double" name="defenseLeftRatio" comment="防御方剩余比率"></field>
+		<field type="String" name="battleSn" comment="战斗sn"></field>
+	</message>
+ -->
+</messages>

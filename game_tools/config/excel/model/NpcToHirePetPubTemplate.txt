@@ -1,0 +1,2 @@
+int pubId; //酒馆ID 
+String npcId; //npc

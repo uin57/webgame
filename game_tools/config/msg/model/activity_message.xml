@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<messages xmlns="http://com.pwrd.war.message" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://com.pwrd.war.message message.xsd" module="activity">
+
+	<message type="CG_ACTIVITY_LIST" comment="取得当前活动列表"> 
+	</message>
+ 	
+ 	<message type="GC_ACTIVITY_LIST" comment="返回当前活动列表"> 
+ 		<field type="com.pwrd.war.gameserver.activity.ActivityInfo" 
+			clientType="ActivityInfo" name="list" list="true" comment="活动信息列表"   >
+			<field type="String" name="actId" comment="活动Id" />
+			<field type="String" name="name" comment="名称" />
+			<field type="String" name="desc" comment="描述" />
+			<field type="String" name="timeDesc" comment="活动时间描述" /> 
+			<field type="Boolean" name="isOpen" comment="是否开启" />
+			<field type="Long" name="openTime" comment="开启时间" />
+			<field type="Boolean" name="isFinish" comment="是否结束" />
+			<field type="Long" name="finishTime" comment="结束时间" />
+		</field>
+	</message>
+	<message type="GC_ACTIVITY_START" comment="有活动开始了"> 
+		<field type="String" name="actId" comment="活动Id" />
+	</message>
+	<message type="GC_ACTIVITY_STOP" comment="有活动结束了"> 
+		<field type="String" name="actId" comment="活动Id" />
+	</message>
+	
+	<message type="CG_ACTIVITY_JOIN" comment="参加活动">
+		<field type="String" name="actId" comment="活动Id" />
+	</message>
+	
+	<message type="CG_ACTIVITY_UNJOIN" comment="离开活动"> 
+		<field type="String" name="actId" comment="活动Id" />
+	</message>
+	
+	<!-- 南蛮入侵具体协议 -->
+	<message type="GC_ACTIVITY_BOSS_INFO" comment="南蛮入侵活动信息">
+		<field type="String" name="actId" comment="活动Id" />
+		<field type="Integer" name="state" comment="状态，1,准备中，2，进行中，3已经结束" />
+		<field type="Integer" name="playerNumber" comment="参加人数" />
+		<field type="Integer" name="nowGroup" comment="当前怪物波数" />
+		<field type="Integer" name="remainTime" comment="剩余时间" />
+		<field type="Integer" name="weiScore" comment="魏国积分" />
+		<field type="Integer" name="shuScore" comment="署国积分" />
+		<field type="Integer" name="wuScore" comment="吴国积分" />
+		<field type="Integer" name="startRemainTime" comment="开始倒计时，秒" />
+	</message>
+	
+	<message type="GC_ACTIVITY_BOSS_RANKS" comment="南蛮入侵活动排行信息">
+		<field type="String" name="ranks" comment="排行信息字符串" />
+	</message>
+	
+	<message type="CG_ACTIVITY_BOSS_ATTACK" comment="南蛮入侵活动手动选择怪物攻击">
+		<field type="String" name="monsterSN" comment="怪的sn" />
+	</message>
+	 
+	<message type="GC_ACTIVITY_BOSS_CAN_MOVE" comment="南蛮入侵活动可以行动了，只有收到此消息才可以行动">
+	</message>	
+	<message type="CG_ACTIVITY_BOSS_RELIVE" comment="南蛮入侵活动元宝复活">
+	</message>
+	<message type="GC_ACTIVITY_BOSS_PLAYER_INFO" comment="南蛮入侵活动玩家的信息">
+		<field type="Long" name="allAttack" comment="总伤害" /> 
+		<field type="Boolean" name="isDead" comment="是否已经死亡" /> 
+		<field type="Integer" name="aliveTime" comment="剩余复活时间，秒" /> 
+		<field type="Integer" name="guwu" comment="鼓舞值" /> 
+	</message>	
+	<message type="CG_ACTIVITY_BOSS_GUWU_SEE" comment="使用阅历鼓舞">
+	</message>
+	<message type="GC_ACTIVITY_BOSS_GUWU_SEE" comment="使用阅历鼓舞">
+		<field type="Boolean" name="success" comment="是否鼓舞成功" /> 
+	</message>
+	<message type="CG_ACTIVITY_BOSS_GUWU_GOLD" comment="使用元宝鼓舞">
+	</message>
+	<message type="GC_ACTIVITY_BOSS_GUWU_GOLD" comment="使用元宝鼓舞">
+		<field type="Boolean" name="success" comment="是否鼓舞成功" /> 
+	</message>
+	<message type="GC_ACTIVITY_BOSS_KAOSHANG" comment="犒赏三军">
+		<field type="String" name="playerName" comment="玩家姓名" /> 
+	</message>
+	<message type="CG_ACTIVITY_BOSS_KAOSHANG" comment="领取犒赏三军buff"> 
+	</message>
+	<message type="GC_ACTIVITY_BOSS_KAOSHANG_SHANGHAI" comment="犒赏三军所需伤害">
+		<field type="Integer" name="needAttack" comment="所需伤害" /> 
+	</message>
+	
+	<message type="CG_ACTIVITY_BOSS_BUY_TOWER" comment="购买塔"> 
+	</message>
+	<message type="GC_ACTIVITY_BOSS_TOWER_LIST" comment="塔列表">
+		<field type="String" name="myTower" comment="如果我有塔，则有名字，没有则没有名字" /> 
+		<field type="String" name="others" comment="其他玩家的名字，jsonarray" /> 
+	</message>
+	<message type="GC_ACTIVITY_BOSS_TOWER_ADD" comment="新增塔">
+		<field type="String" name="name" comment="名字" /> 
+	</message>
+	<message type="GC_ACTIVITY_BOSS_TOWER_ATTACK" comment="塔增加的伤害">
+		<field type="Integer" name="attack" comment="塔增加的伤害" /> 
+		<field type="Integer" name="allAttack" comment="伤害" /> 
+	</message>
+	<message type="GC_ACTIVITY_BOSS_RANK_TOP3" comment="排行前3信息">
+		<field type="String" name="info" comment="jsonarray" /> 
+	</message>
+	<!-- 主将争夺战                                                                                           -->
+	<message type="GC_ACTIVITY_HERO_WAR_LIST" comment="主将争夺列表">
+		 <field type="com.pwrd.war.gameserver.activity.campwar.HeroWarActivityInfo" 
+			clientType="HeroWarActivityInfo" name="list" list="true" comment="武将列表"   macro="heroWarHeroInfo"> 
+		</field>
+	</message>
+	<message type="CG_ACTIVITY_HERO_WAR_ATTACK" comment="武将争夺战争夺"> 
+		<field type="Integer" name="pos" comment="序号" />
+	</message>
+	
+	<!-- 守军争夺战                                                                        -->
+	<message type="GC_ACTIVITY_CAMP_WAR_INDEX" comment="守将争夺战首页信息"> 
+		<field type="Integer" name="remainTime" comment="剩余时间，秒" /> 
+		<field type="com.pwrd.war.gameserver.activity.campwar.CampWarHeroInfo" 
+			clientType="CampWarHeroInfo" name="heroList" list="true" comment="主将列表"   macro="campWarHeroInfo"> 
+			
+		</field>
+		<field type="Integer" name="weiScore" comment="魏积分" />
+		<field type="Integer" name="shuScore" comment="署积分" />
+		<field type="Integer" name="wuScore" comment="吴积分" />
+	</message>
+	
+	<message type="GC_ACTIVITY_CAMP_WAR_ROB_CDTIME" comment="守将争夺战剩余拦截冷却时间">
+		<field type="Integer" name="time" comment="单位秒" /> 
+	</message>
+	<message type="GC_ACTIVITY_CAMP_WAR_BUFF" comment="守将争夺战buff信息"> 		
+		<field type="com.pwrd.war.gameserver.activity.campwar.CampWarBuffInfo" 
+			clientType="CampWarBuffInfo" name="buffList" list="true" comment="buff列表"   > 
+			<field type="Integer" name="skillId" comment="" />
+			<field type="String" name="name" comment="" />
+			<field type="String" name="desc" comment="" />
+			<field type="Integer" name="addMyCampSpeedRateInt" comment="" /> 
+			<field type="Integer" name="addOtherCampNewSpeedRateInt" comment="" />
+			<field type="Integer" name="addMyCampRobScoreRateInt" comment="" />
+			<field type="Integer" name="isyunwu" comment="" />
+			<field type="Integer" name="ttime" comment="" />
+			<field type="Long" name="startTime" comment="" />
+			<field type="Long" name="endTime" comment="" />
+			<field type="String" name="user" comment="使用者UUID" />
+			<field type="Integer" name="useTimes" comment="使用次数" /> 
+			<field type="Integer" name="remainTime" comment="剩余时间，秒" />  
+		</field>
+	</message>
+	
+	<message type="GC_ACTIVITY_CAMP_WAR_SKILLS" comment="守将争夺战技能信息"> 
+		<field type="Integer" name="remainUseTime" comment="剩余可以使用的时间，秒" /> 
+		<field type="com.pwrd.war.gameserver.activity.campwar.CampWarBuffInfo" 
+			clientType="CampWarSkillInfo" name="skillList" list="true" comment="skill列表"   > 
+			<field type="Integer" name="skillId" comment="" />
+			<field type="String" name="name" comment="" />
+			<field type="String" name="desc" comment="" />
+			<field type="Integer" name="addMyCampSpeedRateInt" comment="" /> 
+			<field type="Integer" name="addOtherCampNewSpeedRateInt" comment="" />
+			<field type="Integer" name="addMyCampRobScoreRateInt" comment="" />
+			<field type="Integer" name="isyunwu" comment="" />
+			<field type="Integer" name="ttime" comment="" />  
+			<field type="Integer" name="useTimes" comment="使用次数为0表示可以再使用" />
+		</field>
+	</message>
+	
+	<message type="GC_ACTIVITY_CAMP_WAR_SCORE" comment="守将争夺战资源信息变化"> 
+		<field type="Integer" name="weiScore" comment="魏积分" />
+		<field type="Integer" name="shuScore" comment="署积分" />
+		<field type="Integer" name="wuScore" comment="吴积分" />
+	</message>
+	
+	<message type="GC_ACTIVITY_CAMP_WAR_LOG" comment="守将争夺战资战报信息增加"> 
+		<field type="String" name="log" comment="战报描述字符串" /> 
+	</message>
+	
+	
+	
+	
+	<message type="GC_ACTIVITY_CAMP_WAR_ROB_COMB_WIN" comment="守将争夺战连胜信息"> 
+		 <field type="com.pwrd.war.gameserver.activity.campwar.CampWarPlayerInfo" 
+			clientType="CampWarPlayerShortInfo" name="playerList" list="true" comment="连胜玩家信息"   > 
+			<field type="String" name="playerUUID" comment="玩家UUID" />
+			<field type="String" name="playerName" comment="玩家名字" />  
+			<field type="Integer" name="camp" comment="所属国家" />
+			<field type="Integer" name="sex" comment="性别" />
+			<field type="Integer" name="vocation" comment="职业" /> 
+			<field type="Integer" name="maxComWin" comment="连胜次数" /> 
+		</field>
+	</message>
+	
+	<message type="GC_ACTIVITY_CAMP_WAR_ROB_ADD_LOG" comment="守将争夺战有战报信息">
+		<field type="String" name="attackUUID" comment="" />
+		<field type="String" name="attackName" comment="" />
+		<field type="String" name="defUUID" comment="" />
+		<field type="String" name="defName" comment="" />
+		<field type="Boolean" name="isWin" comment="是否胜利" />
+		<field type="Integer" name="combWinTime" comment="连胜次数" />
+		<field type="Integer" name="getCoins" comment="获得退钱" />
+		<field type="Integer" name="getPopularity" comment="获得声望" />
+		<field type="Integer" name="getScore" comment="获得资源" />
+	</message>
+	
+	<message type="GC_ACTIVITY_CAMP_WAR_ROB_INFO" comment="守将争夺战战斗结果累计胜利信息">
+		<field type="Integer" name="maxCombWinTimes" comment="最大连胜次数" /> 
+		<field type="Integer" name="combWinTime" comment="连胜次数" />
+		<field type="Integer" name="getCoins" comment="获得退钱" />
+		<field type="Integer" name="getPopularity" comment="获得声望" />
+		<field type="Integer" name="getScore" comment="获得资源" />
+	</message>
+	
+	<message type="GC_ACTIVITY_CAMP_WAR_START_TRANSPORT" comment="守将争夺战开始押运"> 
+	</message>
+	
+	
+	
+	<message type="GC_ACTIVITY_CAMP_WAR_TRANSPORT_ADD" comment="守将争夺有押送对象更新"> 
+		<field type="com.pwrd.war.gameserver.activity.campwar.CampWarPlayerInfo"  
+		        clientType="CampWarTransportShortInfo" name="info" list="false" comment="信息"  macro="campWarTransportShortInfo" > 
+		</field> 
+	</message>
+	<message type="GC_ACTIVITY_CAMP_WAR_TRANSPORT_DEL" comment="守将争夺有押送对象完成"> 
+		<field type="String" name="playerUUID" comment="玩家ID" />
+	</message>
+	<message type="GC_ACTIVITY_CAMP_WAR_PROTECT_LIST" comment="守将争夺本国押送的信息"> 
+		<field type="com.pwrd.war.gameserver.activity.campwar.CampWarPlayerInfo"  
+		        clientType="CampWarTransportShortInfo" name="lists" list="true" comment="信息" macro="campWarTransportShortInfo" >		     
+		</field> 
+	</message>
+	<message type="GC_ACTIVITY_CAMP_WAR_ROB_LIST" comment="守将争夺被掠夺的押送信息"> 
+		<field type="com.pwrd.war.gameserver.activity.campwar.CampWarPlayerInfo"  
+		        clientType="CampWarTransportShortInfo" name="lists" list="true" comment="信息"  macro="campWarTransportShortInfo"> 
+		</field> 
+	</message>
+	
+	<message type="GC_ACTIVITY_CAMP_WAR_TRANSPORT_DETAIL" comment="守将争夺押送详细信息"> 
+		<field type="com.pwrd.war.gameserver.activity.campwar.CampWarPlayerInfo"  
+		        clientType="CampWarPlayerInfo" name="info" list="false" comment="信息" macro="campWarTransportInfo"  >  
+		</field> 		
+		<field type="Integer" name="robGetScore" comment="掠夺可得到资源" /> 
+		<field type="Integer" name="robGetCoin" comment="掠夺可得到铜钱" /> 
+		<field type="Integer" name="robGetPropu" comment="掠夺可得到声望" />  
+	</message>
+	<message type="GC_ACTIVITY_CAMP_WAR_HERO_BUFF_ADD" comment="守将争夺守军加buff"> 
+		<field type="String" name="playerUUID" comment="玩家ID" />
+		<field type="Integer" name="remainTime" comment="剩余时间" />
+	</message>
+	
+	<message type="CG_ACTIVITY_CAMP_WAR_TRANSPORT_DETAIL" comment="守将争夺战详细押运信息">
+		<field type="String" name="targetUUID" comment="目标UUID" />
+		<field type="Integer" name="targetCamp" comment="目标国家" />
+	</message>
+	
+	<message type="CG_ACTIVITY_CAMP_WAR_USE_SKILL" comment="守将争夺战使用技能">
+		  <field type="Integer" name="skillId" comment="技能ID" />
+	</message>
+	<message type="CG_ACTIVITY_CAMP_WAR_ROB_CAMP" comment="守将争夺战开始掠夺某国家"> 
+		<field type="Integer" name="camp" comment="国家id" /> 
+	</message> 
+	<message type="CG_ACTIVITY_CAMP_WAR_ROB_BACK" comment="守将争夺战押送回城">  
+	</message>
+	<message type="CG_ACTIVITY_CAMP_WAR_START_ROB" comment="守将争夺开始拦截"> 
+		 <field type="String" name="targetUUID" comment="目标UUID" />
+	</message>
+	
+	<!--                         过关斩将                      -->
+	<message type="GC_ACTIVITY_GGZJ_INFO" comment="过关斩将活动信息">
+		<field type="String" name="actId" comment="活动Id" />
+		<field type="Integer" name="state" comment="状态，1,准备中，2，进行中，3已经结束" />
+		<field type="Integer" name="remainTime" comment="剩余时间" />
+		<field type="Integer" name="startRemainTime" comment="开始倒计时，秒" />
+		<field type="com.pwrd.war.gameserver.activity.ggzj.GGZJCampInfo" name="camps" list="true">
+			<field type="Integer" name="camp" comment="国家"   />
+			<field type="Integer" name="progress" comment="进度"   />
+			<field type="Integer" name="enermy" comment="敌对国家"   />
+			<field type="com.pwrd.war.gameserver.activity.ggzj.GGZJBossInfo" name="bosses" comment="魏国的所有boss"
+				list="true">
+				<field type="String" name="name" comment="" />
+				<field type="Integer" name="voc" comment="" />
+				<field type="Integer" name="sex" comment="" />
+				<field type="Integer" name="level" comment="" />			
+				<field type="Integer" name="allHp" comment="" />
+				<field type="Integer" name="curHp" comment="" />
+				<field type="String" name="monsterSN" comment="" />
+			</field>
+		</field>
+	</message>
+	
+	<message type="GC_ACTIVITY_GGZJ_PROGRESS" comment="进度更新">
+		<field type="Integer" name="progress" comment="当前第几个怪" />
+		<field type="Integer" name="camp" comment="国家" />
+	</message> 
+	
+	<message type="GC_ACTIVITY_GGZJ_RANKS" comment="活动排行信息">
+		<field type="String" name="ranks" comment="排行信息字符串" />
+	</message> 
+	 
+	<message type="GC_ACTIVITY_GGZJ_CAN_MOVE" comment="活动可以行动了，只有收到此消息才可以行动">
+	</message>	
+	<message type="CG_ACTIVITY_GGZJ_RELIVE" comment="活动元宝复活">
+	</message>
+	<message type="GC_ACTIVITY_GGZJ_PLAYER_INFO" comment="活动玩家的信息">
+		<field type="Long" name="allAttack" comment="总伤害" /> 
+		<field type="Boolean" name="isDead" comment="是否已经死亡" /> 
+		<field type="Integer" name="aliveTime" comment="剩余复活时间，秒" /> 
+		<field type="Integer" name="guwu" comment="鼓舞值" /> 
+		<field type="Integer" name="pfcz" comment="破釜沉舟使用次数" /> 
+		<field type="Integer" name="pfczGold" comment="破釜沉舟需要元宝" /> 
+	</message>	
+	<message type="CG_ACTIVITY_GGZJ_GUWU_SEE" comment="使用阅历鼓舞">
+	</message>
+	<message type="GC_ACTIVITY_GGZJ_GUWU_SEE" comment="使用阅历鼓舞">
+		<field type="Boolean" name="success" comment="是否鼓舞成功" /> 
+	</message>
+	<message type="CG_ACTIVITY_GGZJ_GUWU_GOLD" comment="使用元宝鼓舞">
+	</message>
+	<message type="GC_ACTIVITY_GGZJ_GUWU_GOLD" comment="使用元宝鼓舞">
+		<field type="Boolean" name="success" comment="是否鼓舞成功" /> 
+	</message>
+	<message type="CG_ACTIVITY_GGZJ_PFCZ" comment="破釜沉舟">
+	</message>
+	<message type="GC_ACTIVITY_GGZJ_PFCZ" comment="破釜沉舟">
+		<field type="Boolean" name="success" comment="是否成功" /> 
+		<field type="Integer" name="times" comment="剩余几次" /> 
+	</message>
+	<message type="CG_ACTIVITY_GGZJ_GET_TOWER" comment="拿塔">
+	</message>
+	<message type="GC_ACTIVITY_GGZJ_GET_TOWER" comment="拿塔">
+		<field type="Integer" name="camp" comment="国家" /> 
+	</message>
+	<message type="GC_ACTIVITY_GGZJ_RANK_TOP3" comment="排行前3信息">
+		<field type="Integer" name="camp" comment="camp" /> 
+		<field type="String" name="info" comment="jsonarray" /> 
+	</message>
+	
+	<!-- =========================阵营战=============================== -->
+	<message type="GC_ACTIVITY_WORLD_WAR_INFO" comment="活动信息">
+		<field type="Integer" name="state" comment="状态" /> 
+		<field type="Integer" name="zhuti" comment="主题" />  
+		<field type="Integer" name="endRemainTime" comment="结束剩余时间" /> 
+	</message>
+	<message type="GC_ACTIVITY_WORLD_WAR_PLAYRES" comment="玩家列表">
+		<field type="com.pwrd.war.gameserver.activity.worldwar.WorldWarPlayerInfo" name="players" comment="所有玩家"
+			 clientType="WorldWarPlayerShortInfo" list="true" macro="WorldWarPlayerInfo">
+			<field type="String" name="playerUUID" comment="玩家UUID"></field>
+			<field type="String" name="playerName" comment="名字"></field> 
+			<field type="Integer" name="warTypeValue" comment="势力范围"></field>
+			<field type="Integer" name="reginValue" comment="等级范围"></field>
+		</field>
+	</message>
+	<message type="GC_ACTIVITY_WORLD_WAR_PLAYRES_ADD" comment="玩家列表增加">
+		<field type="com.pwrd.war.gameserver.activity.worldwar.WorldWarPlayerInfo" name="player" comment="所有玩家"
+			 clientType="WorldWarPlayerShortInfo"  macro="WorldWarPlayerInfo">
+			<field type="String" name="playerUUID" comment="玩家UUID"></field>
+			<field type="String" name="playerName" comment="名字"></field> 
+			<field type="Integer" name="warTypeValue" comment="势力范围"></field>
+			<field type="Integer" name="reginValue" comment="等级范围"></field>
+		</field>
+	</message>
+	<message type="GC_ACTIVITY_WORLD_WAR_PLAYRES_DEL" comment="玩家列表减少"> 
+		<field type="String" name="playerUUID" comment="玩家UUID"></field>
+	</message>
+	<message type="GC_ACTIVITY_WORLD_WAR_PLAYER_INFO" comment="玩家信息">
+		<field type="com.pwrd.war.gameserver.activity.worldwar.WorldWarPlayerInfo" name="info" comment="玩家信息"
+			 clientType="WorldWarPlayerInfo"   macro="WorldWarPlayerInfo"> 
+		</field>
+	</message>
+	<message type="GC_ACTIVITY_WORLD_WAR_RANKS_INFO" comment="连胜排行">
+		<field type="Integer" name="reginValue" comment="等级范围"></field>
+		<field type="com.pwrd.war.gameserver.activity.worldwar.WorldWarPlayerInfo" name="ranks" comment="玩家信息"
+			 clientType="WorldWarPlayerRankInfo"  list="true"  macro="WorldWarPlayerInfo"> 
+			<field type="String" name="playerUUID" comment="玩家UUID"></field>
+			<field type="String" name="playerName" comment="名字"></field> 
+			<field type="Integer" name="warTypeValue" comment="势力范围"></field>
+			<field type="Integer" name="reginValue" comment="等级范围"></field>
+			<field type="Integer" name="rank" comment="连胜排行"></field>
+		</field>
+	</message>
+	
+	<message type="GC_ACTIVITY_WORLD_WAR_BATTLE_ADD" comment="有战报信息">
+		<field type="String" name="attackUUID" comment="" />
+		<field type="String" name="attackName" comment="" />
+		<field type="String" name="defUUID" comment="" />
+		<field type="String" name="defName" comment="" />
+		<field type="Boolean" name="isWin" comment="是否胜利" />
+		<field type="Boolean" name="isMax" comment="是否达到奖励上限" />
+		<field type="Integer" name="combWinTime" comment="连胜次数" />
+		<field type="Integer" name="getCoins" comment="获得退钱" />
+		<field type="Integer" name="getPopularity" comment="获得声望" />
+		<field type="Integer" name="endPopularity" comment="终结获得声望" />
+	</message>
+	
+	<message type="CG_ACTIVITY_WORLD_WAR_GUWU" comment="鼓舞"> 
+		<field type="Integer" name="guwuType" comment="0，元宝，1阅历"></field>
+	</message>
+	<message type="CG_ACTIVITY_WORLD_WAR_AUTO_WAR" comment="设置自动参展"> 
+		<field type="Integer" name="autoWar" comment="0，手动，1自动"></field>
+	</message>
+	<message type="CG_ACTIVITY_WORLD_WAR_START" comment="开始参战">  
+	</message>
+	<message type="CG_ACTIVITY_WORLD_WAR_CANCEL" comment="取消参战">  
+	</message>
+</messages>

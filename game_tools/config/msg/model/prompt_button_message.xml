@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<messages xmlns="http://com.pwrd.war.message" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://com.pwrd.war.message message.xsd" module="promptButton">
+	<message type="GC_PROMPT_BUTTON" comment="提示按钮">
+		<field type="String" name="id" comment="实例id"></field>
+		<field type="String" name="content" comment="消息内容"></field>
+		<field type="Integer" name="functionId" comment="功能id"></field>
+	</message>
+	<message type="CG_DELETE_PROMPT_BUTTON" comment="清除提示按钮">
+		<field type="String" name="id" comment="实例id"></field>
+	</message>
+
+</messages>

@@ -1,0 +1,6 @@
+message com.pwrd.war.logserver.model.OnlineTimeLog(
+    int minute; // 当天累计在线时间(分钟)
+    int totalMinute; // 累计在线时间(分钟)
+    long lastLoginTime; // 最后一次登录时间
+    long lastLogoutTime; // 最后一次登出时间
+)

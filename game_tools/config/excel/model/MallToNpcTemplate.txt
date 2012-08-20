@@ -1,0 +1,2 @@
+String mallId; //商店id
+String npcId; //npcId

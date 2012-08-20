@@ -1,0 +1,3 @@
+int equipLevel;[minValue=0,notNull=false]							//装备等级
+double levelRate;[minValue=0,notNull=false]							//等级系数
+double currencyRate;[minValue=0,notNull=false]						//价格系数

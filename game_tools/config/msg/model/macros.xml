@@ -1,0 +1,747 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<macros xmlns="http://com.pwrd.war.message">
+	<macro id="RoleInfo" comment="角色信息">
+		<field type="String" name="roleUUID" comment="角色id" />
+		<field type="String" name="name" comment="名字" />
+		<field type="Boolean" name="firstLogin" comment="首次登陆" />
+	</macro>
+	<macro id="HumanDetailInfo" comment="玩家角色详细信息">
+		<field type="String" name="roleUUID" comment="人物角色UUID"></field>
+		<field type="String" name="name" comment="名字"></field>
+		<field type="Integer" name="camp" comment="所阵营"></field>
+		<field type="Integer" name="sex" comment="性别"></field>
+		<field type="Integer" name="vocation" comment="职业"></field>
+		<field type="Integer" name="level" comment="级别"></field>
+	</macro>
+	<macro id="RoleSimpleInfo" comment="角色的简略信息">
+		<field type="String" name="roleUUID" comment="人物角色UUID"></field>
+		<field type="String" name="name" comment="名字"></field>
+		<field type="Integer" name="camp" comment="所阵营"></field>
+		<field type="Integer" name="sex" comment="性别"></field>
+		<field type="Integer" name="vocation" comment="职业"></field>
+		<field type="Integer" name="level" comment="级别"></field>
+		<field type="String" name="sceneId" comment="场景ID"></field>
+		<field type="Integer" name="lineNo" comment="分线号" />
+		<field type="Integer" name="x" comment="x坐标"></field>
+		<field type="Integer" name="y" comment="y坐标"></field>
+		<field type="Integer" name="toX" comment="目标x坐标"></field>
+		<field type="Integer" name="toY" comment="目标y坐标"></field>
+		<field type="Integer" name="humanStatus" comment="玩家当前状态"></field>
+		<field type="String" name="weaponSn" comment="当前武器sn"></field>
+		<field type="String" name="bodySn" comment="变身后的骨骼sn，如果为空表示默认"></field>
+		<field type="Integer" name="xiulianSymbolId" comment="修炼标志ID"></field>
+		<field type="Integer" name="xiulianCollectTimes" comment="已经采集次数"></field>
+		<field type="Integer" name="xiulianAllCollectTimes" comment="总可采集次数"></field>
+	</macro>
+	<macro id="QuestBonusItem" comment="道具奖励信息">
+		<field type="String" name="name" comment="道具的名称"></field>
+		<field type="Short" name="count" comment="道具的数量"></field>
+		<field type="Short" name="rarity" comment="稀有程度，即道具颜色：白色0 "></field>
+	</macro>
+	<macro id="QuestDestInfo" comment="任务目标信息">
+		<field type="Short" name="destType" comment="任务目标类型"></field>
+		<field type="String" name="param" comment="任务目标参数"></field>
+		<field type="Short" name="destReqNum" comment="任务目标需求数量"></field>
+		<field type="Short" name="destGotNum" comment="当前数量"></field>
+	</macro>
+	<macro id="CommonItem" comment="道具信息">
+		<field type="String" name="uuid" comment="道具实例uuid"></field>
+		<field type="String" name="itemSn" comment="道具SN"></field>
+		<field type="Integer" name="bagId" comment="背包id"></field>
+		<field type="Integer" name="index" comment="背包中的格子序号"></field>
+		<field type="Integer" name="bind" comment="是否绑定"></field>
+		<field type="String" name="wearerUuid" comment="穿戴着ID"></field>
+		<field type="Integer" name="createTime" comment="创建时间"></field>
+		<field type="Integer" name="num" comment="数量"></field>
+		<field type="Integer" name="identity" comment="类型"></field>
+		<field type="String" name="feature" comment="属性json字符串，每个道具的实例属性自定，一般为json格式"></field>
+		<field type="String" name="battleProps" comment="战斗属性json字符串，只有装备才有这个，"></field>
+
+	</macro>
+	<!-- <field type="String" name="desc" comment="道具的描述"></field> <field type="String" 
+		name="expireDesc" comment="道具的使用期限描述"></field> <field type="Short" name="descFormat" 
+		comment="道具描述格式类型"></field> <field type="String" name="icon" comment="道具的图标"></field> 
+		<field type="Integer" name="templateId" comment="道具模板Id，标志一种具体的道具，此值相同的道具即为同一道具"></field> 
+		<field type="Short" name="count" comment="数量"></field> <field type="Short" 
+		name="rarity" comment="稀有程度，即道具颜色：白色0 "></field> <field type="Short" name="templateBagId" 
+		comment="模板定义包id" /> <field type="Short" name="position" comment="装备的位置"></field> 
+		<field type="Short" name="bind" comment="绑定状态"></field> <field type="Short" 
+		name="bindMode" comment="绑定模式，0不需要显示，1获取时绑定，2使用时绑定，3装备时绑定"></field> <field 
+		type="Short" name="level" comment="等级，如果主角级别不足，红色显示"></field> <field type="Integer" 
+		name="curEndure" comment="当前耐久，装备需要显示"></field> <field type="Integer" name="maxEndure" 
+		comment="耐久上限，装备需要显示，为0时不需要显示耐久信息"></field> <field type="Short" name="itemCatalogue" 
+		comment="道具大类"></field> <field type="Short" name="itemType" comment="道具小类"></field> 
+		<field type="Byte" name="alliance" comment="阵营，如果武将阵营不符，红色显示"></field> <field 
+		type="Byte" name="sex" comment="性别，如果武将性别不符，红色显示"></field> <field type="Integer" 
+		name="leftCD" comment="还没有转完的CD时间，单位毫秒"></field> <field type="Integer" name="CD" 
+		comment="此道具的CD时间"></field> <field type="Short" name="enhanceLevel" comment="强化等级"></field> 
+		<field type="com.pwrd.war.common.model.item.AttrDescBase" name="baseAttrs" 
+		list="true" comment="基础属性"> <field type="Short" name="key" comment="属性key,如攻击力,防御力" 
+		/> <field type="String" name="mainValue" comment="主属性值描述，如+10" /> </field> 
+		<field type="com.pwrd.war.common.model.item.AttrDescAddon" name="addonAttrs" 
+		list="true" comment="附加属性"> <field type="Short" name="key" comment="属性key,如兵数" 
+		/> <field type="String" name="mainValue" comment="附加属性值描述，如+10" /> </field> 
+		<field type="com.pwrd.war.common.model.item.AttrDescSpec" name="specAttrs" 
+		list="true" comment="特殊属性"> <field type="Short" name="key" comment="属性key" 
+		/> <field type="String" name="value" comment="属性value" /> </field> -->
+
+	<macro id="PetInfo" comment="武将信息">
+		<field type="String" name="uuid" comment="武将的唯一标识"></field>
+		<field type="String" name="petSn" comment="武将SN"></field>
+		<!-- <field type="String" name="name" comment="武将的名称"></field> <field type="Integer" 
+			name="level" comment="武将的等级"></field> <field type="String" name="desc" comment="武将的描述"></field> 
+			<field type="Long" name="exp" comment="武将的等级"></field> <field type="Integer" 
+			name="soldierAmount" comment="武将的当前兵数"></field> <field type="Integer" name="photo" 
+			comment="武将的头像"></field> <field type="Integer" name="type" comment="武将的类型"></field> 
+			<field type="Integer" name="leadership" comment="统"></field> <field type="Integer" 
+			name="might" comment="勇"></field> <field type="Integer" name="intellect" 
+			comment="智"></field> -->
+	</macro>
+	<macro id="MailInfo" comment="邮件信息">
+		<field type="String" name="uuid" comment="邮件的唯一标识"></field>
+		<field type="String" name="title" comment="邮件的标题"></field>
+		<field type="String" name="sendName" comment="发送玩家名称"></field>
+		<field type="String" name="content" comment="邮件的内容"></field>
+		<field type="Integer" name="mailType" comment="邮件类型"></field>
+		<field type="Integer" name="mailStatus" comment="邮件状态"></field>
+		<field type="String" name="createTime" comment="创建时间"></field>
+		<field type="Long" name="updateTime" comment="最后更新时间"></field>
+	</macro>
+	<macro id="QuestInfo" comment="任务信息">
+		<field type="Integer" name="questId" comment="任务Id"></field>
+		<!-- 任务目标状态 -->
+		<field type="com.pwrd.war.common.model.quest.QuestDestInfo"
+			clientType="QuestDestData" name="destInfo" list="true" comment="任务目标"
+			macro="QuestDestInfo">
+		</field>
+		<field type="Short" name="status" comment="任务状态"></field>
+	</macro>
+
+	<macro id="BufferUnit" comment="buff单元">
+		<field type="String" name="buffSn" comment="buffsn"></field>
+		<field type="Integer" name="buffLevel" comment="buff等级"></field>
+		<field type="String" name="buffEffect" comment="状态特效"></field>
+		<field type="Integer" name="dealType" comment="处理类型 1表示增加buff，-1 表示驱除buff"></field>
+	</macro>
+	<macro id="BufferRole" comment="buff和角色的对应关系">
+		<field type="String" name="roleSn" comment="角色sn"></field>
+		<field type="com.pwrd.war.gameserver.buff.domain.BufferUnit"
+			name="bufferUnits" comment="buffs" list="true" clientType="BufferUnit"
+			macro="BufferUnit" />
+	</macro>
+
+
+
+
+
+	<!-- 职业 -->
+	<macro id="VocationSkill" comment="职业技能">
+		<field type="Integer" name="vocationType" comment="职业技能类型"></field>
+		<field type="com.pwrd.war.gameserver.vocation.SkillGroup"
+			clientType="SkillGroup" name="skillGroups" list="true" comment="技能组"
+			macro="SkillGroup">
+		</field>
+		<field type="com.pwrd.war.gameserver.vocation.SkillUnit"
+			clientType="SkillUnit" name="skillUnits" list="true" comment="基本技能"
+			macro="SkillUnit">
+		</field>
+	</macro>
+
+	<macro id="SkillGroup" comment="技能组">
+		<field type="Integer" name="number" comment="技能组编号"></field>
+		<field type="Boolean" name="choose" comment="是否被选中"></field>
+		<field type="String" name="name" comment="技能组名"></field>
+		<field type="String" name="skillSn1" comment="技能sn1"></field>
+		<field type="Integer" name="skillRank1" comment="技能等级1"></field>
+		<field type="String" name="skillSn2" comment="技能sn2"></field>
+		<field type="Integer" name="skillRank2" comment="技能等级2"></field>
+		<field type="String" name="skillSn3" comment="技能sn3"></field>
+		<field type="Integer" name="skillRank3" comment="技能等级3"></field>
+		<field type="String" name="skillSn4" comment="技能sn4"></field>
+		<field type="Integer" name="skillRank4" comment="技能等级4"></field>
+	</macro>
+	<macro id="SkillUnit" comment="技能单元">
+		<field type="String" name="skillSn" comment="技能sn"></field>
+		<field type="Integer" name="skillRank" comment="技能等级"></field>
+	</macro>
+
+	<macro id="FormPosition" comment="阵型位置">
+		<field type="String" name="petSn" comment="武将sn"></field>
+		<field type="Integer" name="position" comment="位置"></field>
+	</macro>
+
+	<macro id="FormUnit" comment="阵型单元">
+		<field type="String" name="formSn" comment="阵型sn">
+		</field>
+		<field type="Integer" name="formLevel" comment="阵型等级">
+		</field>
+		<field type="Boolean" name="valid" comment="阵型是否启用">
+		</field>
+		<field type="com.pwrd.war.gameserver.form.FormPosition"
+			clientType="FormPosition" name="formPositions" list="true" comment="阵型位置"
+			macro="FormPosition">
+		</field>
+		<field type="String" name="petSns" list="true" comment="武将技序列">
+		</field>
+	</macro>
+
+	<macro id="PetOrder" comment="武将技排序">
+		<field type="String" name="petSn" comment="武将sn">
+		</field>
+		<field type="String" name="skillSn" comment="武将技sn">
+		</field>
+	</macro>
+
+
+
+	<macro id="MonsterInfo" comment="明雷的简略信息">
+		<field type="String" name="monsterUUID" comment="明雷UUID"></field>
+		<field type="String" name="monsterSn" comment="明雷ID"></field>
+		<field type="String" name="name" comment="明雷名字"></field>
+		<field type="String" name="skeletonId" comment="骨骼"></field>
+		<field type="Integer" name="skeletonIdDirect" comment="骨骼朝向"></field>
+		<field type="Integer" name="triggerType" comment="触发类型"></field>
+		<field type="Integer" name="triggerX" comment="触发范围x"></field>
+		<field type="Integer" name="triggerY" comment="触发范围y"></field>
+		<field type="String" name="sceneId" comment="场景ID"></field>
+		<field type="Integer" name="lineNo" comment="分线号"></field>
+		<field type="Integer" name="x" comment="刷新位置x坐标"></field>
+		<field type="Integer" name="y" comment="刷新位置y坐标"></field>
+		<field type="Integer" name="nowX" comment="当前y坐标"></field>
+		<field type="Integer" name="nowY" comment="当前y坐标"></field>
+		<field type="Integer" name="toX" comment="目标位置x"></field>
+		<field type="Integer" name="toY" comment="目标位置y"></field>
+		<field type="Integer" name="speed" comment="速度"></field>
+		<field type="Integer" name="moveType"
+			comment="移动类型 1、固定位置不移动  2、一定范围内移动，参数为范围半径 3、固定路线巡逻 4、移动到指定位置后不动"></field>
+		<field type="Integer" name="allHp" comment="总hp"></field>
+		<field type="Integer" name="curHp" comment="当前hp"></field>
+	</macro>
+
+	<macro id="MallInfo" comment="商店信息">
+		<field type="String" name="itemSn" comment="商品sn"></field>
+		<field type="Integer" name="price" comment="价格"></field>
+		<field type="Integer" name="currencyType" comment="货币类型"></field>
+		<field type="Integer" name="number" comment="数量"></field>
+	</macro>
+
+	<macro id="RedeemInfo" comment="回购物品信息">
+		<field type="Integer" name="flag" comment="1增加 0列表 -1删除"></field>
+		<field type="String" name="uuid" comment="物品uuid"></field>
+		<field type="String" name="itemSn" comment="商品sn"></field>
+		<field type="Integer" name="price" comment="价格"></field>
+		<field type="Integer" name="currencyType" comment="货币类型"></field>
+		<field type="Integer" name="number" comment="数量"></field>
+		<field type="Long" name="sellTime" comment="卖出时间"></field>
+	</macro>
+
+
+	<macro id="Buffer" comment="buff改变消息">
+		<field type="String" name="bufferSn" comment="bufferId"></field>
+		<field type="String" name="bufferName" comment="buffer名称"></field>
+		<field type="Integer" name="bufferType" comment="buffer类型"></field>
+		<field type="Integer" name="usedNumber" comment="可使用的次数"></field>
+		<field type="Long" name="bufferTime" comment="buffer持续时间"></field>
+		<field type="String" name="bufferIcon" comment="buffer图标"></field>
+ 		<field type="String" name="bufferDescription" comment="buffer描述"></field>
+		<field type="Double" name="value" comment="数值"></field>
+		<field type="String" name="ext" comment="附加值"></field>
+		<field type="Integer" name="bigType" comment="大类型"></field>
+	</macro>
+
+
+	<macro id="RepInfoList" comment="用户副本信息">
+		<field type="String" name="uuid" comment="副本uuid"></field>
+		<field type="String" name="repId" comment="副本id"></field>
+		<field type="Integer" name="repType" comment="副本类型"></field>
+		<field type="Integer" name="flag" comment="副本标志 1已通过  0已开启未通过  -1未开启"></field>
+		<field type="String" name="repName" comment="副本名称"></field>
+		<field type="Integer" name="num" comment="当天进入次数"></field>
+		<field type="Integer" name="score" comment="过关评价"></field>
+		<field type="Boolean" name="questFlag" comment="是否有当前任务"></field>
+	</macro>
+
+	<macro id="AgainstRepUnitInfo" comment="每个战斗单位获取经验">
+		<!-- <field type="String" name="uuid" comment=""></field> -->
+		<field type="String" name="roleName" comment="角色名"></field>
+		<field type="Integer" name="addExp" comment="获得经验"></field>
+	</macro>
+	<macro id="AgainstRepItemInfo" comment="每次战斗获取的物品">
+		<field type="String" name="itemName" comment="物品名称"></field>
+		<field type="Integer" name="bagId" comment="背包id"></field>
+		<field type="Integer" name="index" comment="索引"></field>
+		<field type="String" name="itemSn" comment="sn"></field>
+		<field type="Integer" name="count" comment="数量"></field>
+	</macro>
+	<macro id="AgainstRepResultInfo" comment="副本评价奖励">
+		<field type="Boolean" name="haveThis" comment="是否有副本评价奖励"></field>
+		<field type="Integer" name="coins" comment="铜钱"></field>
+		<field type="Integer" name="exp" comment="经验"></field>
+		<field type="Integer" name="see" comment="阅历"></field>
+		<field type="Integer" name="gold" comment="奖励元宝"></field>
+		<field type="com.pwrd.war.gameserver.rep.against.AgainstRepItemInfo"
+			name="repItems" comment="物品集合" list="true" macro="AgainstRepItemInfo"></field>
+		<field type="com.pwrd.war.gameserver.rep.against.AgainstRepUnitInfo"
+			name="repUnits" comment="每个战斗单位获取经验" list="true" macro="AgainstRepUnitInfo"></field>
+	</macro>
+
+	<macro id="PetInformation" comment="武将基本信息">
+		<field type="String" name="uuid" comment="武将的唯一标识"></field>
+		<field type="String" name="petSn" comment="武将SN"></field>
+		<field type="String" name="name" comment="武将名称"></field>
+		<field type="Integer" name="sex" comment="性別"></field>
+		<field type="Integer" name="vocation" comment="职业"></field>
+		<field type="String" name="skeltonId" comment="骨骼"></field>
+		<field type="Integer" name="level" comment="等級"></field>
+		<field type="Boolean" name="inBattle" comment="是否出战"></field>
+	</macro>
+
+
+	<macro id="EquipmentInformation" comment="装备的基本信息">
+		<field type="String" name="sn" comment="装备的唯一标识"></field>
+		<field type="String" name="battleProps" comment="(战斗属性)"></field>
+		<field type="String" name="feature" comment="(强化属性)"></field>
+	</macro>
+
+
+	<!-- 战斗相关对象 -->
+	<macro id="FightRoleInfo" comment="战斗单元信息">
+		<field type="String" name="roleSn" comment="角色编号"></field>
+		<field type="String" name="roleName" comment="角色名称"></field>
+		<field type="String" name="skeletonSn" comment="角色骨骼"></field>
+		<field type="Integer" name="initMorale" comment="初始士气"></field>
+		<field type="Integer" name="line" comment="角色初始所在线"></field>
+		<field type="Integer" name="initPos" comment="角色初始位置"></field>
+		<field type="Integer" name="formPos" comment="角色阵型位置"></field>
+		<field type="Integer" name="initHp" comment="角色初始血量"></field>
+		<field type="Integer" name="finalHp" comment="角色战斗后血量"></field>
+		<field type="Integer" name="maxHp" comment="角色最大血量"></field>
+		<field type="Boolean" name="isAttack" comment="是否是进攻方"></field>
+		<field type="Boolean" name="isRemote" comment="是否是远程攻击"></field>
+		<field type="Integer" name="index" comment="角色在战场中的编号"></field>
+		<field type="Integer" name="roleType" comment="角色类型，人物1，武将16，怪物256，障碍8"></field>
+		<field type="Integer" name="exp" comment="结束后经验奖励"></field>
+		<field type="Integer" name="money" comment="结束后金钱奖励"></field>
+		<field type="Integer" name="level" comment="角色等级"></field>
+		<field type="Integer" name="star" comment="角色星级"></field>
+		<field type="Integer" name="gender" comment="角色性别"></field>
+		<field type="String" name="attackedAnim" comment="受击动画"></field>
+		<field type="String" name="castAnim" comment="弹道动画"></field>
+		<field type="String" name="vocationAnim" comment="职业特性弹道动画"></field>
+		<field type="Boolean" name="isVisible" comment="初始时是否可见"></field>
+		<field type="Integer" name="maxMorale" comment="最大士气"></field>
+		<field type="Integer" name="skillMorale" comment="技能士气"></field>
+		<field type="Integer" name="belongs" comment="所属的角色编号，对障碍、召唤类型有效"></field>
+	</macro>
+	
+	<macro id="FightAction" comment="回合战报">
+		<field type="Integer" name="round" comment="回合数"></field>
+		<field type="com.pwrd.war.gameserver.fight.domain.FightChangeLineAction"
+			name="changeLines" comment="换线消息" list="true" clientType="FightChangeLineAction"
+			macro="FightChangeLineAction"></field>
+		<field type="com.pwrd.war.gameserver.fight.domain.FightLockAction"
+			name="superSkills" comment="锁屏武将技消息" list="true" clientType="FightLockAction"
+			macro="FightLockAction"></field>
+		<field type="com.pwrd.war.gameserver.fight.domain.FightUnitAction"
+			name="roleActions" comment="其他用户动作消息" list="true" clientType="FightUnitAction"
+			macro="FightUnitAction"></field>
+		<field type="com.pwrd.war.gameserver.fight.domain.FightBuffInfo"
+			name="areaBuffs" comment="区域buff变化消息" list="true" clientType="FightBuffInfo"
+			macro="FightBuffInfo"></field>
+	</macro>
+
+	<macro id="FightChangeLineAction" comment="角色换线消息">
+		<field type="Integer" name="index" comment="角色编号"></field>
+		<field type="Integer" name="oldLine" comment="角色原线路"></field>
+		<field type="Integer" name="newLine" comment="角色新线路"></field>
+		<field type="Integer" name="newPosition" comment="角色新位置"></field>
+		<field type="com.pwrd.war.gameserver.fight.domain.FightBuffInfo"
+			name="buffers" comment="换线产生的buff" list="true" clientType="FightBuffInfo"
+			macro="FightBuffInfo"></field>
+	</macro>	
+
+	<macro id="FightBuffInfo" comment="战斗产生的buff变化">
+		<field type="Integer" name="index" comment="角色编号"></field>
+		<field type="Integer" name="buffSn" comment="buff编号（8位）"></field>
+		<field type="Integer" name="type" comment="动作类型"></field>
+		<field type="Integer" name="targetPos" comment="区域buff位置"></field>
+		<field type="Integer" name="targetLine" comment="区域buff所在线"></field>
+		<field type="Integer" name="oldBuffSn" comment="buff uuid"></field>
+	</macro>
+
+	<macro id="FightLostItem" comment="战斗掉落物品">
+		<field type="String" name="sn" comment="掉落物品sn"></field>
+		<field type="Integer" name="num" comment="掉落数量"></field>
+	</macro>
+	
+	<macro id="FightLockAction" comment="用户锁屏动作消息">
+		<field type="Integer" name="unitIndex" comment="单元编号"></field>
+		<field type="Integer" name="actionType" comment="动作类型"></field>
+		<field type="Integer" name="skillSn" comment="技能编号"></field>
+		<field type="Integer" name="skillTarget" comment="技能目标点"></field>
+		<field type="com.pwrd.war.gameserver.fight.domain.FightLockTargetInfo"
+			name="targets" comment="目标信息" list="true" clientType="FightLockTargetInfo"
+			macro="FightLockTargetInfo"></field>
+		<field type="com.pwrd.war.gameserver.fight.domain.FightBuffInfo"
+			name="buffers" comment="用户动作产生的buff" list="true" clientType="FightBuffInfo"
+			macro="FightBuffInfo"></field>
+	</macro>
+	
+	<macro id="FightUnitAction" comment="用户动作消息">
+		<field type="Integer" name="unitIndex" comment="单元编号"></field>
+		<field type="Integer" name="actionType" comment="动作类型"></field>
+		<field type="Integer" name="spd" comment="移动速度"></field>
+		<field type="Integer" name="curPos" comment="回合结束时位置"></field>
+		<field type="Integer" name="curHp" comment="回合结束时血量"></field>
+		<field type="Integer" name="skillSn" comment="技能编号"></field>
+		<field type="Integer" name="skillTarget" comment="技能目标点"></field>
+		<field type="Boolean" name="skillEnd" comment="技能是否结束"></field>
+		<field type="com.pwrd.war.gameserver.fight.domain.FightTargetInfo"
+			name="targets" comment="目标信息" list="true" clientType="FightTargetInfo"
+			macro="FightTargetInfo"></field>
+		<field type="com.pwrd.war.gameserver.fight.domain.FightBuffInfo"
+			name="buffers" comment="用户动作产生的buff" list="true" clientType="FightBuffInfo"
+			macro="FightBuffInfo"></field>
+		<field type="Integer" name="curMorale" comment="回合结束时士气"></field> 
+	</macro>
+	
+	<macro id="FightLockTargetInfo" comment="锁屏技能目标信息">
+		<field type="Integer" name="unitIndex" comment="单元编号"></field>
+		<field type="Integer" name="type" comment="命中类型(0命中，1暴击，2未命中)"></field>
+		<field type="Integer" name="hpLost" comment="血量减少"></field>
+		<field type="Boolean" name="isDead" comment="是否死亡"></field>
+		<field type="Integer" name="backDistance" comment="击退距离"></field>
+		<field type="Integer" name="curPos" comment="当前位置(击退后)"></field>
+	</macro>
+	
+	<macro id="FightTargetInfo" comment="技能目标信息">
+		<field type="Integer" name="unitIndex" comment="单元编号"></field>
+		<field type="Integer" name="type" comment="命中类型(0命中，1暴击，2未命中)"></field>
+		<field type="Integer" name="hpLost" comment="血量减少"></field>
+	</macro>
+	
+	<!-- 
+	<macro id="RolePosition" comment="战斗过程中角色的位置">
+		<field type="String" name="roleSn" comment="角色Sn"></field>
+		<field type="String" name="roleName" comment="角色名"></field>
+		<field type="Integer" name="position" comment="位置"></field>
+		<field type="Integer" name="line" comment="线路 ：线路为3条，分别为：0，1，2"></field>
+		<field type="Integer" name="hp" comment="血量"></field>
+		<field type="String" name="skeletonSn" comment="骨骼sn"></field>
+		<field type="Boolean" name="isAttack" comment="是否是进攻方"></field>
+		<field type="Integer" name="maxHp" comment="最大血量"></field>
+		<field type="Integer" name="roleType" comment="角色类型   人物 :1      武将 :16  怪物 :256"></field>
+		<field type="Integer" name="index" comment="角色在战场中的编号"></field>
+	</macro>
+
+	<macro id="RoleAction" comment="角色战报消息">
+		<field type="String" name="roleSn" comment="角色sn"></field>
+		<field type="com.pwrd.war.gameserver.buff.domain.BufferUnit"
+			name="bufferUnits" comment="buffs" list="true" clientType="BufferUnit"
+			macro="BufferUnit" />
+		<field type="com.pwrd.war.gameserver.fight.domain.HPInfo" name="hPInfos"
+			comment="战斗掉血信息" list="true" clientType="HPInfo" macro="HPInfo" />
+		<field type="Integer" name="type" comment="行动类型，类型见下" />
+		<field type="String" name="action" comment="行动对象，具体数据参考下面格式，每个属性都是字符串，并用逗号分隔"></field>
+	</macro>
+
+	<macro id="HPInfo" comment="掉血信息">
+		<field type="Integer" name="type" comment="0表示正常，1表示暴击，2表示闪避"></field>
+		<field type="Integer" name="lostHp" comment="战斗丢失血量"></field>
+	</macro>
+	
+	<macro id="BattleRoleResult" comment="战斗结束结果">
+		<field type="String" name="roleSn" comment="角色Sn"></field>
+		<field type="Integer" name="exp" comment="增加的经验"></field>
+		<field type="Integer" name="money" comment="钱"></field>
+	</macro>
+	 -->
+
+	<!-- 
+		行动类型对应的行对对象格式：
+		
+		行动类型1(死亡)，行动格式为空
+		行动类型2(击退)，行动格式为"上次位置,当前位置"
+		行动类型3(仅攻击)，行动格式为"技能编号,cast(多个动画用分号分隔),弹道,技能动画,技能特效,弹道目标位置"
+		行动类型4(仅移动)，行动格式为"上回合位置,速度"
+		行动类型5(被击)，行动格式为空
+		行动类型6(无动作)，行动格式为空
+		行动类型7(移动并且攻击)，行动格式为"速度,上次位置,当前位置,技能编号,cast(多个动画用分号分隔),弹道,技能动画,技能特效,弹道目标位置"
+		行动类型8(换线)，行动格式为"目标原线,目标新线,目标新位置"
+		行动类型10(技能效果使用)，行动格式为"技能编号,技能效果,目标位置"
+		行动类型11(仅锁屏攻击)，行动格式为"技能编号,技能动画,技能特效,弹道目标位置,技能目标编号及掉血(sn_hp:sn_hp:...)"
+		行动类型12(移动并且锁屏攻击)，行动格式为"速度,上次位置,当前位置,技能编号,技能动画,技能特效,弹道目标位置,技能目标编号及掉血(sn_hp:sn_hp:...)"
+	 -->
+
+	<macro id="SecretShopInfo" comment="神秘商店信息">
+		<field type="String" name="itemSn" comment="商品sn"></field>
+		<field type="Integer" name="price" comment="价格"></field>
+		<field type="Integer" name="currencyType" comment="货币类型"></field>
+		<field type="Integer" name="number" comment="数量"></field>
+		<field type="Integer" name="position" comment="位置"></field>
+		<field type="Boolean" name="buyFlag" commnet="是否已经购买"></field>
+	</macro>
+	<macro id="friendInfo" comment="好友信息">
+		<field type="String" name="friendUUID" comment="好友UUID" />  
+		<field type="String" name="friendName" comment="好友名字" />  
+		<field type="Integer" name="friendLevel" comment="好友等级" />  
+		<field type="Integer" name="sex" comment="性别" /> 
+		<field type="Integer" name="vocation" comment="职业" />  
+		<field type="Integer" name="friendExp" comment="好友经验" />  
+		<field type="String" name="friendSign" comment="好友签名" />  
+		<field type="String" name="mapId" comment="所在地图" />  
+		<field type="Integer" name="mapLine" comment="所在分线" />  
+		<field type="Boolean" name="isOnLine" comment="是否在线" />   
+		<field type="String" name="chats" comment="聊天内容" />    
+		<field type="Long" name="lastConcatTime" comment="最近联系时间" />  
+		<field type="Boolean" name="isFriend" comment="是否是好友" />
+		<field type="Integer" name="waterFlag" comment="是否已经浇水 -1未开放 0未浇 1已浇" />      
+		<field type="Long" name="lastWaterTime" comment="上次浇水时间" />      
+	</macro>
+	
+	<macro id="SecretShopBuyInfo" comment="神秘商店用户购买信息">
+		<field type="String" name="humanUuid" comment="用户uuid"></field>
+		<field type="String" name="humanName" comment="用户名"></field>
+		<field type="String" name="itemSn" comment="商品sn"></field>		
+	</macro>
+
+	<macro id="robberyInfo" comment="运镖者信息">
+		<field type="String" name="playerUUID" comment="夺宝者UUID" />  
+		<field type="String" name="playerName" comment="名字" />  
+		<field type="Integer" name="playerLevel" comment="等级" />  
+		<field type="Integer" name="campId" comment="所属阵营" />  
+		<field type="Short" name="robberyType" comment="运送的宝物类型1-5" />  
+		<field type="Short" name="beRobTimes" comment="被拦截次数" />  
+		<field type="String" name="robers" comment="拦截者UUID jsonarray数组" />  
+		<field type="String" name="protecterUUID" comment="护送者UUID" />  
+		<field type="String" name="protecterName" comment="护送者姓名" />  
+		<field type="Integer" name="getMoney" comment="获得铜钱奖励" />   
+		<field type="Integer" name="getPopularity" comment="获得声望奖励" />    
+		<field type="Long" name="startTime" comment="开始夺宝时间" />  
+		<field type="Long" name="endTime" comment="结束夺宝时间" />    
+	</macro>
+	
+	<macro id="arenaRoleInfo" comment="竞技场对手信息">
+		<field type="String" name="name" comment="对手名" />
+		<field type="String" name="msg" comment="吐槽" />
+		<field type="Integer" name="rank" comment="排名" />
+		<field type="Integer" name="vocation" comment="职业" />
+		<field type="Boolean" name="gender" comment="性别" />
+		<field type="String" name="uid" comment="对手id" />
+	</macro>
+	
+	<macro id="arenaChallengeHistory" comment="竞技场挑战历史记录">
+		<field type="String" name="reportid" comment="战报编号" />
+		<field type="String" name="targetid" comment="对手UUID" />
+		<field type="String" name="name" comment="对手名" />
+		<field type="Boolean" name="win" comment="是否战胜对手" />
+		<field type="Boolean" name="active" comment="是否主动挑战" />
+		<field type="Integer" name="rank" comment="当前排名" />
+		<field type="Integer" name="rankUp" comment="排名上升" />
+		<field type="Long" name="time" comment="距当前时间(秒)" />
+	</macro>
+	
+	<macro id="arenaTopHistory" comment="竞技场巅峰之战记录">
+		<field type="String" name="reportid" comment="战报编号" />
+		<field type="String" name="winid" comment="胜利方UUID" />
+		<field type="String" name="winname" comment="胜利方名" />
+		<field type="String" name="lostid" comment="失败方UUID" />
+		<field type="String" name="lostname" comment="失败方名" />
+	</macro>
+	
+	<macro id="arenaRanking" comment="竞技场排行榜">
+		<field type="String" name="id" comment="用户UUID" />
+		<field type="String" name="name" comment="用户名" />
+		<field type="Integer" name="level" comment="等级" />
+		<field type="Integer" name="power" comment="战力" />
+		<field type="Integer" name="ranking" comment="排行榜名次" />
+	</macro>
+	
+	<macro id="arenaWinRanking" comment="竞技场连胜排行榜">
+		<field type="String" name="id" comment="用户UUID" />
+		<field type="String" name="name" comment="用户名" />
+		<field type="Integer" name="level" comment="等级" />
+		<field type="Integer" name="power" comment="战力" />
+		<field type="Integer" name="win" comment="连胜次数" />
+		<field type="Integer" name="ranking" comment="排行榜名次" />
+	</macro>
+	
+	<macro id="arenaAchievement" comment="竞技场成就">
+		<field type="Integer" name="aid" comment="成就编号" />
+		<field type="Boolean" name="finished" comment="是否完成成就" />
+		<field type="Integer" name="money" comment="金钱奖励" />
+		<field type="Integer" name="shengwang" comment="声望奖励" />
+		<field type="Integer" name="winneed" comment="需要连胜次数" />
+		<field type="Integer" name="wincurrent" comment="当前连胜次数" />
+		<field type="Integer" name="totalwinneed" comment="需要累积胜利次数" />
+		<field type="Integer" name="totalwincurrent" comment="当前累积胜利次数" />
+		<field type="Integer" name="rankneed" comment="需要竞技场排名" />
+		<field type="Integer" name="rankcurrent" comment="当前竞技场排名" />
+	</macro>
+	
+	<macro id="heroWarHeroInfo" comment="主将争夺战主将信息">
+		<field type="String" name="playerUUID" comment="" />
+		<field type="String" name="playerName" comment="" />
+		<field type="Integer" name="vocation" comment="" />
+		<field type="Integer" name="sex" comment="" /> 
+		<field type="Integer" name="level" comment="" />
+		<field type="Integer" name="camp" comment="" />
+		<field type="Integer" name="pos" comment="序号" /> 
+	</macro>
+	<macro id="campWarTransportShortInfo" comment="国战运镖简短信息">
+		<field type="String" name="playerUUID" comment="玩家UUID" />
+		<field type="String" name="playerName" comment="玩家名字" />  
+		<field type="Integer" name="camp" comment="所属国家" />
+		<field type="Integer" name="robCampId" comment="掠夺国家" />
+		<field type="Integer" name="speed" comment="每秒运送速度" /> 
+		<field type="Integer" name="hasDist" comment="已运送距离" /> 
+		<field type="Integer" name="allDist" comment="总需要运送距离" />   
+	</macro>
+	<macro id="campWarHeroInfo" comment="主将争夺战主将信息">
+		<field type="String" name="playerUUID" comment="" />
+		<field type="String" name="playerName" comment="" />
+		<field type="Integer" name="vocation" comment="" />
+		<field type="Integer" name="sex" comment="" /> 
+		<field type="Integer" name="level" comment="" />
+		<field type="Integer" name="camp" comment="" />
+		<field type="Integer" name="pos" comment="序号" /> 
+		<field type="Boolean" name="getBuff" comment="是否产生了buff" />
+		<field type="Integer" name="remainTime" comment="剩余时间，秒" />
+	</macro>
+	<macro id="campWarTransportInfo" comment="国战运镖详细信息">
+		<field type="String" name="playerUUID" comment="玩家UUID" />
+		<field type="String" name="playerName" comment="玩家名字" />  
+		<field type="Integer" name="camp" comment="所属国家" />
+		<field type="Integer" name="sex" comment="性别" />
+		<field type="Integer" name="vocation" comment="职业" /> 
+		<field type="Integer" name="robScore" comment="运送的资源" /> 
+		<field type="Integer" name="speed" comment="每秒运送速度" /> 
+		<field type="Integer" name="hasDist" comment="已运送距离" /> 
+		<field type="Integer" name="allDist" comment="总需要运送距离" /> 
+		<field type="Integer" name="bRobTimes" comment="被拦截次数" /> 
+		<field type="String" name="robberIds" comment="拦截者id列表" /> 
+	</macro>
+	
+	<macro id="familyInfoList" comment="家族信息列表">
+		<field type="String" name="id" comment="家族id" />
+		<field type="String" name="name" comment="家族名称" />
+		<field type="Integer" name="level" comment="家族等级" />
+		<field type="Integer" name="rank" comment="排名" />
+		<field type="String" name="leaderName" comment="族长名称" />
+		<field type="Integer" name="memberNum" comment="成员数量" />
+		<field type="Integer" name="maxMemberNum" comment="成员上限" />
+		<field type="Integer" name="isInApply" comment="是否申请了该帮派:0否1是" />
+	</macro>
+	
+	<macro id="familyLog" comment="家族日志">
+		<field type="String" name="charId" comment="角色id" />
+		<field type="String" name="name" comment="角色名称" />
+		<field type="Integer" name="popularity" comment="贡献" />
+		<field type="Integer" name="familyExp" comment="家族增加的经验" />
+		<field type="Long" name="time" comment="贡献时间" />
+	</macro>
+	
+	<macro id="familyHumanInfos" comment="家族成员信息列表">
+		<field type="String" name="charId" comment="角色id" />
+		<field type="String" name="name" comment="角色名称" />
+		<field type="Integer" name="level" comment="等级" />
+		<field type="Integer" name="sex" comment="性别" />
+		<field type="Integer" name="familyRole" comment="职务" />
+		<field type="Integer" name="contestRank" comment="竞技场排名" />
+		<field type="Integer" name="dayContribute" comment="每日贡献" />
+		<field type="Integer" name="totalContribute" comment="累计贡献" />
+		<field type="Long" name="lastLoginTime" comment="最后登陆时间" />
+		<field type="Integer" name="isOnline" comment="是否在线:0否1是" />
+	</macro>
+	
+	<macro id="familyApplyHumanInfos" comment="申请家族成员信息列表">
+		<field type="String" name="id" comment="角色id" />
+		<field type="String" name="name" comment="角色名称" />
+		<field type="Integer" name="sex" comment="性别" />
+		<field type="Integer" name="level" comment="等级" />
+		<field type="Integer" name="contestRank" comment="竞技场排名" />
+		<field type="Long" name="applyTime" comment="申请时间" />
+	</macro>
+	
+	<macro id="giftBagInfoList" comment="礼包信息列表">
+		<field type="String" name="id" comment="礼包实例id" />
+		<field type="String" name="giftId" comment="礼包模版id" />
+		<field type="String" name="name" comment="礼包名称" />
+		<field type="String" name="img" comment="礼包图标" />
+		<field type="String" name="desc" comment="礼包描述" />
+	</macro>
+	
+	<macro id="JingjiuInfo" comment="敬酒信息列表">
+		<field type="Integer" name="id" comment="id：1美酒  2佳酿 3陈年老窖" />
+		<field type="String" name="name" comment="name" />
+		<field type="Integer" name="vipLevel" comment="需要vip等级" />
+		<field type="Integer" name="coin" comment="需要铜钱" />
+		<field type="Integer" name="gold" comment="需要元宝" />
+		<field type="Integer" name="popularity" comment="获得声望" />
+		<field type="Integer" name="times" comment="敬酒次数" />
+	</macro>
+	
+	<macro id="CommonWarcraft" comment="兵法信息">
+		<field type="String" name="id" comment="兵法实例id"></field>
+		<field type="String" name="warcraftId" comment="兵法SN"></field>
+		<field type="Integer" name="bagId" comment="背包id"></field>
+		<field type="Integer" name="index" comment="背包中的格子序号"></field>
+		<field type="String" name="wearerId" comment="穿戴着ID"></field>
+		<field type="String" name="desc" comment="属性json字符串，每个兵法的实例属性自定，一般为json格式"></field>
+	</macro>
+	
+	<macro id="PrizeWarcraft" comment="奖励兵法信息">
+		<field type="String" name="warcraftId" comment="兵法SN"></field>
+		<field type="Integer" name="needGrasp" comment="所需领悟度"></field>
+		<field type="String" name="desc" comment="属性json字符串，每个兵法的实例属性自定，一般为json格式"></field>
+	</macro>
+	
+	<macro id="humanTreeWaterInfo" comment="返回浇水记录">
+		<field type="String" name="charId" comment="浇水者"></field>
+		<field type="String" name="charName" comment="浇水者名字"></field>
+		<field type="Long" name="waterTime" comment="浇水时间"></field>
+	</macro>
+	
+	<macro id="SecretShopPreciousInfo" comment="神秘商店珍贵物品">
+		<field type="String" name="itemSn" comment="物品Sn"></field>
+		<field type="Integer" name="price" comment="价格"></field>
+		<field type="Integer" name="currencyType" comment="货币类型"></field>
+		<field type="Integer" name="seq" comment="显示顺序"></field>
+	</macro>
+	
+	<macro id="XinghunXilianInfo" comment="星魂批量洗练结果">
+		<field type="Integer" name="resultId" comment="结果ID"></field>
+		<field type="String" name="prop1" comment="属性1名称"></field>
+		<field type="String" name="prop2" comment="属性2名称"></field>
+		<field type="String" name="prop3" comment="属性3名称"></field>
+		<field type="Double" name="propValue1" comment="属性1的值"></field>
+		<field type="Double" name="propValue2" comment="属性2的值"></field>
+		<field type="Double" name="propValue3" comment="属性3的值"></field>
+		<field type="Integer" name="propQualtity1" comment="属性1的品质 1红2橙3紫4蓝5绿"></field>
+		<field type="Integer" name="propQualtity2" comment="属性2的品质"></field>
+		<field type="Integer" name="propQualtity3" comment="属性3的品质"></field>
+		
+	</macro>
+	<macro id="WorldWarPlayerInfo" comment="阵营战玩家信息">
+		<field type="String" name="playerUUID" comment="玩家UUID"></field>
+		<field type="String" name="playerName" comment="名字"></field>
+		<field type="Integer" name="camp" comment="国家"></field>
+		<field type="Integer" name="sex" comment="性别"></field>
+		<field type="Integer" name="vocation" comment="职业"></field>
+		<field type="Integer" name="level" comment="等级"></field>
+		<field type="Integer" name="warTypeValue" comment="势力范围"></field>
+		<field type="Integer" name="reginValue" comment="等级范围"></field>
+		<field type="Integer" name="maxComWin" comment="最高连胜次数"></field>
+		<field type="Integer" name="combWin" comment="连胜次数"></field>
+		<field type="Integer" name="winTimes" comment="胜利次数"></field>
+		<field type="Integer" name="lossTimes" comment="失败次数"></field>
+		<field type="Integer" name="getCoins" comment="获得铜钱 "></field>
+		<field type="Integer" name="getProp" comment="获得声望"></field>
+		<field type="Integer" name="allGetCoins" comment="累计铜钱 "></field>
+		<field type="Integer" name="allGetProp" comment="累计声望"></field>
+		<field type="Integer" name="guwu" comment="鼓舞进度"></field>
+		<field type="Boolean" name="autoWar" comment="自动参站"></field>
+		<field type="Integer" name="rank" comment="连胜排行"></field>
+		<field type="Boolean" name="canBattle" comment="是否在战斗"></field>
+	</macro>
+</macros>

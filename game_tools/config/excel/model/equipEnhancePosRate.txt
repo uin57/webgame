@@ -1,0 +1,6 @@
+int positionId;									//装备位置ID
+int lelve;										//装备等级
+String positionName;							//装备类型名称
+double atkRate;[notNull=false,minValue=0]		//攻击系数
+double defRate;[notNull=falsem,inValue=0]		//防御系数
+double hpRate;[notNull=false,minValue=0]		//生命系数

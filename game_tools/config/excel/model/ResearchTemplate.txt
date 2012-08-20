@@ -1,0 +1,22 @@
+int level;[notNull=false;minValue=0]			//等级
+int addMaxHp;[notNull=false;minValue=0]		//生命上限（强体术）
+String addMaxHpDesc;[notNull=false]			//描述
+int addMaxHpNeed;[notNull=false;minValue=0]
+int addAtk;[notNull=false;minValue=0]			//	攻击（兵器冶炼）
+String addAtkDesc;[notNull=false]			//描述
+int addAtkNeed;[notNull=false;minValue=0]
+int addDef;[notNull=false;minValue=0]		//	防御（护甲术）
+String addDefDesc;[notNull=false]			//描述
+int addDefNeed;[notNull=false;minValue=0]
+int addShortAtk;[notNull=false;minValue=0]		//	近战攻击（近战学）
+String addShortAtkDesc;[notNull=false]			//描述
+int addShortAtkNeed;[notNull=false;minValue=0]
+int addShortDef;[notNull=false;minValue=0]		//	近战防御（重甲冶炼）
+String addShortDefDesc;[notNull=false]			//描述
+int addShortDefNeed;[notNull=false;minValue=0]
+int addRemoteAtk;[notNull=false;minValue=0]		//	远程攻击（弹药学）
+String addRemoteAtkDesc;[notNull=false]			//描述
+int addRemoteAtkNeed;[notNull=false;minValue=0]
+int addRemoteDef;[notNull=false;minValue=0]		//	远程防御（轻甲冶炼）
+String addRemoteDefDesc;[notNull=false]			//描述
+int addRemoteDefNeed;[notNull=false;minValue=0]

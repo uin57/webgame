@@ -1,0 +1,3 @@
+int bagType;	//背包类型
+int index;		//索引
+int gold;		//需要的元宝

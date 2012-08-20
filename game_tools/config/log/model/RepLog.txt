@@ -1,0 +1,5 @@
+message com.pwrd.war.logserver.model.RepLog(
+	String repId;	//完成副本id
+	int curLevel;	//用户等级
+	long completeTime;// 完成时间
+)

@@ -1,0 +1,6 @@
+String giftId; [notNull=true]			// 礼包id
+String giftName; [notNull=true]		// 礼包名称
+Integer cycle; [notNull=true]	// 生命周期(-1为永久)
+String img; [notNull=true]	// 礼包图标
+String desc; [notNull=true]		// 礼包描述
+String prizeId;[notNull=true]		// 奖励id

@@ -1,0 +1,24 @@
+package protobuff;  
+
+option java_package = "com.pwrd.war.gameserver.battle.protobuff";
+option java_outer_classname = "BattleInitProtobuff";
+
+message RolePosition {
+  required string roleSn = 1;
+  required string roleName = 2;
+  required int32 position = 3;
+  required int32 hp = 4;
+  required string skeletonSn = 5;
+  required bool isAttack =6;
+  required int32 maxHp = 7;
+}
+
+message BattleInit{
+	required string battleSn=1;
+	required string attackMatrixID=2;
+	required string defenceMatrixID=3;
+	optional int32 chooseTime =4;
+	repeated string inValidPetSkills=5;
+	repeated RolePosition rolePositions=6;
+}
+

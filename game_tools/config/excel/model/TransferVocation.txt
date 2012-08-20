@@ -1,0 +1,11 @@
+int transferVocationSn;[notNull=true] // 转职编号
+int vocation;[notNull=true] // 职业类型
+int sex;[notNull=false]
+String name; // 转职名称
+String icon;[notNull=false] // 转职图标
+int level;[notNull=true] // 转职等级
+int needLevel;[notNull=false]	//转职时需要玩家的等级
+int needStarLevel;[minValue=0;notNull=false] // 需要星数
+int petSkillLevel;[minValue=-1;notNull=false]   // 武将技等级 
+String passiveSkills;[notNull=false]	//下一级可有的被动技能
+String learnPassSkill;[notNull=false]	//可以获得的被动技能

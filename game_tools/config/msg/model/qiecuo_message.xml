@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<messages xmlns="http://com.pwrd.war.message" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://com.pwrd.war.message message.xsd" module="qiecuo">
+	<message type="CG_QieCuo_Request_Message" comment="切磋要求">
+		<field type="String" name="sponsorPlayerUUID" comment="切磋发起者"></field>
+		<field type="String" name="sponsorPlayerName" comment="切磋发起者名称"></field>
+		<field type="String" name="bearPlayerUUID" comment="被切磋者"></field>
+		<field type="String" name="bearPlayerName" comment="被切磋者名称"></field>
+	</message>
+
+	<message type="GC_QieCuo_Request_Message" comment="切磋要求">
+		<field type="String" name="sponsorPlayerUUID" comment="切磋发起者"></field>
+		<field type="String" name="sponsorPlayerName" comment="切磋发起者名称"></field>
+		<field type="String" name="bearPlayerUUID" comment="被切磋者"></field>
+		<field type="String" name="bearPlayerName" comment="被切磋者名称"></field>
+	</message>
+
+	<message type="CG_QieCuo_Answer_Message" comment="切磋应答">
+		<field type="String" name="sponsorPlayerUUID" comment="切磋发起者"></field>
+		<field type="String" name="sponsorPlayerName" comment="切磋发起者名称"></field>
+		<field type="Integer" name="result" comment="0表示 接受切磋 ，1表示取消切磋"></field>
+		<field type="String" name="bearPlayerUUID" comment="被切磋者"></field>
+		<field type="String" name="bearPlayerName" comment="被切磋者名称"></field>
+	</message>
+
+	<message type="GC_QieCuo_Answer_Message" comment="切磋应答失败返回的消息">
+		<field type="String" name="sponsorPlayerUUID" comment="切磋发起者"></field>
+		<field type="String" name="sponsorPlayerName" comment="切磋发起者名称"></field>
+		<field type="String" name="bearPlayerUUID" comment="被切磋者"></field>
+		<field type="String" name="bearPlayerName" comment="被切磋者名称"></field>
+		<field type="Integer" name="result" comment="0表示 接受切磋 ，1表示取消切磋"></field>
+	</message>
+
+	<message type="GC_QieCuo_Result_Message" comment="切磋战报">
+		<field type="String" name="sponsorPlayerUUID" comment="切磋发起者"></field>
+		<field type="String" name="sponsorPlayerName" comment="切磋发起者名"></field>
+		<field type="String" name="bearPlayerUUID" comment="被切磋者"></field>
+		<field type="String" name="bearPlayerName" comment="被切磋者名"></field>
+		<field type="Boolean" name="isWin" comment="是否战胜"></field>
+		<field type="String" name="battleSn" comment="战场sn"></field>
+	</message>
+</messages>

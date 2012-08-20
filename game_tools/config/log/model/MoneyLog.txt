@@ -1,0 +1,8 @@
+message com.pwrd.war.logserver.model.MoneyLog(
+	int mainCurrency;// 主货币类型
+    int mainDelta  default 0;// 主货币钱数变化值
+    int mainCurrLeft;// 主货币剩余金钱
+    int altCurrency;// 辅助货币类型
+    int altDelta default 0;// 辅助货币变化值
+    int altCurrLeft;// 辅助货币剩余金钱
+)

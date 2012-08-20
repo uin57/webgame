@@ -1,0 +1,9 @@
+message com.pwrd.war.logserver.model.BasicPlayerLog(
+	String ip;// IP地址
+	int exp;// 经验
+	int rankId; // 官职ID
+	String rankName; // 官职名称
+	String sceneName; // 场景名称
+	int missionId; // 关卡ID
+	String missionName; // 关卡名称 
+)

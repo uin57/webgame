@@ -1,0 +1,5 @@
+int playerLevel;[notNull=false;minValue=0]			//玩家等级
+int collectorExp;[notNull=false;minValue=0]				//收集者获得经验
+float collectorFriendAddRate;[notNull=false;minValue=0]	//好友加成百分比
+int beCollectorExp;[notNull=false;minValue=0]			//被收集者可以获得经验
+float beCollectFriendAddRate;[notNull=false;minValue=0]	//被收集好友百分比

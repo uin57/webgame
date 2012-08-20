@@ -1,0 +1,10 @@
+message com.pwrd.war.logserver.model.ItemLog(
+    int bagId;// 包裹id
+    int bagIndex;// 在包裹中的位置索引
+    int templateId;// 道具模板ID
+    String instUUID;// 道具实例ID
+    int delta  default 0;//变化值
+    int resultCount;// 操作后的最终叠加数
+    String itemGenId;// 道具产生ID：对应ItemGenLog
+    byte[] itemData;// 道具大字段信息，用于在删除贵重道具时将道具二进制信息备份
+)

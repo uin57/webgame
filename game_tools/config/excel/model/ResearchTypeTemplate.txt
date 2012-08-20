@@ -1,0 +1,5 @@
+int researchType;[notNull=false;minValue=0]			//研究类型
+String researchName;									//研究名称
+int needLevel;[notNull=false;minValue=0]			//可见等级
+String questSn;[notNull=false]						//可见任务SN
+String icon;[notNull=false]							//图标

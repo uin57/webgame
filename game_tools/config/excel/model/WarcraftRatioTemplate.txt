@@ -1,0 +1,3 @@
+String warcraftId;[notNull=false]		//兵法ID
+Integer drop;		//掉落权重
+Integer level;		//玩家等级

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<messages xmlns="http://com.pwrd.war.message" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://com.pwrd.war.message message.xsd" module="warcraft">
+	
+	<message type="CG_REQ_WARCRAFT_INFO" comment="客户端请求玩家兵法领悟信息(包括兵法领悟阶段,兵法碎片等)">
+	</message>
+	<message type="GC_REQ_WARCRAFT_INFO" comment="服务端返回玩家兵法领悟信息(包括兵法领悟阶段,兵法碎片等)">
+		<field type="Integer" name="stage" comment="兵法领悟阶段" />
+		<field type="Integer" name="grasp" comment="领悟度" />
+		<field type="Integer" name="warcraftCoin" comment="兵法碎片" />
+		<field type="com.pwrd.war.gameserver.warcraft.model.PrizeWarcraft"
+			clientType="PrizeWarcraft" name="prizeWarcraft" comment="奖励兵法信息" list="true" macro="PrizeWarcraft">
+		</field>
+	</message>
+	<message type="CG_REQ_WARCRAFT_TEMP_INFO" comment="客户端主动请求临时兵法背包信息">
+	</message>
+	<message type="GC_WARCRAFT_TEMP_INFO" comment="客服务端返回临时兵法背包信息">
+		<field type="com.pwrd.war.gameserver.warcraft.model.CommonWarcraft"
+			clientType="CommonWarcraft" name="warcraft" comment="兵法信息数组" list="true" macro="CommonWarcraft">
+		</field>
+	</message>
+	<message type="CG_REQ_ALL_WARCRAFT_BAG_INFO" comment="客户端主动请求所有兵法背包信息">
+	</message>
+	<message type="GC_WARCRAFT_BAG" comment="返回兵法背包信息:包括兵法背包(wearerId为空)和武将兵法装备位信息">
+		<field type="String" name="uuid" comment="所属者uuid" />
+		<field type="String" name="wearerId" comment="佩戴者uuid" />
+		<field type="Short" name="bagId" comment="背包ID:8兵法背包9玩家兵法装备位10武将兵法装备位" />
+		<field type="Short" name="capacity" comment="背包的可用位置数量" />
+		<field type="com.pwrd.war.gameserver.warcraft.model.CommonWarcraft"
+			clientType="CommonWarcraft" name="warcraft" comment="兵法信息数组" list="true" macro="CommonWarcraft">
+		</field>
+	</message>
+	<message type="GC_WARCRAFT_UPDATE" comment="更新单个兵法信息，客户端受到此消息就替换原来此位置的兵法">
+		<field type="com.pwrd.war.gameserver.warcraft.model.CommonWarcraft"
+			clientType="CommonWarcraft" name="warcraft" comment="兵法信息数组" list="true" macro="CommonWarcraft">
+		</field>
+	</message> 
+	<message type="GC_REMOVE_WARCRAFT" comment="移除一个兵法">
+		<field type="Short" name="bagId" comment="包id" />
+		<field type="Short" name="index" comment="兵法在包内位置索引" />
+		<field type="String" name="wearerId" comment="佩戴者uuid" />
+	</message>
+	<message type="GC_RESET_WARCRAFT_CAPACITY" comment="重新设置兵法装备位的容量，只可能是兵法装备位">
+		<field type="Short" name="bagId" comment="包Id" />
+		<field type="String" name="wearerId" comment="佩戴者uuid" />
+		<field type="Short" name="capacity" comment="新的容量" />
+	</message>
+	<message type="CG_MOVE_WARCRAFT" comment="移动兵法，用于拖拽,合成,装备卸载动作">
+		<field type="Short" name="fromBagId" comment="来源包id" />
+		<field type="Short" name="fromIndex" comment="道具在来源背包内位置索引" />
+		<field type="Short" name="toBagId" comment="目的包id" />
+		<field type="Short" name="toIndex" comment="道具在目的包内位置索引" />
+		<field type="String" name="wearerId" comment="物品佩戴者的UUID,即当前操作的武将宠物id"></field>
+	</message>
+	<message type="CG_DROP_WARCRAFT" comment="丢弃兵法">
+		<field type="Short" name="bagId" comment="包ID" />
+		<field type="Short" name="index" comment="包内位置索引" />
+		<field type="String" name="wearerId" comment="物品佩戴者的UUID,即当前操作的武将宠物id"></field>
+	</message>
+	<message type="CG_SELL_WARCRAFT" comment="卖出兵法:只能卖出临时背包中的兵法">
+		<field type="Short" name="index" comment="临时背包内位置索引" />
+	</message>
+	<message type="CG_GRASP_WARCRAFT" comment="领悟兵法">
+		<field type="Short" name="graspType" comment="领悟类型:0普通领悟1一键领悟" />
+	</message>
+	<message type="CG_GET_WARCRAFT" comment="拾取兵法">
+		<field type="Short" name="index" comment="临时背包内位置索引" />
+	</message>
+	<message type="CG_GET_ALL_WARCRAFT" comment="一键拾取">
+	</message>
+	<message type="CG_GET_PRIZE_WARCRAFT" comment="领取奖励兵法">
+		<field type="String" name="warcraftId" comment="兵法模版id" />
+	</message>
+	<message type="CG_COMPOSE_All_WARCRAFT" comment="一键合成">
+	</message>
+	<message type="CG_SELL_All_WARCRAFT" comment="一键卖出">
+	</message>
+	<message type="GC_SELL_WARCRAFT_RESULT" comment="兵法卖出结果">
+		<field type="Integer" name="result" comment="兵法操作结果:0失败1成功" />
+		<field type="Integer" name="index" comment="兵法索引" />
+		<field type="Integer" name="price" comment="兵法价格" />
+	</message>
+	<message type="GC_PICK_WARCRAFT_RESULT" comment="兵法卖出结果">
+		<field type="Integer" name="result" comment="兵法操作结果:0失败1成功" />
+		<field type="Integer" name="index" comment="兵法索引" />
+	</message>
+	<message type="GC_GRASP_WARCRAFT_RESULT" comment="兵法领悟结果">
+		<field type="Integer" name="result" comment="兵法操作结果:0失败1成功" />
+		<field type="Integer" name="index" comment="兵法索引" />
+		<field type="com.pwrd.war.gameserver.warcraft.model.CommonWarcraft"
+			clientType="CommonWarcraft" name="warcraft" comment="兵法信息数组" list="false" macro="CommonWarcraft">
+		</field>
+		<field type="Integer" name="addGrasp" comment="增加的领悟度" />
+		<field type="Integer" name="stage" comment="当前领悟阶段" />
+		<field type="Integer" name="lastStage" comment="上一领悟阶段" />
+	</message>
+</messages>
+

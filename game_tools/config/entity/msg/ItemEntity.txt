@@ -1,0 +1,18 @@
+message com.pwrd.war.db.model.ItemEntity{
+	type = 30004;
+	java.lang.String Properties = 1;
+	java.lang.String Id = 2;
+	java.sql.Timestamp CreateTime = 3;
+	java.lang.String CharId = 4;
+	int BagId = 6;
+	int BagIndex = 7;
+	int TemplateId = 8;
+	int Overlap = 9;
+	int Bind = 10;
+	java.sql.Timestamp Deadline = 11;
+	int Deleted = 12;
+	java.sql.Timestamp DeleteDate = 13;
+	int CurEndure = 14;
+	long CoolDownTimePoint = 15;
+	int Star = 16;
+}

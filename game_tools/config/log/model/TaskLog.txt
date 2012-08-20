@@ -1,0 +1,3 @@
+message com.pwrd.war.logserver.model.TaskLog(
+   int taskId;// 任务id
+)

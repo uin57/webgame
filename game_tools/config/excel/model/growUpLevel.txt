@@ -1,0 +1,2 @@
+Integer grow;		//成长
+Integer money;		//需要钱币

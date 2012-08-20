@@ -1,0 +1,8 @@
+int constellationId;//星座id
+String constellationName;//星座名称
+int starNumber;//第几星
+String monsterId;//明雷id
+String prizeId;//掉落包id
+int prizePro;//掉包概率
+int exp;[notNull=false;minValue=0] //获得经验
+String xinghunSn;[notNull=false] //获得星魂sn

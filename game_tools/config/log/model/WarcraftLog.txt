@@ -1,0 +1,6 @@
+message com.pwrd.war.logserver.model.WarcraftLog(
+	int flag;		//1获得 2删除
+	long time;		//获得时间
+	String warcraftId;//兵法id
+	String warcraftName;//兵法名称
+)

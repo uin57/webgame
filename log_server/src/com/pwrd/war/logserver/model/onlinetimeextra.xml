@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN"
+          "http://www.ibatis.com/dtd/sql-map-2.dtd" >
+<sqlMap>
+    <typeAlias alias="online_time_log" type="com.pwrd.war.logserver.model.OnlineTimeLog" />
+    <update id="update_online_time_log" parameterClass="online_time_log">
+update $tableName$ set
+level=#level#,
+minute=#minute#,
+total_minute=#totalMinute#,
+last_login_time=#lastLoginTime#,
+last_logout_time=#lastLogoutTime#,
+param=#param#
+where char_id=#charId#
+    </update>
+    
+	<select id="select_online_time_log" parameterClass="online_time_log" resultClass="online_time_log">
+select minute, total_minute from $tableName$ where char_id=#charId#
+    </select>
+</sqlMap>

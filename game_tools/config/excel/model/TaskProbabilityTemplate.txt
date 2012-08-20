@@ -1,0 +1,17 @@
+int lowLevel;//角色最低等级
+int highLevel;//角色最高等级
+int times;//当日奖励次数
+int copper;//铜钱
+int see;//阅历
+String itemPrize;//道具奖励
+double itemProbability;//道具奖励概率
+int vitPrize;[notNull=false,minValue=0]//体力奖励
+double vitProbability;//体力奖励概率
+int popularityPrize;[notNull=false,minValue=0]//声望
+double popularityProbability;//声望奖励概率
+int task1;[notNull=false,minValue=0]//任务1
+int task2;[notNull=false,minValue=0]//任务2
+int task3;[notNull=false,minValue=0]//任务3
+int task4;[notNull=false,minValue=0]//任务4
+int task5;[notNull=false,minValue=0]//任务5
+int task6;[notNull=false,minValue=0]//任务6

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<messages xmlns="http://com.pwrd.war.message" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://com.pwrd.war.message message.xsd" module="giftBag">
+	<!-- 请求礼包信息列表 -->
+	<message type="CG_GIFT_BAG_INFO_LIST" comment="请求礼包信息列表">
+	</message> 
+	<!-- 返回礼包信息列表结果 -->
+	<message type="GC_GIFT_BAG_INFO_LIST" comment="返回礼包信息列表">
+		<field type="com.pwrd.war.gameserver.giftBag.model.vo.GiftBagInfo" 
+			clientType="GiftBagInfoListData" name="GiftBagInfoList" list="true" comment="礼包信息列表" macro="giftBagInfoList" ></field>
+	</message>
+	<!-- 领取礼包奖励 -->
+	<message type="CG_GET_GIFT_BAG_PRIZE" comment="领取礼包奖励">
+		<field type="String" name="id" comment="礼包实例id" />
+		<field type="String" name="giftId" comment="礼包模版id" />
+	</message>
+
+</messages>

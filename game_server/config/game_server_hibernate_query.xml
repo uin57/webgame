@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.pwrd.war.db.model">
+
+	<!-- 取得所有定时公告 -->
+	<query name="findAllTimeNotice">
+	<![CDATA[
+		from TimeNoticeInfo
+	]]>
+	</query>
+
+	<!-- 根据PassportId查询所有RoleInfo -->
+	<query name="queryRolesByPid">
+	<![CDATA[
+		from HumanEntity where passportId = :passportId and deleted != 1 order by createTime
+	]]>
+	</query>
+
+	<!-- 根据Name查询RoleInfo -->
+	<query name="queryRoleByName">
+	<![CDATA[
+		from HumanEntity where name = :name
+	]]>
+	</query>
+
+	<!-- 查询所有玩家 -->
+	<query name="queryAllRole">
+	<![CDATA[
+		from HumanEntity
+	]]>
+	</query>
+
+	<!-- 查询玩家角色当前最大的UUID -->
+	<query name="queryUUID_HUMAN">
+	<![CDATA[
+		select max(id) from HumanEntity where id >=:minId and id <= :maxId
+	]]>
+	</query>
+
+	<!-- 根据场景 Id 查询玩家列表 -->
+	<query name="queryHumansBySceneId">
+	<![CDATA[
+		from HumanEntity where sceneId = :sceneId
+	]]>
+	</query>
+
+	<!-- 查询宠物当前最大的UUID -->
+	<query name="queryUUID_PET">
+	<![CDATA[
+		select max(id) from PetEntity where id >=:minId and id <= :maxId
+	]]>
+	</query>
+
+	<!-- 查询场景当前最大的UUID -->
+	<query name="queryUUID_SCENE">
+	<![CDATA[
+		select max(id) from SceneEntity where id >=:minId and id <= :maxId
+	]]>
+	</query>
+
+	<!-- 查询玩家权限 -->
+	<query name="queryPlayerRole">
+		select name,role,todayOnlineTime,lastLogoutTime from
+		UserInfo where id = :id
+	</query>
+
+	<query name="queryRoleByUUID">
+	<![CDATA[
+		from HumanEntity where id = :id and deleted != 1
+	]]>
+	</query>
+	
+	<query name="getMaxLevel">
+	<![CDATA[
+		select max(level) from HumanEntity
+	]]>
+	</query>
+	<query name="queryTopHumanList">
+	<![CDATA[
+		from HumanEntity where camp = :camp order by level desc limit 0,500
+	]]>
+	</query>
+	
+	<query name="getTotalPlayer">
+	<![CDATA[
+		select count(*) from HumanEntity
+	]]>
+	</query>
+
+	<!-- 查询数据库的版本号 -->
+	<query name="queryDbVersion">
+		from DbVersion
+	</query>
+
+	<!-- 登陆用 ： 根据 用户名，密码查询 User -->
+	<query name="queryUserByNameAndPwd">
+		from UserInfo where name = :name and password =
+		:password
+	</query>
+
+
+
+
+	<!-- 得到角色的所有物品 -->
+	<query name="queryPlayerItem">
+		from ItemEntity where charId = :charId and deleted !=
+		1
+	</query>
+
+	<!-- 得到角色的所有物品id -->
+	<query name="queryPlayerItemIds">
+		select id from ItemEntity where charId = :charId and deleted != 1
+	</query>
+
+	<!-- 得到角色的所有宠物 -->
+	<query name="queryPlayerPets">
+		from PetEntity where charId = :charId and deleted !=
+		1
+	</query>
+
+	<!-- 根据模版 Id 获取场景实体 -->
+	<query name="getSceneByTemplateId">
+		from SceneEntity where templateId = :templateId
+	</query>
+
+	<!-- 得到角色的所有邮件 -->
+	<query name="queryPlayerMail">
+		from MailEntity where charId = :charId order by
+		createTime asc
+	</query>
+
+	<query name="updateUserOnlineTime">
+	<![CDATA[
+		update UserInfo set todayOnlineTime = :onlineTime,lastLoginTime = :lastLoginTime,lastLogoutTime = unix_timestamp()*1000 where id = :passportId
+	]]>
+	</query>
+
+	<!-- 得到角色的所有正在进行的任务 -->
+	<query name="queryPlayerDoingQuest">
+		from DoingQuestEntity where charId = :charId
+	</query>
+
+	<!-- 得到角色的所有已完成的任务 -->
+	<query name="queryPlayerFinishedQuest">
+		from FinishedQuestEntity where charId = :charId
+	</query>
+
+	<!-- 得到角色的所有日常任务 -->
+	<query name="queryPlayerDailyQuest">
+		from DailyQuestEntity where charId = :charId
+	</query>
+	
+	<!-- 得到角色的所有查看过的剧情 -->
+	<query name="queryFinishedStory">
+		from FinishedStoryEntity where charId = :charId
+	</query>
+
+	<!--// 更新玩家 buff // -->
+	<query name="updateBuffs">
+	<![CDATA[
+		update HumanEntity set buffPack = :buffs where id = :humanUUId
+	]]>
+	</query>
+
+	<!-- 查询奖品详细信息 -->
+	<query name="queryPrizeInfo">
+	<![CDATA[
+		select id,prizeId,prizeName,coin,item,pet from PrizeInfo where prizeId = :prizeId
+	]]>
+	</query>
+
+	<!-- 查询奖励补偿名称列表 -->
+	<query name="queryUserPrizeNameListByPassportId">
+	<![CDATA[
+		select id,userPrizeName,type from UserPrize where passportId = :passportId and status = 0 order by id
+	]]>
+	</query>
+
+	<!-- 查询奖励补偿内容 -->
+	<query name="queryUserPrizeByPrizeId">
+	<![CDATA[
+		select id,userPrizeName,passportId,coin,item,type,status from UserPrize where passportId = :passportId and status = 0 and id=:prizeId
+	]]>
+	</query>
+
+	<!-- 更新奖励状态为0的变成状态为1,如果更新条目数量不为1,则应该是已经领取过 -->
+	<query name="updateUserPrizeStatus">
+	<![CDATA[
+		update UserPrize set status = 1,updateTime = unix_timestamp()*1000 where id = :prizeId and status = 0
+	]]>
+	</query>
+
+	<!-- 查询直充订单列表 -->
+	<query name="queryChargeInfoListByUserId">
+	<![CDATA[
+		from ChargeInfo where userId = :userId and status = 0 order by id
+	]]>
+	</query>
+
+	<!-- 按照订单id直接查询直充订单 -->
+	<query name="queryChargeInfoByOrderId">
+	<![CDATA[
+		from ChargeInfo where userId = :userId and status = 0 and id = :orderId
+	]]>
+	</query>
+
+	<!-- 查询直充订单列表 -->
+	<query name="updateChargeInfoStatus">
+	<![CDATA[
+		update ChargeInfo set status = 1,updateTime = unix_timestamp()*1000 where id = :orderId and status = 0
+	]]>
+	</query>
+
+	<!-- 查询职业 -->
+	<query name="queryVocation">
+		from VocationSkillEntity where humanSn = :humanSn  order by vocationType
+	</query>
+
+	<query name="queryForm">
+		from FormEntity where humanSn = :humanSn 
+	</query>
+	
+	<query name="queryPlayerReps">
+	<![CDATA[
+		from HumanRepInfoEntity where charId = :charId
+	]]>	
+	</query>
+
+		<!-- 查询buffer -->
+
+	<query name="queryBuffer">
+		from BufferEntity where humanSn = :humanSn 
+	</query>
+	<query name="deleteBuffer">
+		delete from BufferEntity where humanSn = :humanSn  and bufferSn = :bufferSn
+	</query>
+	<!-- 查询玩家的成就 -->
+
+	<query name="queryArchive">
+		from UserArchiveEntity where humanUUID = :humanUUID 
+	</query>
+	
+	<query name="queryServerInfo">
+		from ServerInfoEntity where key = :key 
+	</query>
+	<!-- 冷却队列 -->
+	<query name="getByHuman">
+		from CooldownEntity where humanUUID = :humanUUID 
+	</query>
+	
+	<!--// 更新玩家 buff // -->
+	<query name="updateVits">
+	<![CDATA[
+		update HumanEntity set vitality = vitality + :num where vitality + :num <= maxVitality
+	]]>
+	</query>
+	
+	<!--// 查询玩家神秘商店信息 // -->
+	<query name="queryPlayerSecretShop">
+	<![CDATA[
+		from SecretShopInfoEntity where charId = :charId and histroyFlag = false
+	]]>	
+	</query>
+	
+	<!--// 更新玩家神秘商店信息 // -->
+	<query name="updatePlayerSecretShop">
+	<![CDATA[
+		update SecretShopInfoEntity set histroyFlag = true where charId = :charId 
+	]]>	
+	</query>
+	
+	<!--// 购买物品后更新玩家神秘商店信息 // -->
+	<query name="updatePlayerSecretShopBuy">
+	<![CDATA[
+		update SecretShopInfoEntity set number = :number , buyFlag = :buyFlag where charId = :charId and itemSn = :itemSn and histroyFlag = false and position = :position
+	]]>	
+	</query>
+	
+	<query name="findAllFriends">
+	<![CDATA[
+		from FriendEntity where playerUUID = :playerUUID
+	]]>
+	</query>
+	<query name="findAFriend">
+	<![CDATA[
+		from FriendEntity where playerUUID = :playerUUID and friendUUID = :friendUUID
+	]]>
+	</query>
+	<query name="findAllRobbery">
+	<![CDATA[
+		from RobberyEntity  
+	]]>
+	</query>
+
+	<query name="queryPlayerDayTaskInfo">
+		<![CDATA[
+			from DayTaskInfoEntity where charId = :charId
+		]]>
+	</query>
+	<query name="deletePlayerDayTaskInfo">
+		<![CDATA[
+			delete from DayTaskInfoEntity where charId = :charId
+		]]>
+	</query>
+	<!--// 领取每日任务后更新每日任务表信息 // -->
+	<query name="updatePlayerDayTaskInfo">
+	<![CDATA[
+		update DayTaskInfoEntity set dayTimes = :dayTimes , taskTimes = :taskTimes , bullet = :bullet, taskFlag = :taskFlag, taskId = :taskId where charId = :charId
+	]]>	
+	</query>
+	
+	<!--// 放弃任务后更新每日任务信息 // -->
+	<query name="updatePlayerDayTaskFlagAndId">
+	<![CDATA[
+		update DayTaskInfoEntity set taskFlag = :taskFlag, taskId = :taskId where charId = :charId
+	]]>	
+	</query>
+	
+	<!--// 完成一次每日任务信息 // -->
+	<query name="updatePlayerDayTaskTimes">
+	<![CDATA[
+		update DayTaskInfoEntity set taskTimes = :taskTimes where charId = :charId
+	]]>	
+	</query>
+	
+	<!--// 完成全部每日任务// -->
+	<query name="updatePlayerDayTaskFlag">
+	<![CDATA[
+		update DayTaskInfoEntity set taskFlag = true, dayTimes = :dayTimes where charId = :charId
+	]]>	
+	</query>
+
+	
+	<!--// 竞技场查询  // -->
+	<query name="findAllArenaInfos">
+	<![CDATA[
+		from ArenaEntity
+	]]>
+	</query>
+	<query name="findAllArenaHistories">
+	<![CDATA[
+		from ArenaHistoryEntity where charId = :charId
+	]]>
+	</query>
+	<query name="findAllArenaAchievements">
+	<![CDATA[
+		from ArenaAchievementEntity where charId = :charId
+	]]>
+	</query>
+	
+	<!--// 将星云路查询  // -->
+	<query name="queryPlayerTowerInfo">
+		<![CDATA[
+			from TowerInfoEntity where charId = :charId
+		]]>
+	</query>
+	
+	<!--// 将星云路更新  // -->
+	<query name="updatePlayerTowerInfo">
+		<![CDATA[
+			update TowerInfoEntity set curNum = :curNum , maxNum = :maxNum where charId = :charId and constellationId = :constellationId
+		]]>
+	</query>
+	
+	<!--// 将星云路更新刷新次数  // -->
+	<query name="updatePlayerRefreshTimes">
+		<![CDATA[
+			update TowerInfoEntity set curNum = :curNum , lastRefreshTime = :lastRefreshTime,  refreshNum = :refreshNum where charId = :charId and constellationId = :constellationId
+		]]>
+	</query>
+	
+		<!--// 将星云路更新神秘星  // -->
+	<query name="updatePlayerSecretFlag">
+		<![CDATA[
+			update TowerInfoEntity set secretFlag = :secretFlag where charId = :charId and constellationId = :constellationId
+		]]>
+	</query>
+		
+	<!-- 查询武将争夺战所有武将 -->
+	<query name="findAllHeroWarActivityEntity">
+	<![CDATA[
+		from HeroWarActivityEntity
+	]]>
+	</query>
+	
+	<!-- // 家族查询 // -->
+	<query name="getAllFamily">
+		from FamilyEntity order by exp desc
+	</query>
+	<query name="queryRolesByFamilyId">
+		from HumanEntity where familyId = :familyId
+	</query>
+	<query name="queryLogsByFamilyId">
+		from FamilyLogEntity where familyId = :familyId order by time desc
+	</query>
+	<query name="queryFamilyMemberByFamilyId">
+		from FamilyMemberEntity where familyId = :familyId
+	</query>
+	<query name="queryFamilyMemberByCharId">
+		from FamilyMemberEntity where charId = :charId
+	</query>
+	<query name="queryFamilyApplyMemberByFamilyId">
+		from FamilyApplyMemberEntity where familyId = :familyId
+	</query>
+	
+	<!-- // 礼包查询 // -->
+	<query name="getAllgiftBagByCharId">
+		from GiftBagEntity where charId = :charId
+	</query>
+	
+	<!-- // 兵法查询 // -->
+	<query name="getAllWarcraftByCharId">
+		from WarcraftEntity where charId = :charId order by createTime asc
+	</query>
+	<query name="getWarcraftInfoByCharId">
+		from WarcraftInfoEntity where charId = :charId
+	</query>
+
+	<!-- 新手引导 -->
+	<query name="getPlayerGuide">
+		from PlayerGuideEntity where playerUUID = :playerUUID
+	</query>
+	
+	<query name="getPlayerProbList">
+		from ProbEntity where playerUUID = :playerUUID
+	</query>
+	
+	<!-- // 摇钱树 // -->
+	<query name="queryPlayerTreeInfo">
+		from TreeInfoEntity where charId = :charId
+	</query>
+	
+	<!-- // 摇钱树 浇水记录 // -->
+	<query name="queryPlayerTreeWater">
+		from TreeWaterEntity where toCharId = :toCharId and  waterTime >= :waterTime
+	</query>
+	
+	<!-- // 摇钱树 浇水记录 // -->
+	<query name="updateOffLinePlayerTreeInfo">
+		update TreeInfoEntity set curTreeExp = :curTreeExp, maxTreeExp = :maxTreeExp, treeLevel = :treeLevel where charId = :charId 
+	</query>
+	
+	<!-- // 提示按钮查询 // -->
+	<query name="queryPromptButtonByCharId">
+		from PromptButtonEntity where charId = :charId order by time desc
+	</query>
+	
+</hibernate-mapping>

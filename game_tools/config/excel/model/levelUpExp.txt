@@ -1,0 +1,2 @@
+int level;		//等级
+int needExp;	//升级需要经验

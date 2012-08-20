@@ -1,0 +1,6 @@
+String quality;		//SN
+int qualtityNum;	//品质代码 1红2橙3紫4蓝5绿
+int lock;[minValue=0;notNull=false]		//道具名称
+int refresh;[minValue=0;notNull=false]		//品质，颜色
+int hunshi;[minValue=0;notNull=false]			//消耗魂石
+int price;[minValue=0;notNull=false]			//消耗铜钱

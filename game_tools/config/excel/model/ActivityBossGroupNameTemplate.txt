@@ -1,0 +1,3 @@
+int group;		//组怪物
+String name;	//名称
+String deadTalk;	//死亡喊话

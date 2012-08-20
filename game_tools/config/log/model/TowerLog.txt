@@ -1,0 +1,8 @@
+message com.pwrd.war.logserver.model.TowerLog(
+	int constellationId;	  //星座id
+	int starId;				//当前所在星 
+	int curLevel;	//用户等级
+	long completeTime;// 完成时间
+	int secretFlag;//1为神秘星 0为不是
+	int successful;// 1成功 0失败
+)

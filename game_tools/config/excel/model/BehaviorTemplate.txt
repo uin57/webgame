@@ -1,0 +1,2 @@
+int opCountMax;[minValue=0;notNull=false] // 建筑名称多语言 Id 
+long resetTime;[minValue=0;notNull=false] // 重置时间戳

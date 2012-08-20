@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<messages xmlns="http://com.pwrd.war.message" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://com.pwrd.war.message message.xsd" module="pet">
+	
+ 
+	<message type="GC_PET_LIST" comment="武将列表消息">
+		<field type="Short" name="maxSize" comment="武将列表总的大小" />
+		<field type="Short" name="currentSize" comment="目前武将的数量" />
+		<field type="com.pwrd.war.common.model.pet.PetInfo" macro="PetInfo"
+			name="pets" clientType="com.pwrd.war.data.PetInfo" list="true"
+			comment="武将信息列表">
+		</field>
+	</message>
+
+	<message type="GC_PET_ADD" comment="增加武将消息">
+		<field type="com.pwrd.war.common.model.pet.PetInfo" macro="PetInfo"
+			name="pets" clientType="com.pwrd.war.data.PetInfo"
+			comment="武将信息">
+		</field>
+	</message>
+	
+	<message type="GC_PET_DEL" comment="增删除武将消息">
+		<field type="String" name="petUUid" comment="武将UUID" />
+	</message>
+	
+	
+	<message type="GC_PET_INFO" comment="宠物信息">
+		<field type="com.pwrd.war.common.model.pet.PetInfo" macro="PetInfo"
+			name="petInfo" clientType="PetInfo" comment="单个宠物信息">
+		</field>
+	</message>
+	
+	<message type="CG_PET_HIRE_LIST" comment="获取可见招募武将列表">
+		<field type="String" name="pub" comment="酒馆"></field>  
+	</message>
+
+	<message type="GC_PET_HIRE_LIST" comment="获取可见招募武将列表">
+		<field type="com.pwrd.war.common.model.pet.PetHireInfo" list="true" 
+			name="petInfo" clientType="PetHireInfo"  comment="招募宠物信息"> 
+			<field type="String" name="petSn" comment=""></field>
+			<field type="Boolean" name="canHire" comment="武将是否可以招募，现在此字段废弃"></field> 
+			<field type="Integer" name="hireLevel" comment=""></field>
+			<field type="Integer" name="hirePopularity" comment=""></field>
+			<field type="Integer" name="hireCoin" comment=""></field>
+			<field type="Integer" name="hireGold" comment=""></field>
+			<field type="String" name="hireItem1Sn" comment=""></field>
+			<field type="Integer" name="hireItem1Num" comment=""></field>
+			<field type="String" name="hireItem2Sn" comment=""></field>
+			<field type="Integer" name="hireItem2Num" comment=""></field> 
+		</field>
+	</message>
+	
+	<message type="CG_PET_HIRE" comment="招募武将">  
+		<field type="String" name="pub" comment="酒馆"></field>
+		<field type="String" name="petSn" comment=""></field>
+	</message>
+	
+	<message type="CG_PET_FIRE" comment="解雇武将">  
+		<field type="String" name="petUUID" comment="武将uuid"></field>
+	</message>
+	
+	<message type="CG_PET_JINGJIU" comment="武将敬酒">  
+		<field type="Integer" name="id" comment="敬酒id"></field>
+	</message>
+	<message type="GC_PET_JINGJIU" comment="武将敬酒">  
+		<field type="Boolean" name="result" comment="结果"></field>
+		<field type="String" name="desc" comment="原因"></field>
+	</message>
+	
+	<message type="GC_PET_JINGJIU_LIST" comment="敬酒信息">
+		<field type="com.pwrd.war.common.model.pet.JingjiuInfo" 
+			clientType="JingjiuInfoData" name="jingjiuInfo" list="true" comment="敬酒信息列表" macro="JingjiuInfo"></field>
+	</message>
+</messages>

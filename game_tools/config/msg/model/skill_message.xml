@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<messages xmlns="http://com.pwrd.war.message" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://com.pwrd.war.message message.xsd" module="skill">
+	<message type="CG_Skill_Upgrade" comment="技能升级消息">
+		<field type="String" name="skillSn" comment="技能sn"></field>
+		<field type="Integer" name="rank" comment="等级"></field>
+	</message>
+
+	<message type="GC_Skill_Upgrade" comment="技能升级消息">
+		<field type="String" name="skillSn" comment="技能sn"></field>
+		<field type="Integer" name="rank" comment="等级"></field>
+	</message>
+
+	<message type="CG_Skill_Order" comment="修改技能组">
+		<field type="Integer" name="vocationType" comment="职业类型"></field>
+		<field type="Integer" name="skillGroupOrder" comment="技能组编号"></field>
+		<field type="String" name="skillGroupName" comment="技能组名称"></field>
+		<field type="String" name="skillSns" comment="技能sn序列" list="true"></field>
+	</message>
+
+	<message type="GC_Skill_Group_Name" comment="修改技能组名称">
+		<field type="Integer" name="vocationType" comment="职业类型"></field>
+		<field type="Integer" name="skillGroupOrder" comment="技能组编号"></field>
+		<field type="String" name="skillGroupName" comment="技能组名称"></field>
+	</message>
+
+	<message type="GC_Skill_Order" comment="修改技能组顺序">
+		<field type="Integer" name="vocationType" comment="职业类型"></field>
+		<field type="Integer" name="skillGroupOrder" comment="技能组编号"></field>
+		<field type="String" name="skillSns" comment="技能sn序列" list="true"></field>
+	</message>
+
+	<message type="CG_Skill_Cooldown" comment="技能冷却加速">
+		<field type="String" name="cdSn" comment="cdSn"></field>
+		<field type="String" name="accelerateTime" comment="加速的时间"></field>
+		<field type="Integer" name="currencyType" comment="货币类型 0为元宝"></field>
+		<field type="Integer" name="currencyNumber" comment="货币数量"></field>
+	</message>
+
+	<message type="GC_Skill_Cooldown" comment="技能冷却加速">
+		<field type="String" name="cdSn" comment="cdSn"></field>
+		<field type="Integer" name="cdType"
+			comment="cd类型 0 表示增加冷却 1表示加速修改冷却 2表示冷却时间到了结束冷却"></field>
+		<field type="Integer" name="targetType" comment="冷却对象类型，如：0表示技能冷却"></field>
+		<field type="String" name="targetSn" comment="冷却对象sn"></field>
+		<field type="String" name="cooldownTime" comment="剩余冷却时间"></field>
+		<field type="Integer" name="currencyType" comment="货币类型 0为元宝"></field>
+		<field type="Integer" name="currencyNumber" comment="货币数量"></field>
+	</message>
+
+</messages>

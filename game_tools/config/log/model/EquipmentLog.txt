@@ -1,0 +1,7 @@
+message com.pwrd.war.logserver.model.EquipmentLog(
+	int flag;			//1穿上 2卸下
+	String equipmentId;	//装备id
+	int enhanceLevle;	//强化等级
+	String petName;		//装备武将名称
+	long time;		// 操作时间
+)

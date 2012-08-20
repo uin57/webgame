@@ -1,0 +1,6 @@
+message com.pwrd.war.logserver.model.PetExpLog(
+	int petTempId;	// 武将模版ID
+	long petId;	// 武将ID
+	long expDelta;	//经验改变
+	long expLeft;	//剩余经验
+)

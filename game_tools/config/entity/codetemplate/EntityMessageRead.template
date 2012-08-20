@@ -1,0 +1,31 @@
+#macro(read $seq $name $type)
+	case ${seq}:{
+	     _entity.set${name}(_read${type}());
+		 return true;
+	}
+#end
+
+#macro(readTime $seq $name $type)
+	case ${seq}:{
+		long _time = _readLong();
+		#if ($type.equals("java.sql.Time") || $type.equals("java.sql.Date"))
+			byte _notNull = readByte();
+			if(_notNull == 1){
+				_entity.set${name}( new $type(_time));
+			}
+		#else
+			if(_time >0 ){
+				_entity.set${name}( new $type(_time));
+			}
+		#end
+		return true;
+	}
+#end
+
+#foreach($f in $fields)
+	#if ($f.getReadType())
+	    #read($f.sequence $f.name $f.getReadType())
+	#elseif($f.type.equals("java.sql.Timestamp") || $f.type.equals("java.sql.Date") || $f.type.equals("java.sql.Time"))
+		#readTime($f.sequence $f.name $f.type)
+	#end	
+#end

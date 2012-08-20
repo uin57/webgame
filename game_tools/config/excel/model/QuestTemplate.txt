@@ -1,0 +1,28 @@
+int questId;			//任务id
+String questTitle;		//任务名
+String questDesc;		//任务概述
+String questContent;	//任务内容
+int questType;[minValue=1;notNull=true]		//任务主类型（主线为1，支线为2，日常为5，周常为6，帮会为10，国家为11）
+int questSubType;[notNull=false]		//任务子类型
+int questRegion;[notNull=false]			//任务区域
+boolean canVisible;[notNull=false]		//是否可见
+boolean canGiveup;[notNull=false]		//能否放弃
+String preQuestIds;[notNull=false]		//前置任务编号列表（多个任务用逗号分开）
+int acceptNpc;[notNull=false]			//接受任务NPC编号
+int finishNpc;[notNull=false]			//完成任务NPC编号
+String acceptTalk;[notNull=false]		//接受任务对白
+int acceptMinLevel;[notNull=false]		//接受任务最小等级
+List<com.pwrd.war.gameserver.quest.template.SpecialCondition> acceptCondition;[Collection(3,3)]	//接受任务特殊条件（最多3个）
+String finishTalk;[notNull=false]		//完成任务对白
+String finishDesc;[notNull=false]		//完成任务描述
+int finishMinLevel;[notNull=false]		//完成任务最小等级
+List<com.pwrd.war.gameserver.quest.template.SpecialCondition> finishCondition;[Collection(3,3)]	//完成任务特殊条件（最多3个）
+int moneyBonusType;[notNull=false]		//金钱奖励类型
+int moneyBonusCount;[notNull=false]		//金钱奖励数量
+int expBonusCount;[notNull=false]		//经验奖励数量
+String itemBonus;[notNull=false]		//物品奖励（物品id:数量,...）
+List<com.pwrd.war.gameserver.quest.template.SpecialBonus> specialBonus;[Collection(3,3)]	//特殊奖励（最多3个）
+;
+;
+;
+String repId;[notNull=false]//副本id

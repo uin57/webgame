@@ -1,0 +1,7 @@
+String quality;		//品质，颜色
+int qualityNum;		//品质代码 1红2橙3紫4蓝5绿
+int attributeNum;	//属性品质代码 1红2橙3紫4蓝5绿
+String attribute;	//属性品质
+double probability; //出现概率
+double minVaule;	//区间下限
+double maxValue;	//区间上限

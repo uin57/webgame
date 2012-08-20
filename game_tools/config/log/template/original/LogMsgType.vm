@@ -1,0 +1,16 @@
+package com.imop.tr.logserver;
+
+/**
+ * This is an auto generated source,please don't modify it.
+ */
+public interface MessageType {
+	/** 标准日志消息 */
+	public final short LOG_RECORD = 500;				
+	
+	/* Log消息 */
+#foreach($logConfig in $logConfigs)
+		/** ${logConfig.logInfo} */
+		public final short LOG_${logConfig.getUpperLogType()}_RECORD = ${logConfig.logTypeValue};
+#end
+
+}

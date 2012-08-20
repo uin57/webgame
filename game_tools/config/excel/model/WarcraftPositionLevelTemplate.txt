@@ -1,0 +1,2 @@
+Integer kong; [notNull=true]		// 兵法孔等级
+Integer level; [notNull=true]	// 角色等级

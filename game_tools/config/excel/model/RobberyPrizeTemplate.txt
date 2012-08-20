@@ -1,0 +1,3 @@
+int level;	//等级
+int[] coins;[collection(5,1);]	//铜钱
+int[] popularity;[collection(5,1);]		//声望

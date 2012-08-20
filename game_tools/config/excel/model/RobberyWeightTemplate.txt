@@ -1,0 +1,2 @@
+int freshTimes;	//刷新次数
+int[] weights;[collection(5,1);]	//每中的权重,共5个

@@ -1,0 +1,8 @@
+message com.pwrd.war.logserver.model.GmCommandLog(
+	String operatorName;// 操作者姓名
+	String targetIp;// 目标机器
+	String command;// 命令
+	String commandDesc;// 命令描述
+	String commandDetail;// 命令内容
+	String returnResult;// 返回结果
+)

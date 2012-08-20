@@ -1,0 +1,7 @@
+int bossIndex;	//boss编号
+int weiX;		//魏，蜀，吴 出生点
+int weiY;
+int shuX;
+int shuY;
+int wuX;
+int wuY;

@@ -1,0 +1,3 @@
+message com.pwrd.war.logserver.model.CheatLog(
+    String details; //详细
+)

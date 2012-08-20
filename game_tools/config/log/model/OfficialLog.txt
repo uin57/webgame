@@ -1,0 +1,4 @@
+message com.pwrd.war.logserver.model.OfficialLog(
+	int officialLevel;			//当前官职等级
+	long time;		// 操作时间
+)

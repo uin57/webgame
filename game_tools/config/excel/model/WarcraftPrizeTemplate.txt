@@ -1,0 +1,9 @@
+Integer level;	//角色等级
+Integer exp1;	//领悟1经验
+String warcraftId1;	//兵法1
+Integer exp2;	//领悟2经验
+String warcraftId2;	//兵法2
+Integer exp3;	//领悟3经验
+String warcraftId3;	//兵法3
+Integer exp4;	//领悟4经验
+String warcraftId4;	//兵法4

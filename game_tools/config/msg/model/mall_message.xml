@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<messages xmlns="http://com.pwrd.war.message" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://com.pwrd.war.message message.xsd" module="mall">
+
+	<message type="CG_MALL_LIST" comment="查询商品列表">
+		<field type="Boolean" name="isNpc" comment="是否为npc商店"></field>
+		<field type="String" name="id" comment="npc或者商店的id"></field>
+	</message>
+	
+	<message type="GC_MALL_LIST" comment="返回商品信息">
+		<field type="Boolean" name="isNpc" comment="是否为npc商店"></field>
+		<field type="String" name="id" comment="npc或者商店的id"></field>
+		<field type="com.pwrd.war.common.model.mall.MallInfo" 
+			clientType="MallInfoData" name="mallInfo" list="true" comment="商品列表" macro="MallInfo" ></field>
+	</message>	
+	
+	<message type="CG_REDEEM_LIST" comment="查询回购物品列表">
+	</message>
+	
+	<message type="GC_REDEEM_LIST" comment="返回回购物品信息">
+		<field type="com.pwrd.war.common.model.mall.RedeemInfo" 
+			clientType="RedeemInfoData" name="redeemInfo" list="true" comment="回购物品列表" macro="RedeemInfo"></field>
+	</message>
+	
+	<message type="CG_MALL_BUY" comment="购买物品">
+		<field type="String" name="itemSn" comment="商品的sn"></field>
+		<field type="Integer" name="number" comment="商品的数量"></field>
+	</message>
+	
+	<message type="GC_MALL_BUY" comment="返回购买结果">
+		<field type="Boolean" name="result" comment="购买结果"></field>
+		<field type="String" name="content" comment="购买结果的内容"></field>
+	</message>
+	
+	<message type="CG_REDEEM_BUY" comment="购买回购物品">
+		<field type="String" name="uuid" comment="物品uuid"></field>
+		<field type="String" name="itemSn" comment="物品itemSn"></field>
+		<field type="Integer" name="number" comment="物品的数量"></field>
+	</message>
+	
+	<message type="GC_REDEEM_BUY" comment="购买回购物品">
+		<field type="Boolean" name="result" comment="购买结果"></field>
+		<field type="String" name="content" comment="购买结果的内容"></field>
+	</message>
+	
+	<message type="CG_MALL_SELL" comment="卖物品">
+		<field type="String" name="uuid" comment="物品的uuid"></field>
+		<field type="String" name="itemSn" comment="物品的sn"></field>
+		<field type="Integer" name="number" comment="物品的数量"></field>
+	</message>
+	
+	<message type="GC_MALL_SELL" comment="返回出售物品结果">
+		<field type="Boolean" name="result" comment="出售结果"></field>
+		<field type="String" name="content" comment="出售结果的内容"></field>
+		<field type="String" name="id" comment="商品的sn或者uuid"></field>
+		<field type="Integer" name="number" comment="剩余的数量"></field>	
+	</message>
+	
+</messages>

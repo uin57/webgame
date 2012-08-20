@@ -1,0 +1,2 @@
+int descLangId;[notNull=false]//说明多语言Id
+String desc;[notNull=true]//说明

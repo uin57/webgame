@@ -1,0 +1,2 @@
+int times;	//次数
+int needGold;	//需要元宝

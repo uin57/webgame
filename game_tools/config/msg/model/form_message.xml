@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<messages xmlns="http://com.pwrd.war.message" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://com.pwrd.war.message message.xsd" module="form">
+	<message type="GC_Form" comment="阵型初始化消息">
+		<field type="com.pwrd.war.gameserver.form.FormPosition"
+			clientType="FormPosition" name="formPositions" list="true" comment="阵型位置"
+			macro="FormPosition">
+		</field>
+		<field type="Integer" name="maxPos" comment="最大可上阵人数" />
+	</message>
+	
+	<message type="CG_Form" comment="客户端请求阵型初始化消息"></message>
+	
+	<message type="CG_Form_Position" comment="客户端发送新的武将位置">
+		<field type="com.pwrd.war.gameserver.form.FormPosition"
+			clientType="PetPostion" name="petPositions" list="true" comment="武将技序列"
+			macro="FormPosition">
+		</field>
+	</message>
+
+</messages>

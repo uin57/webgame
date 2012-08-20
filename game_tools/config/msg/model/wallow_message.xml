@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<messages xmlns="http://com.pwrd.war.message" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://com.pwrd.war.message message.xsd" module="wallow">
+
+<!--  
+	<message type="GC_WALLOW_OPEN_PANEL" comment="打开防沉迷填写面板">
+	</message>		
+	
+	<message type="CG_WALLOW_ADD_INFO" comment="填写防沉迷认证信息">
+		<field type="String" name="name" comment="真实姓名"></field>
+		<field type="String" name="idCard" comment="身份证号"></field>
+	</message>
+	
+	<message type="GC_WALLOW_ADD_INFO_RESULT" comment="防沉迷认证结果">
+		<field type="String" name="result" comment="认证结果"></field>
+	</message>
+	-->
+	<message type="GC_WALLOW_INFO" comment="防沉迷信息">
+		<field type="Integer" name="min" comment="累计上线时间"></field>
+		<field type="String" name="tip" comment="信息提示"></field>
+	</message>
+</messages>

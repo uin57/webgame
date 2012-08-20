@@ -1,0 +1,4 @@
+int nameLangId;[notNull=false;minValue=0] // 名称多语言 Id
+String name; // 名称
+String waveChangeTimeIds;[notNull=false]
+List<com.pwrd.war.gameserver.timeevent.template.WaveChangeLimit> phases;[collection(4,3)] // 建筑功能信息列表

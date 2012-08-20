@@ -1,0 +1,10 @@
+String name; [notNull=true]			// 阶段
+Integer cost; [notNull=true]		// 铜钱消耗
+Integer back; [notNull=true]	// 失败返还
+Double rate; [notNull=true]	// 进阶几率
+Integer warcraft1; [notNull=true]		// 获得兵法类1权重
+Integer warcraft2; [notNull=true]		// 获得兵法类2权重
+Integer warcraft3; [notNull=true]		// 获得兵法类3权重
+Integer warcraft4; [notNull=true]		// 获得兵法类4权重
+Integer warcraft5; [notNull=true]		// 获得兵法类5权重
+Integer empty; [notNull=true]		// 获得为空权重

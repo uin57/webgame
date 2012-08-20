@@ -1,0 +1,8 @@
+message com.pwrd.war.logserver.model.CurrencyLog(
+	int costFlag;	//1产出 2消耗
+	int currencyType;// 货币类型
+	int currencyNum;// 货币数量
+	String costType; // 货币消耗种类的大类别
+	String costDetailType; // 货币消耗种类的详细类别
+	String detailReason; // 具体行为描述
+)

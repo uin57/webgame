@@ -1,0 +1,5 @@
+message com.pwrd.war.logserver.model.PrizeLog(
+	long loginTime;// 登录时间
+	int prizeType;// 奖励物品
+	int drawCount;// 领取次数
+)

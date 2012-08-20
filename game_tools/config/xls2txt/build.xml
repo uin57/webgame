@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<project name="parser" default="jar" basedir=".">
+	<property name="root" value="../../" />
+	<property name="tempSrc" value="bin/src" />
+	<target name="init">
+		<delete dir="bin" />
+		<mkdir dir="bin" />
+		<mkdir dir="${tempSrc}" />
+	</target>
+
+	<path id="classpath.local">
+		<pathelement location="${root}/lib/jdom-1.0.jar" />
+		<pathelement location="${root}/lib/poi-3.6-20091214.jar" />
+		<pathelement location="." />
+	</path>
+
+	<target name="compile" depends="init">
+		<javac destdir="${tempSrc}" srcdir="${root}/src" includes="com/imop/tr/tools/xls2txt/">
+			<classpath refid="classpath.local" />
+		</javac>
+	</target>
+
+	<target name="jar" depends="compile">
+		<copy todir="bin/lib">
+			<fileset dir="${root}/lib">
+				<include name="jdom-1.0.jar" />
+				<include name="poi-3.6-20091214.jar" />
+			</fileset>
+		</copy>
+		<copy todir="bin">
+			<fileset dir="${root}/config/xls2txt">
+				<include name="config.xml" />
+				<include name="run.bat" />
+			</fileset>
+		</copy>
+		<jar jarfile="bin/lib/Excel2Txt.jar" basedir="${tempSrc}" />
+		<delete dir="${tempSrc}" />
+	</target>
+</project>

@@ -1,0 +1,8 @@
+message com.pwrd.war.logserver.model.PetLevelLog(
+	int petTempId;	// 武将模版ID
+	long petId;	// 武将ID
+	int levelBeforeAction;	//行动前等级
+	int levelAfterAction;	//行动后等级
+	long expBeforeAction;	//行动前经验
+	long expAfterAction;	   //行动后经验
+)

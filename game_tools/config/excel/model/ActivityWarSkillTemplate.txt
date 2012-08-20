@@ -1,0 +1,9 @@
+int skillId;												//技能id
+String skillName;[notNull=false,minValue=0]					//名称
+String skillDesc;[notNull=false,minValue=0]					//描述
+int skillTime;[notNull=false,minValue=0]					//持续时间
+int needCampScore;[notNull=false,minValue=0]				//需要本国资源
+float addMyCampSpeedRate;[notNull=false,minValue=0]			//本国押运速度增幅
+float addOtherCampNewSpeedRate;[notNull=false,minValue=0]	//敌国新押运速度增幅
+float addMyCampRobScoreRate;[notNull=false,minValue=0]		//本国抢夺资源数量增幅
+int isyunwu;[notNull=false,minValue=0]						//是否产生云雾

@@ -1,0 +1,40 @@
+package protobuff;  
+
+option java_package = "com.pwrd.war.gameserver.battle.protobuff";
+option java_outer_classname = "BattleReportProtobuff";
+
+message BufferUnit{
+	required string buffSn=1;
+	required int32 buffLevel=2;
+	required int32 dealType=3;
+	required string buffEffect=4;
+	required int32 roundNumber=5;
+}
+
+message ActionReport {
+  required string defenderSn=1;
+  required int32 lostHp=2;
+  required int32 maxHp=3;
+  required int32 leftHp=4;
+  optional bool  isGoal=5;
+  optional bool isHit=6;
+  optional string dialog=7;
+  required int32 type=8;
+  repeated BufferUnit bufferUnits=9;
+}
+
+message BattleReport{
+	optional int32 currentMorale=1;
+	optional int32 currentRound=2;
+	required bool isDo=3;
+	required string skillSn=4;
+	required string attackerSn=5;
+	required string dialog=6;
+	required int32 skillType=7;
+	repeated ActionReport actionReports=8;
+	required int32 attackType=9;
+	optional string superEffect=10;
+	optional string attackSkillAnimation=11;
+	optional string defenseSkillAnimation=12;
+	required bool isEndReport=13;
+}

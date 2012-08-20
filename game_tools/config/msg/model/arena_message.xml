@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<messages xmlns="http://com.pwrd.war.message" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://com.pwrd.war.message message.xsd" module="arena">
+	
+	<!-- 客户端请求获取竞技场信息  -->
+	<message type="CG_ARENA_LIST" comment="获取竞技场信息">
+	</message>
+	
+	<!-- 返回竞技场信息 -->
+	<message type="GC_ARENA_LIST" comment="返回竞技场信息">
+		<field type="String" name="title" comment="称号" />
+		<field type="Integer" name="rank" comment="排名" />
+		<field type="Integer" name="win" comment="连胜" />
+		<field type="Integer" name="challenge" comment="剩余挑战次数" />
+		<field type="com.pwrd.war.gameserver.arena.ArenaRoleInfo" clientType="ArenaRoleInfo"  name="targets" comment="目标信息" list="true" macro="arenaRoleInfo" />
+		<field type="com.pwrd.war.gameserver.arena.ChallengeHistory" clientType="ChallengeHistory"  name="challenges" comment="挑战历史" list="true" macro="arenaChallengeHistory" />
+		<field type="com.pwrd.war.gameserver.arena.TopHistory" clientType="TopHistory"  name="tops" comment="巅峰之战历史" list="true" macro="arenaTopHistory" />
+		<field type="String" name="msg" comment="吐槽" />
+	</message>
+	
+	<!-- 客户端请求挑战信息 -->
+	<message type="CG_ARENA_FIGHT" comment="竞技场挑战">
+		<field type="Integer" name="targetPos" comment="挑战目标位置" />
+	</message>
+	
+	<!-- 客户端请求排行榜 -->
+	<message type="CG_ARENA_RANKING_LIST" comment="获取竞技场排行榜信息">
+	</message>
+	
+	<!-- 返回竞技场排行榜信息 -->
+	<message type="GC_ARENA_RANKING_LIST" comment="返回竞技场排行榜信息">
+		<field type="com.pwrd.war.gameserver.arena.RankingInfo" clientType="RankingInfo"  name="ranking" comment="排行信息" list="true" macro="arenaRanking" />
+		<field type="com.pwrd.war.gameserver.arena.WinRankingInfo" clientType="WinRankingInfo"  name="win" comment="连胜排行信息" list="true" macro="arenaWinRanking" />
+	</message>
+	
+	<!-- 客户端请求成就 -->
+	<message type="CG_ARENA_ACHIEVEMENT_LIST" comment="获取竞技场成就信息">
+	</message>
+	
+	<!-- 返回竞技场成就信息 -->
+	<message type="GC_ARENA_ACHIEVEMENT_LIST" comment="返回竞技场成就信息">
+		<field type="com.pwrd.war.gameserver.arena.ArenaAchievement" clientType="ArenaAchievement"  name="achievement" comment="成就" list="true" macro="arenaAchievement" />
+	</message>
+	
+	<!-- 付费增加攻击次数上限信息 -->
+	<message type="CG_ARENA_ADD_TIME" comment="增加竞技场挑战次数">
+	</message>
+	
+	<!-- 修改吐槽信息 -->
+	<message type="CG_ARENA_UPDATE_MSG" comment="修改吐槽信息">
+		<field type="String" name="msg" comment="吐槽" />
+	</message>
+	
+	<!-- 增加竞技场次数结果消息 -->
+	<message type="GC_ARENA_ADD_TIME" comment="增加竞技场次数结果消息">
+		<field type="Integer" name="curTime" comment="当前已经增加的次数" />
+		<field type="Integer" name="nextCost" comment="下一次消耗的花费数" />
+	</message>
+	
+	<!-- 竞技场公告 -->
+	<message type="GC_ARENA_NOTICE" comment="竞技场公告">
+		<field type="String" name="msg" comment="公告内容" />
+	</message>
+</messages>

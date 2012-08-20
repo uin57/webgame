@@ -1,0 +1,10 @@
+String bufferName ; [notNull=false] //buff名称
+int bigType; [notNull=false] //大类型
+int buffType; [notNull=false] //buff类型	
+int valueType; [notNull=false] //数值类型
+double value ;[notNull=false] //数值
+int number ;[notNull=false] //使用次数
+long time ;[notNull=false] //持续时间
+int bufferTarget ;[notNull=false] //buff对象
+String bufferIcon ;[notNull=false] //buffer图标 
+String bufferDescription ;[notNull=false] //buff描述

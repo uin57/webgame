@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<messages xmlns="http://com.pwrd.war.message" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://com.pwrd.war.message message.xsd" module="transferVocation">
+	<!-- 转职消息 -->
+	<message type="CG_Transfer_Vocation_Message" comment="转职消息">
+		<field type="String" name="petSn" comment="武将sn"></field>
+		<field type="Integer" name="useType" comment="类型，1铜钱，2小元宝，3大元宝"></field>
+	</message>
+	
+	<message type="GC_Transfer_Vocation_Result" comment="转职消息结果">
+		<field type="Boolean" name="isOk" comment="是否成功"></field> 
+		<field type="Integer" name="effect" comment="效果二进制，1普通，2暴击，3是否升阶，4是否升官"></field> 
+		<field type="Integer" name="addStar" comment="增加星数"></field> 
+		<field type="Integer" name="addExp" comment="增加的经验"></field> 
+	</message>
+</messages>

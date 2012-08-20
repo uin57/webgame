@@ -1,0 +1,15 @@
+;
+String name;
+int x1;[x=true]
+int x2;[x=true;minValue=100]
+int x3;[x=true;maxValue=10]
+int x;[x=true;minValue=12;maxValue=100]//x坐标测试
+int y;[y=true;minValue=10]//y坐标测试
+int min;[minValue=10]
+int max;[maxValue=100]
+int hh;[minValue=100;maxValue=1000;]
+List<String> lst;[collection(4,3);]
+Map<String,Object> map;[collection(4,2)]//map测试
+Set<Integer> set;[collection(3,2)]//集合
+com.imop.webzt.gameserver.quest.bonus.SpecialBonus bonus;[object(4)]
+

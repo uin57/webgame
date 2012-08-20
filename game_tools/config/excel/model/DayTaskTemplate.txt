@@ -1,0 +1,6 @@
+String taskId;//任务id
+String taskName;//任务名称
+int times;[notNull=false,minValue=0]//完成次数
+int weight;[notNull=false,minValue=0]//权重
+int level;//出现等级
+String taskDesc;//任务描述

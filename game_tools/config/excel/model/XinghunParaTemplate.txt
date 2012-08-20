@@ -1,0 +1,23 @@
+String xinghunSn;		//SN
+String name;		//道具名称
+int xingzuoId;	//星座id
+String quality;		//品质，颜色
+int qualityNum;	//品质代码 1红2橙3紫4蓝5绿
+int hunshi;[minValue=0;notNull=false]			//卖出魂石
+int price;[minValue=0;notNull=false]			//卖出价格
+int minAtk;[minValue=0;notNull=false]			//最小攻击
+int maxAtk;[minValue=0;notNull=false]			//最大攻击
+int minDef;[minValue=0;notNull=false]			//最小防御
+int maxDef;[minValue=0;notNull=false]			//最大防御
+int minHp;[minValue=0;notNull=false]			//最小生命
+int maxHp;[minValue=0;notNull=false]			//最大生命
+double minShanbi;[minValue=0;notNull=false]		//最小闪避
+double maxShanbi;[minValue=0;notNull=false]		//最大闪避
+double minMingzhong;[minValue=0;notNull=false]		//最小命中
+double maxMingzhong;[minValue=0;notNull=false]		//最大命中
+double minCri;[minValue=0;notNull=false]			//最小暴击
+double maxCri;[minValue=0;notNull=false]			//最大暴击
+double minRenxing;[minValue=0;notNull=false]		//z最低韧性
+double maxRenxing;[minValue=0;notNull=false]		//最高韧性
+double minBisha;[minValue=0;notNull=false]			//最低必杀
+double maxBisha;[minValue=0;notNull=false]			//最高必杀

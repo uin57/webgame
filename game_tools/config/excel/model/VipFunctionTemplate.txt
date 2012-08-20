@@ -1,0 +1,4 @@
+int vipLevel;[notNull=false] //vip等级
+int charge;[notNull=false]//充值金额
+String functionId;[notNull=false]//功能id
+String functionDesc;[notNull=false]//功能描述

@@ -1,0 +1,11 @@
+int starLevel;[minValue=0;notNull=false]	//星级
+int coinExp;[minValue=0;notNull=false]
+int coinWeight;[minValue=0;notNull=false]
+int coin2Exp;[minValue=0;notNull=false]
+int coin2Weight;[minValue=0;notNull=false]
+int goldExp;[minValue=0;notNull=false]
+int goldWeight;[minValue=0;notNull=false]
+int gold2Exp;[minValue=0;notNull=false]
+int gold2Weight;[minValue=0;notNull=false]
+int gold3StarLevel;[minValue=0;notNull=false]
+int gold3Weight;[minValue=0;notNull=false]

@@ -1,0 +1,4 @@
+message com.pwrd.war.logserver.model.ActivityLog(
+	String name;		//活动名称
+	long time;		// 参加时间
+)

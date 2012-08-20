@@ -1,0 +1,14 @@
+String  petSn;[notNull=true]//武将id
+String  petName;[notNull=false]//武将名称
+String battleSpeek1;[notNull=false]//战斗情况一对话
+String battleSpeek2;[notNull=false]//战斗情况二对话
+String battleSpeek3;[notNull=false]//战斗情况三对话
+String battleSpeek4;[notNull=false]//战斗情况四对话
+String areaSpeek1;[notNull=false]//区域对话一
+String areaSpeek2;[notNull=false]//区域对话二
+String areaSpeek3;[notNull=false]//区域对话三
+String areaSpeek4;[notNull=false]//区域对话四
+String moodSpeek1;[notNull=false]//情绪对话一
+String moodSpeek2;[notNull=false]//情绪对话二
+String moodSpeek3;[notNull=false]//情绪对话三
+String moodSpeek4;[notNull=false]//情绪对话四

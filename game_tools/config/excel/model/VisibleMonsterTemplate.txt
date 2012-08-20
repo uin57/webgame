@@ -1,0 +1,44 @@
+String visibleMonsterSn;			//明雷ID
+String name;			//名字
+String sceneId;			//地图ID
+String point; 			//坐标，是个坐标数组
+String skeletonId;		//骨骼ID
+int skeletonDirect;		//骨骼方向
+int lifeCount;			//生命数量
+int isShare;[notNull=false;minValue=0]			//怪物共享性，0,非共享，1共享性怪物，每次战斗都是同一个怪，明雷也有生命
+int appearType;	[notNull=false;minValue=0]		//出现类型 0、地图出现即刷新  1、地图出现后延时一定时间刷新 2、定时间点刷新，参数为xx时:xx分 3、时间段内随机刷新，参数为xx时:xx分-xx时xx分
+String appearParam;[notNull=false]	//出现参数
+int groupIndex;[minValue=0;notNull=false]				//组顺序
+int refreshTime;[notNull=false;minValue=-1]		//刷新时间 明雷消失后多久重新刷新出现，单位为秒 -1表示不刷新 0表示立刻刷新 
+int liefCycleType;[notNull=false;minValue=0]		//生命周期类型
+String lifeCycleParam;[notNull=false]		//生命周期参数
+int triggerType;[notNull=false;minValue=0]		//触发类型 0、被动触发，被点击后才触发战斗 1、主动触发
+int triggerX;[notNull=false]			//触发范围x
+int triggerY;[notNull=false]			//触发范围y
+int attackX;[notNull=false;minValue=0]			//最小攻击距离x，当怪物和人2者距离小于此值开始战斗
+int attackY;[notNull=false;minValue=0]			//最小攻击距离y，当怪物和人2者距离小于此值开始战斗
+int goawayX;[notNull=false;minValue=0]			//离开距离x，超过这个距离怪物则回归原点
+int goawayY;[notNull=false;minValue=0]			//离开距离y，超过这个距离怪物则回归原点
+int normalSpeed;[notNull=false;minValue=0]		//正常移动速度，每100ms的距离
+int attackSpeed;[notNull=false;minValue=0]		//追击时移动速度，每100ms的距离
+int moveType;[notNull=false;minValue=0]	//移动类型 1、固定位置不移动  2、一定范围内移动，参数为范围半径 3、固定路线巡逻 4、移动到指定位置后不动
+String moveParam;[notNull=false]		//移动参数
+int warMinNum;			//战斗最少人数
+int warMaxNum;			//战斗最多人数
+int warMinLevel;		//战斗人物最低等级
+int warMaxLevel;		//战斗人物最高等级
+String quest;[notNull=false]			//任务可见
+int dieNeedNotice;[notNull=false;minValue=0]		//死亡是否需要公告,0要，1不要
+String noticeContent;[notNull=false]	//公告内容
+int triggerMonsterType;[notNull=false;minValue=0]	//触发怪物类型0、触发怪物数量自适应 1、触发怪物数量固定 
+String triggerMonsterData;	//触发怪物数据数据格式： 0:怪物ID，-1(或者等级),概率值; 1:怪物ID,-1(或者等级),数量;
+String formId;[notNull=false]		//阵法id
+int formLevel;[notNull=false;minValue=0]	//阵法等级
+String reliveSceneId;[notNull=false]			//主角复活地图id
+int reliveSceneX;[notNull=false;minValue=0]				//主角复活地图x
+int reliveSceneY;[notNull=false;minValue=0]				//主角复活地图y
+;
+;
+int visibleMonsterType;[minValue=0;notNull=false]				//明雷类型
+int viewNpcId;[notNull=false]	//围观NPCid
+String userNpcData;[notNull=false]		//攻击方NPC数据格式: 怪物id,等级增长(-1或等级),概率值,阵法位置(1-9),开始回合

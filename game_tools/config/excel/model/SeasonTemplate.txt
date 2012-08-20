@@ -1,0 +1,2 @@
+int initYear;[minValue=1;notNull=true]//初始年份
+int triggerTimeEventId;[minValue=1;notNull=true]//触发变化时间点

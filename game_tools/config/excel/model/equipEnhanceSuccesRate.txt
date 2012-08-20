@@ -1,0 +1,8 @@
+double succesRate1;[minValue=0;notNull=false]			//成功率分布1
+int weaight1;[minValue=0;notNull=false]				//成功率出现权重1 
+double succesRate2;[minValue=0;notNull=false]
+int weaight2;[minValue=0;notNull=false] 
+double succesRate3;[minValue=0;notNull=false]
+int weaight3;[minValue=0;notNull=false] 
+double succesRate4;[minValue=0;notNull=false]
+int weaight4;[minValue=0;notNull=false] 

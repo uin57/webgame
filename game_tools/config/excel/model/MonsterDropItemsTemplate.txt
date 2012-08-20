@@ -1,0 +1,6 @@
+String monsterSn;		//怪物SN
+String name;		//名称
+String generalDrops;[notNull=false]	//通用掉落
+String type1Drops;[notNull=false]			//玩家类型1掉落
+String type2Drops;[notNull=false]			//玩家类型2掉落
+String type3Drops;[notNull=false]			//玩家类型3掉落

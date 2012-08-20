@@ -1,0 +1,43 @@
+#macro(write $seq $name $type)
+_write$type($seq,_entity.get$name());
+#end
+
+#macro(writeObject $seq $name $type)
+if(_entity.get$name()!=null){
+	_write$type($seq,_entity.get$name());
+}else{
+	_write$type($seq,0);
+}
+#end
+
+#macro(writeTime $seq $name $type)
+#if ($type.equals("java.sql.Time") || $type.equals("java.sql.Date"))	
+	if(_entity.get$name()!=null){
+		_writeLong($seq,_entity.get$name().getTime());
+		//not null tag
+		writeByte((byte)1);
+	}else{
+		_writeLong($seq,0);
+		//not null tag
+		writeByte((byte)0);
+	}
+#else
+if(_entity.get$name()!=null){
+	_writeLong($seq,_entity.get$name().getTime());
+}else{
+	_writeLong($seq,0);
+}	
+#end
+#end
+
+#foreach($f in $fields)
+	#if ($f.getReadType())
+		#if ($f.type.equals("java.lang.Integer") || $f.type.equals("java.lang.Byte") || $f.type.equals("java.lang.Long") || $f.type.equals("java.lang.Short") || $f.type.equals("java.lang.Double") || $f.type.equals("java.lang.Float")) 
+			#writeObject($f.sequence $f.name $f.getReadType())
+		#else 
+			#write($f.sequence $f.name $f.getReadType())
+		#end
+	#elseif($f.type.equals("java.sql.Timestamp") || $f.type.equals("java.sql.Date") || $f.type.equals("java.sql.Time"))
+		#writeTime($f.sequence $f.name $f.type)
+	#end	
+#end

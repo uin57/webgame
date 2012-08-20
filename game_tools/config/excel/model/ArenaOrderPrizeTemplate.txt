@@ -1,0 +1,4 @@
+int minLevel;	//最低等级
+int maxLevel;	//最高等级
+int presitgePrize;[notNull=false;minValue=0]		//声望奖励
+int moneyPrize;[notNull=false;minValue=0]		//金钱奖励

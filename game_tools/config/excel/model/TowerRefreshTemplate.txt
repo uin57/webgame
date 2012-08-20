@@ -1,0 +1,4 @@
+int constellationId;//星座id
+String secretId;//神秘星id
+String prizeId;//掉落包id
+int prizePro;//掉包概率

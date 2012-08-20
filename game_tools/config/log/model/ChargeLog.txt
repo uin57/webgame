@@ -1,0 +1,4 @@
+message com.pwrd.war.logserver.model.ChargeLog(
+    int num; //充值数额
+    long time ; //充值时间
+)

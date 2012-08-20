@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<messages xmlns="http://com.pwrd.war.message" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://com.pwrd.war.message message.xsd" module="common">
+	<constants>
+		<constant name="消息显示类型">
+			1- 普通消息类
+			2-	重要消息类
+			3-在当前对话窗口直接显示此信息 
+			4-在好友闪动处显示 
+		</constant>
+	</constants>
+	<message type="GC_SYSTEM_MESSAGE" comment="系统提示消息">
+		<field type="String" name="content" comment="消息内容"></field>
+		<field type="Integer" name="color" comment="消息字体颜色"></field>
+		<field type="Short" name="showType" comment="消息显示类型"></field>
+	</message>
+
+	<message type="GC_SYSTEM_NOTICE" comment="系统公告">
+		<field type="String" name="content" comment="消息内容"></field>
+		<field type="Integer" name="color" comment="消息字体颜色"></field>
+		<field type="Short" name="speed" comment="速度"></field>
+		<field type="Short" name="time" comment="显示时长"></field>
+	</message>
+
+	<message type="GC_WAITING_START" comment="等待开始">
+		<field type="Integer" name="waitingType" comment="等待类型,如创建副本等待"></field>
+		<field type="Integer" name="overTime" comment="超时时间（秒）"></field>
+		<field type="String" name="title" comment="等待标题"></field>
+		<field type="String" name="tip" comment="等待提示语"></field>
+	</message>
+	
+	<message type="GC_WAITING_OVER" comment="等待结束">
+		<field type="Integer" name="waitingType" comment="等待类型"></field>
+		<field type="Integer" name="tag" comment="标签,该等待的一个标识"></field>
+	</message>
+	
+	<message type="CG_PING" comment="客户端用于时间同步的消息">
+	</message>
+	
+	<message type="GC_PING" comment="服务器端响应的时间同步的消息">
+		<field type="Long" name="timestamp" comment="服务器当前时间戳"></field>
+	</message>
+	
+	<message type="GC_HANDSHAKE" comment="服务器准备好之后,告知客户端可以进行登录操作">		
+	</message>
+
+	<message type="GC_SHOW_OPTION_DLG" comment="显示确认对话框">
+		<field type="String" name="title" comment="窗口标题" />
+		<field type="String" name="content" comment="窗口内容" />
+		<field type="String" name="tag" comment="操作标识" />
+		<field type="String" name="okText" />
+		<field type="String" name="cancelText" />
+	</message>
+
+	<message type="CG_SELECT_OPTION" comment="选择确认对话框 ok 或 cancel 选项">
+		<field type="String" name="tag" comment="操作标识" />
+		<field type="String" name="value" comment="选项值" />
+	</message>
+	
+	<message type="GC_COMMON_ASK_AND_ANSWER_URL" comment="在线答疑URL">
+		<field type="String" name="url" comment="URL值"></field>
+	</message>
+	
+	<message type="GC_SYSTEM_PROMPT" comment="提示消息:1:重要提示(个人提示)2:错误提示3:按钮提示4:头顶提示5:特殊提示">
+		<field type="Short" name="showType" comment="消息类型"></field>
+		<field type="String" name="content" comment="消息内容"></field>
+		<field type="Integer" name="color" comment="消息字体颜色"></field>
+	</message>
+
+</messages>

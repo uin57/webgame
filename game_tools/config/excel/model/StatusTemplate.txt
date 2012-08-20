@@ -1,0 +1,11 @@
+String statusSn ;[notNull=true] // 状态id
+Integer statusLevel;[notNull=false] //等级
+String statusName ;[notNull=false] // 状态名称
+Integer statusType; [notNull=false] // 状态类别
+String statusDescription; [notNull=false] // 状态说明
+String statusSpecialEffect; [notNull=false] // 状态特效
+Double statusWeight; [notNull=false] // 状态权重
+Integer statusRound ;[notNull=false] // 状态回合数
+String statusEffect; [notNull=false] // 状态效果
+String arg1 ;[notNull=false] // 参数1
+String arg2 ;[notNull=false] // 参数2

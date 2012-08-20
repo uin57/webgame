@@ -1,0 +1,4 @@
+String mallId; //商店id
+String itemSn; //道具Sn
+int price;		//价格
+int currencyType;//货币类型

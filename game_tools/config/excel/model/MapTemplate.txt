@@ -1,0 +1,4 @@
+String mapId;[notNull=true]	//地图id
+;
+;
+String bgId;[notNull=true]	//战斗背景id

@@ -1,0 +1,213 @@
+#macro( smallType $type)
+#if($type == "Short")short#elseif( $type == "Integer" )int#elseif( $type == "Byte" )byte#elseif( $type == "Long" )long#elseif( $type == "Float" )float#elseif( $type == "Double" )double#elseif( $type == "Boolean" )boolean#else$type#end
+#end
+#macro( upperFirstChar $type)$type.substring(0,1).toUpperCase()$type.substring(1)#end
+#macro( lowerFirstChar $type)$type.substring(0,1).toLowerCase()$type.substring(1)#end
+#set($packageName = "com.imop.webzt.gameserver."+$message.module+".msg")
+package $packageName;
+
+import com.imop.webzt.core.msg.MessageType;
+import com.imop.webzt.gameserver.common.msg.GCMessage;
+
+/**
+ * $message.comment
+ *
+ * @author CodeGenerator, don't modify this file please.
+ */
+public class ${message.className} extends GCMessage{
+	
+#foreach( $field in $list )
+	/** ${field.comment} */
+#if ($field.list) 
+	private #smallType($field.type)[] ${field.smallName};
+#else
+	private #smallType($field.type) $field.smallName;
+#end
+#end	
+#foreach( $field in $message.subMsgs )
+	/** ${field.comment} */
+	private  $field.subMsgType[] ${field.smallName};
+#end
+
+	public $message.className (){
+	}
+	
+#if ($message.fieldSize>0)
+	public $message.className (
+#foreach( $field in $list )
+#if ($field.list) 
+			#smallType($field.type)[] ${field.smallName}#if($velocityCount != $message.fieldSize),
+#end
+#else
+			#smallType($field.type) $field.smallName#if($velocityCount != $message.fieldSize),
+#end
+#end
+#end
+#foreach( $field in $message.subMsgs )
+			$field.subMsgType[] ${field.smallName}#if($velocityCount != $message.subMsgs.size()),
+#end
+#end ){
+#foreach( $field in $list )
+			this.${field.smallName} = ${field.smallName};
+#end	
+#foreach( $field in $message.subMsgs )
+			this.${field.smallName} = ${field.smallName};
+			if(this.${field.smallName}==null){
+				this.${field.smallName}=new $field.subMsgType[0];
+			}
+#end		
+	}
+#end
+	
+	@Override
+	protected boolean writeImpl() {
+#foreach( $field in $list )
+	#if ($field.list) 
+		writeShort(${field.smallName}.length);
+		for(int i=0; i<${field.smallName}.length; i++){
+		#if( $field.isNewType )
+			#foreach( $subfield in $field.subFields )
+				#if ($subfield.list) 
+			#smallType($subfield.type)[] ${subfield.smallName}=${field.smallName}[i].get${subfield.bigName}();
+			writeShort(${subfield.smallName}.length);
+			for(int j=0; j<${subfield.smallName}.length; j++){
+					#if($subfield.list)
+						#if( $subfield.isNewType )
+							#foreach( $subsubfield in $subfield.subFields )
+				write${subsubfield.type}(${subfield.smallName}[j].get${subsubfield.bigName}());
+							#end
+						#else
+				write${subfield.type}(${subfield.smallName}[j]);
+						#end
+					#elseif($subfield.isNewType)
+						#foreach( $subsubfield in $subfield.subFields )
+				write${subsubfield.type}(${subfield.smallName}[j].get${subsubfield.bigName}());
+						#end						
+					#else
+				write${subfield.type}(${subfield.smallName}[j]);
+					#end
+			}
+				#else
+			write${subfield.type}(${field.smallName}[i].get${subfield.bigName}());
+				#end
+			#end
+		#else
+			write${field.type}(${field.smallName}[i]);
+		#end
+		}
+	#elseif( $field.isNewType )
+		#foreach( $subfield in $field.subFields )
+			#if ($subfield.list) 
+		#smallType($subfield.type)[] ${subfield.smallName}=${field.smallName}.get${subfield.bigName}();
+		writeShort(${subfield.smallName}.length);
+		for(int i=0; i<${subfield.smallName}.length; i++){	
+				#if($subfield.isNewType)
+					#foreach( $subsubfield in $subfield.subFields )
+				write${subsubfield.type}(${subfield.smallName}[i].get${subsubfield.bigName}());
+					#end						
+				#else
+				write${subfield.type}(${subfield.smallName}[i]);
+				#end
+		}
+			#elseif( $subfield.isNewType )
+				#foreach( $subsubfield in $subfield.subFields )
+					#if ($subsubfield.list) 
+		#smallType($subsubfield.type)[] ${subsubfield.smallName}=${subfield.smallName}[i].get${subsubfield.bigName}();
+		writeShort(${subsubfield.smallName}.length);
+		for(int j=0; j<${subsubfield.smallName}.length; j++){
+			write${subsubfield.type}(${subsubfield.smallName}[j]);
+		}
+					#else
+		write${subsubfield.type}(${subfield.smallName}[i].get${subsubfield.bigName}());
+					#end
+				#end
+			#else
+		write${subfield.type}(${field.smallName}.get${subfield.bigName}());
+			#end
+		#end
+	#else
+		write${field.type}(${field.smallName});
+	#end
+#end
+#foreach( $field in $message.subMsgs )
+		writeShort(${field.smallName}.length);
+		for(int i=0;i<${field.smallName}.length;i++){
+			${field.smallName}[i].setBuffer(buf);
+			${field.smallName}[i].writeImpl();
+		}
+#end
+		return true;
+	}
+	
+	@Override
+	public short getType() {
+		return MessageType.$message.type;
+	}
+	
+	@Override
+	public String getTypeName() {
+		return "$message.type";
+	}
+#foreach( $field in $list )
+#if ($field.list)
+
+	public #smallType($field.type)[] get${field.bigName}(){
+		return ${field.smallName};
+	}
+
+	public void set${field.bigName}(#smallType($field.type)[] ${field.smallName}){
+		this.${field.smallName} = ${field.smallName};
+	}	
+#if ($field.needCreateType)
+
+	public static class $field.type{
+#foreach( $subfield in $field.subFields )
+		/** ${subfield.comment} */
+		private #smallType($subfield.type) $subfield.smallName;
+#end	
+
+		public $field.type (){}
+
+		public $field.type (
+#foreach( $subfield in $field.subFields )
+			#smallType($subfield.type) $subfield.smallName#if($velocityCount != $field.subFields.size()),
+#end	
+#end	 ){
+#foreach( $subfield in $field.subFields )
+			this.${subfield.smallName} = ${subfield.smallName};
+#end	
+		}
+ #foreach( $subfield in $field.subFields )
+ 
+		public #smallType(${subfield.type}) get${subfield.bigName}(){
+			return ${subfield.smallName};
+		}
+			
+		public void set${subfield.bigName}(#smallType(${subfield.type}) ${subfield.smallName}){
+			this.${subfield.smallName} = ${subfield.smallName};
+		}
+#end
+	}
+#end	
+#else
+
+	public #smallType(${field.type}) get${field.bigName}(){
+		return ${field.smallName};
+	}
+		
+	public void set${field.bigName}(#smallType(${field.type}) ${field.smallName}){
+		this.${field.smallName} = ${field.smallName};
+	}
+#end
+#end
+#foreach( $field in $message.subMsgs )
+			
+	public $field.subMsgType[]  get${field.bigName}(){
+		return ${field.smallName};
+	}
+		
+	public void set${field.bigName}($field.subMsgType[] ${field.smallName}){
+		this.${field.smallName} = ${field.smallName};
+	}
+#end
+}

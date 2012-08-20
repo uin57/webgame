@@ -1,0 +1,4 @@
+int funcid;[notNull=false,minValue=0]		//功能ID
+String funcname;			//功能名称
+int level;[notNull=false,minValue=0]		//开启等级
+String repSN;[notNull=false,minValue=0]	//需要完成的副本

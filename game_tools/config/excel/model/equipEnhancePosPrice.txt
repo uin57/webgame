@@ -1,0 +1,2 @@
+int lelve;										//装备等级
+List<Integer> posPrice;[collection(6,1);]		//部位对应的价格武器	头盔	衣服	鞋子	戒指	配饰

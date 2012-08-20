@@ -1,0 +1,2 @@
+int shakeTimes;[minValue=0;notNull=false] //摇钱次数
+int costGold;[minValue=0;notNull=false] //消耗元宝数

@@ -1,0 +1,15 @@
+<messages xmlns="http://com.pwrd.war.message" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://com.pwrd.war.message message.xsd" module="vocation">
+	<message type="GC_Vocation" comment="职业">
+		<field type="com.pwrd.war.gameserver.vocation.VocationSkill"
+			name="vocationSkills" clientType="VocationSkill" list="true" macro="VocationSkill"></field>
+	</message>
+	<message  type="CG_Default_Skill_Group" comment="设置默认技能组">
+	   <field type="Integer" name="vocationType" comment="职业类型"></field>
+	   <field type="Integer" name="defaultSkillGroupOrder" comment="默认技能组编号"></field>
+	</message>
+	<message  type="GC_Default_Skill_Group" comment="设置默认技能组返回">
+	   <field type="Integer" name="vocationType" comment="职业类型"></field>
+	   <field type="Integer" name="defaultSkillGroupOrder" comment="默认技能组编号"></field>
+	</message>
+</messages>

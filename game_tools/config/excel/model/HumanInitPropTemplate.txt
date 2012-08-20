@@ -1,0 +1,27 @@
+int vocation;[[minValue=0;notNull=true] // 职业ID
+String name;		//职业名称	
+int initLevel;		//职业初始等级	
+int initGrow;[notNull=false;minValue=0]		//初始成长度	
+double initSpd;[notNull=false;minValue=0]		//初始速度	
+double initShanbi;[notNull=false;minValue=0]		//初始闪避	
+double initCri;[notNull=false;minValue=0]		//初始暴击	
+double initShanghai;[notNull=false;minValue=0]	//初始伤害
+double initMianshang;[notNull=false;minValue=0]	//初始免伤
+double initFanji;[notNull=false;minValue=0]		//初始反击
+double initMingzhong;[notNull=false;minValue=0]	//初始命中
+double initLianji;[notNull=false;minValue=0]		//初始连击
+double atkVocationFactor;[notNull=false;minValue=0]		//攻击系数
+double initAtk;[notNull=false;minValue=0]		//攻击系数对应攻击
+double defVocationFactor;[notNull=false;minValue=0]		//防御系数
+double initDef;[notNull=false;minValue=0]		//防御系数对应防御
+double hpVocationFactor;[notNull=false;minValue=0]  		//血量系数
+double initHp;[notNull=false;minValue=0]  		//血量系数对应血量
+int maxTransgerNum;[notNull=false;minValue=0]	//可转职次数上限
+int cooldownRound;[notNull=false;minValue=0]	//被击后攻击方冷却回合数
+String castAnim;[notNull=false]		//攻击弹道动画(男)
+String attackedAnim;[notNull=false]	//被击光效(男)
+String vocationAnim;[notNull=false]	//职业特性弹道动画(男)
+String castAnimFemale;[notNull=false]		//攻击弹道动画(女)
+String attackedAnimFemale;[notNull=false]	//被击光效(女)
+String vocationAnimFemale;[notNull=false]	//职业特性弹道动画(女)
+int maxMorale;[notNull=true]		//最大士气

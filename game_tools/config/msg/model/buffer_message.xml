@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<messages xmlns="http://com.pwrd.war.message" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://com.pwrd.war.message message.xsd" module="buff">
+	<message type="GC_Buffer_Init_Message" comment="触发战斗消息">
+		<field type="com.pwrd.war.gameserver.buff.domain.Buffer" name="buffers"
+			clientType="Buffer" list="true" macro="Buffer"></field>
+	</message>
+	<message type="GC_Buff_Change_Message" comment="buff改变消息">
+		<field type="Integer" name="modifyType" comment="-1 表示去除，0 表示修改，1表示添加"></field>
+		<field type="com.pwrd.war.gameserver.buff.domain.Buffer" name="buff"
+			clientType="Buffer" macro="Buffer"></field>
+	</message>
+	<message type="CG_Not_Hp_Bag_Message" comment="没气血包时,提示购买气血包的消息">
+	</message>
+	<message type="GC_Not_Hp_Bag_Message" comment="没气血包时,提示购买气血包的消息">
+		<field type="Boolean" name="result" comment="使用血气包是否成功，不成功一般是元宝不够"></field>
+	</message>
+	<message type="CG_Hp_Bag_Message" comment="有气血包时,提示使用气血包的消息">
+	</message>
+	<message type="CG_Romove_Buffer" comment="去除buff">
+		<field type="Integer" name="bigType" comment="buffer 大类型"></field>
+	</message>
+</messages>
+

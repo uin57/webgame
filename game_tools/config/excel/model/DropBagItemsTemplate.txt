@@ -1,0 +1,4 @@
+String dropBagSn;				//掉落包id
+String dropBagName;			//掉落包名字
+String dropType;			//掉落包类型
+List<com.pwrd.war.gameserver.monster.template.DropItem> drops;[Collection(20,4)]		//掉落的物品集合

@@ -1,0 +1,16 @@
+String petSn; //武将ID 
+String name;	//武将名
+int seeLevel;[notNull=false,minValue=0]	//隐藏可见 玩家等级
+String seeMessionId;[notNull=false]	//（隐藏可见）任务ID
+int seePopularity;[notNull=false,minValue=0]		//（隐藏可见）声望值
+int hireLevel;[notNull=false,minValue=0]			//招募 玩家等级
+int hirePopularity;[notNull=false,minValue=0]		//招募声望
+int hireCoin;[notNull=false,minValue=0]		//需要铜钱
+int hireGold;[notNull=false,minValue=0]	//需要元宝
+String hireItem1Sn;[notNull=false]		//招募道具1sn
+int hireItem1Num;[notNull=false,minValue=0]		//招募道具1数量
+String hireItem2Sn;[notNull=false]		//招募道具2sn
+int hireItem2Num;[notNull=false,minValue=0]		//招募道具2数量
+int pub;[notNull=false,minValue=0]	//所属酒馆
+int seeMinLevel;[notNull=false,minValue=0]	//最低可见等级
+int seeMaxLevel;[notNull=false,minValue=0]	//最高可见等级

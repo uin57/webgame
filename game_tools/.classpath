@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="config"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/core"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/game_server"/>
+	<classpathentry kind="lib" path="lib/antlr-2.7.6.jar"/>
+	<classpathentry kind="lib" path="lib/avalon-logkit-2.1.jar"/>
+	<classpathentry kind="lib" path="lib/commons-collections-3.2.1.jar"/>
+	<classpathentry kind="lib" path="lib/commons-io-2.0.1.jar"/>
+	<classpathentry kind="lib" path="lib/commons-lang-2.4.jar"/>
+	<classpathentry kind="lib" path="lib/commons-logging-1.1.jar"/>
+	<classpathentry kind="lib" path="lib/dom4j-1.6.jar"/>
+	<classpathentry kind="lib" path="lib/jacob.jar"/>
+	<classpathentry kind="lib" path="lib/javassist-3.10.0.GA.jar"/>
+	<classpathentry kind="lib" path="lib/jaxen-1.1.1.jar"/>
+	<classpathentry kind="lib" path="lib/jdom-1.0.jar"/>
+	<classpathentry kind="lib" path="lib/json-lib-0.7.1.jar"/>
+	<classpathentry kind="lib" path="lib/log4j-1.2.15.jar"/>
+	<classpathentry kind="lib" path="lib/maven-ant-tasks-2.1.1.jar"/>
+	<classpathentry kind="lib" path="lib/oro-2.0.8.jar"/>
+	<classpathentry kind="lib" path="lib/poi-3.6-20091214.jar"/>
+	<classpathentry kind="lib" path="lib/poi-ooxml-3.7.jar"/>
+	<classpathentry kind="lib" path="lib/servletapi-2.3.jar"/>
+	<classpathentry kind="lib" path="lib/slf4j-api-1.5.6.jar"/>
+	<classpathentry kind="lib" path="lib/slf4j-log4j12-1.5.6.jar"/>
+	<classpathentry kind="lib" path="lib/velocity-1.6.4.jar"/>
+	<classpathentry kind="lib" path="lib/werken-xpath-0.9.4.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/gm_server"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

@@ -1,0 +1,7 @@
+int combwin;	//连胜次数
+int score;		//资源
+int propu;		//声望
+int coins;		//铜钱
+int addscore;	//额外资源
+int addpropu;	//额外声望
+int addcoins;	//额外铜钱

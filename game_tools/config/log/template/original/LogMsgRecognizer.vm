@@ -1,0 +1,62 @@
+package com.imop.tr.logserver;
+
+import org.apache.mina.common.ByteBuffer;
+
+import com.imop.tr.core.msg.IMessage;
+import com.imop.tr.core.msg.recognizer.IMessageRecognizer;
+import com.imop.tr.core.msg.MessageParseException;
+#foreach($logType in $logTypes)
+	import com.imop.tr.logserver.model.${logType.getLogFileName()};
+#end
+
+/**
+ * This is an auto generated source,please don't modify it.
+ */
+public class LogMessageRecognizer implements IMessageRecognizer {
+
+
+	@Override
+	public int recognizePacketLen(final ByteBuffer buff) {
+		// 消息头还未读到,返回null
+		if (buff.remaining() < IMessage.MIN_MESSAGE_LENGTH) {
+			return -1;
+		}
+		return IMessage.Packet.peekPacketLength(buff);
+	}
+
+
+	public IMessage recognize(ByteBuffer buf) throws MessageParseException {
+		/* 长度尚不足 */
+		if (buf.remaining() < IMessage.MIN_MESSAGE_LENGTH) {
+			return null;
+		}
+
+		/* 长度不足实际命令 */
+		int len = buf.getShort(); // 预期长度
+		if (buf.remaining() < len - 2) {
+			return null;
+		}
+
+		short type = buf.getShort();
+		return createMessage(type);
+	}
+
+	public static IMessage createMessage(int type)
+			throws MessageParseException {
+
+		switch (type) {
+#foreach($logType in $logTypes)
+			case MessageType.LOG_${logType.getUpperLogType()}_RECORD: {
+				return new ${logType.getLogFileName()}();
+			}
+#end
+
+		default: {
+			// TODO::考虑不要死机，可能要特殊处理
+			throw new MessageParseException("Unrecognized message :" + type);
+		}
+		}
+
+	}
+
+}

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<messages xmlns="http://com.pwrd.war.message" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://com.pwrd.war.message message.xsd" module="vitality">
+	<!-- 购买体力 -->
+	<message type="CG_BUY_VIT" comment="购买体力">
+		<field type="String" name="sceneId" comment="场景Id" />
+	</message> 
+	<!-- 返回购买体力信息 -->
+	<message type="GC_BUY_VIT" comment="返回购买体力结果">
+		<field type="Boolean" name="result" comment="结果"></field>
+		<field type="String" name="reason" comment="原因"></field>
+	</message> 
+	
+	<message type="GC_VIT_ZERO" comment="体力为0了">
+	</message> 
+</messages>

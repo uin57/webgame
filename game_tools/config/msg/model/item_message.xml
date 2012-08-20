@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<messages xmlns="http://com.pwrd.war.message" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://com.pwrd.war.message message.xsd" module="item">
+	<constants>
+		<constant name="道具描述格式类型">
+			装备-1
+			消耗品-2
+			材料-3
+			任务道具-4
+		</constant>
+		<constant name="包编号">
+			主道具包背包-1
+			材料包-2
+			任务道具背包-3
+			身上装备包-4
+			仓库-5
+		</constant>
+		<constant name="道具稀有程度">
+			白色-0
+		</constant>
+	</constants>
+	<!-- 背包道具部分 -->
+	<message type="GC_BAG_UPDATE" comment="刷新整个背包">
+		<field type="String" name="uuid" comment="所属者uuid" />
+		<field type="String" name="wearerId" comment="佩戴者uuid" />
+		<field type="Short" name="bagId" comment="背包ID" />
+		<field type="Short" name="capacity" comment="背包的可用位置数量" />
+		<field type="com.pwrd.war.common.model.item.CommonItem"
+			clientType="CommonItem" name="item" comment="单个道具信息" list="true" macro="CommonItem">
+			
+		</field>
+	</message>
+	<!--  
+<field type="Short" name="bagId" comment="背包ID" />
+			<field type="Short" name="index" comment="道具在背包内位置索引" />
+			<field type="Short" name="currency" comment="出售给商店的货币类型"></field>
+			<field type="Integer" name="price" comment="出售给商店的价格"></field>
+			<field type="Integer" name="freezeState" comment="物品的绑定状态"></field>
+			<field type="Integer" name="cancelTime" comment="取消绑定的时间间隔"></field>
+			<field type="Boolean" name="canBeUsed" comment="是否可以使用"/>
+			<field type="Boolean" name="canEnhance" comment="是否可以强化"/>
+			-->
+	<message type="GC_ITEM_UPDATE" comment="更新单个道具信息，客户端受到此消息就替换原来此位置的道具">
+		<field type="com.pwrd.war.common.model.item.CommonItem"
+			clientType="CommonItem" name="item" comment="道具信息数组" list="true" macro="CommonItem">
+			
+		</field>
+	</message> 
+	
+	<message type="GC_REMOVE_ITEM" comment="移除一个道具">
+		<field type="Short" name="bagId" comment="包id" />
+		<field type="Short" name="index" comment="道具在包内位置索引" />
+		<field type="String" name="wearerId" comment="佩戴者uuid" />
+	</message>
+	<message type="GC_SWAP_ITEM" comment="交换道具">
+		<field type="Short" name="fromBagId" comment="来源包id" />
+		<field type="Short" name="fromIndex" comment="道具在来源背包内位置索引" />
+		<field type="Short" name="toBagId" comment="目的包id" />
+		<field type="Short" name="toIndex" comment="道具在目的包内位置索引" />
+	</message>
+	<message type="GC_RESET_CAPACITY" comment="重新设置背包的容量，只可能是主道具包、材料包、仓库三者之一">
+		<field type="Short" name="bagId" comment="包Id" />
+		<field type="Short" name="capacity" comment="新的容量" />
+	</message>
+	<message type="CG_REQ_BAGINFO" comment="客户端主动请求更新背包">
+		<field type="Short" name="bagId" comment="来源包id" />
+		<field type="String" name="wearerId" comment="佩戴者uuid" />
+	</message>
+	<message type="CG_MOVE_ITEM" comment="移动物品，用于拖拽动作">
+		<field type="Short" name="fromBagId" comment="来源包id" />
+		<field type="Short" name="fromIndex" comment="道具在来源背包内位置索引" />
+		<field type="Short" name="toBagId" comment="目的包id" />
+		<field type="Short" name="toIndex" comment="道具在目的包内位置索引" />
+		<field type="String" name="wearerId" comment="物品佩戴者的UUID,即当前操作的武将宠物id"></field>
+	</message>
+	<message type="CG_TIDY_BAG" comment="整理背包">
+		<field type="Short" name="bagId" comment="包ID" />
+	</message>
+	<message type="CG_DROP_ITEM" comment="丢弃道具">
+		<field type="Short" name="bagId" comment="包ID" />
+		<field type="Short" name="index" comment="包内位置索引" />
+	</message>
+	<message type="CG_USE_ITEM" comment="人物使用道具消息">
+		<field type="Short" name="bagId" comment="背包ID" />
+		<field type="Short" name="index" comment="背包内位置索引" />
+		<field type="String" name="targetUuid" comment="使用对象的UUID,人物或者武将uuid"></field>
+		<field type="String" name="wearId" comment="使用者UUID,人物或者武将uuid" ></field>
+		<field type="String" name="params" comment="额外参数" defaultValue=""></field>
+	</message>
+	<message type="CG_SELL_ITEM" comment="卖出道具">
+		<field type="Short" name="bagId" comment="背包ID" />
+		<field type="Short" name="index" comment="背包内位置索引" />
+	</message>
+	<message type="GC_ITEM_START_CD" comment="使用道具后通知客户端开始转CD">
+		<field type="String" name="uuid" comment="道具实例uuid"></field>
+		<field type="Integer" name="cooldown" comment="冷却时间，单位：毫秒" />
+	</message>
+	<message type="CG_SPLIT_ITEM" comment="拆分叠加道具">
+		<field type="Short" name="bagId" comment="背包ID" />
+		<field type="Short" name="index" comment="背包内位置索引" />
+		<field type="Short" name="count" comment="拆出的数量" />
+	</message>
+	<message type="CG_REQ_ITEM_INFO" comment="请求查看物品信息">
+		<field type="String" name="targetUUID" comment="查询目标的UUID"></field>
+		<field type="String" name="ownerUUID" comment="物品所有者的UUID"></field>
+		<field type="Short" name="queryType" comment="查询类别"></field>
+	</message>
+	<message type="GC_RES_ITEM_INFO" comment="服务器响应的物品信息">
+		<field type="com.pwrd.war.common.model.item.CommonItem"
+			clientType="CommonItem" name="item" comment="单个道具信息"	macro="CommonItem"> 
+		</field>
+	</message>
+ 
+	<message type="CG_ENHANCE_EQUIP" comment="强化装备">
+		<field type="Integer" name="bagId" comment="背包ID" />
+		<field type="Integer" name="index" comment="背包内位置索引" />
+		<field type="String" name="wearerId" comment="佩带者" />
+		<field type="Boolean" name="isFree" comment="是否免费强化，使用元宝"/> 
+		<field type="Boolean" name="isDouble" comment="是否强化暴击，使用元宝"/> 
+	</message>
+	<message type="GC_ENHANCE_EQUIP" comment="强化装备结果返回">  
+		<field type="Boolean" name="isFree" comment="是否免费"/> 
+		<field type="Boolean" name="isDouble" comment="是否强化暴击"/> 
+	</message>
+	<message type="CG_ENHANCE_EQUIP_INFO" comment="取得强化装备一些信息"> 
+	</message>
+	
+	<message type="GC_ENHANCE_EQUIP_INFO" comment="返回当前装备强化成功概率">
+		<field type="Boolean" name="isDouble" comment="是否双倍强化" />
+		<field type="String" name="doubleTimeDesc" comment="双倍强化时间段描述" />
+		<field type="Boolean" name="isFree" comment="是否免费强化" />
+		<field type="String" name="freeTimeDesc" comment="免费强化时间段描述" /> 
+		<field type="Integer" name="freeGold" comment="免费强化需要元宝" />
+		<field type="Integer" name="doubleGold" comment="强化暴击需要元宝" />
+		<field type="Integer" name="nextDesc" comment="下一个描述" />
+	</message>
+	
+	<message type="GC_USE_REEL" comment="打造结果">
+		<field type="Integer" name="result" comment="1ok,0false" />
+	</message>
+ 	
+ 	<message type="CG_SPAND_BAG_GOLD" comment="扩充背包需要多少元宝">
+		<field type="Integer" name="number" comment="数量" /> 
+		<field type="Integer" name="bagType" comment="背包1，仓库5" /> 
+	</message>
+	<message type="GC_SPAND_BAG_GOLD" comment="扩充背包需要多少元宝">
+		<field type="Integer" name="number" comment="数量" /> 
+		<field type="Integer" name="gold" comment="元宝数目" /> 
+		<field type="Integer" name="bagType" comment="背包1，仓库5" /> 
+	</message>
+	<message type="CG_SPAND_BAG" comment="扩充背包">
+		<field type="Integer" name="number" comment="数量" /> 
+		<field type="Integer" name="bagType" comment="背包1，仓库5" /> 
+	</message>
+	
+	<message type="CG_XINGHUN_ACTIVATE" comment="星魂激活">
+		<field type="Integer" name="bagId" comment="背包ID" />
+		<field type="Integer" name="index" comment="背包内位置索引" />
+		<field type="Integer" name="eqbagId" comment="装备背包id" />
+		<field type="Integer" name="eqbagIndex" comment="装备index" />
+		<field type="String" name="uuid" comment="佩戴者uuid" />
+	</message>
+	
+	<message type="GC_XINGHUN_ACTIVATE" comment="激活结果">
+		<field type="Boolean" name="result" comment="结果" />
+		<field type="String" name="desc" comment="结果描述" />
+	</message>
+	
+	<message type="CG_XINGHUN_DESTRUCT" comment="星魂销毁">
+		<field type="Integer" name="bagId" comment="背包ID" />
+		<field type="Integer" name="index" comment="背包内位置索引" />
+		<field type="String" name="uuid" comment="佩戴者uuid" />
+		<field type="Integer" name="eqbagId" comment="装备背包id" />
+		<field type="Integer" name="eqbagIndex" comment="装备index" />
+	</message>
+	
+	<message type="CG_XINGHUN_XILIAN" comment="星魂洗练">
+		<field type="Integer" name="bagId" comment="背包ID" />
+		<field type="Integer" name="index" comment="背包内位置索引" />
+		<field type="Integer" name="prop1" comment="-1未激活，0锁定，1激活" />
+		<field type="Integer" name="prop2" comment="-1未激活，0锁定，1激活" />
+		<field type="Integer" name="prop3" comment="-1未激活，0锁定，1激活" />
+		<field type="Integer" name="eqbagId" comment="装备背包id" />
+		<field type="Integer" name="eqbagIndex" comment="装备index" />
+		<field type="String" name="uuid" comment="佩戴者uuid" />
+	</message>
+	
+	<message type="GC_XINGHUN_XILIAN" comment="激活结果">
+		<field type="Boolean" name="result" comment="结果" />
+		<field type="String" name="desc" comment="结果描述" />
+	</message>
+	
+	<message type="CG_XINGHUN_ADD" comment="星魂镶嵌">
+		<field type="Integer" name="xhbagId" comment="星魂背包ID" />
+		<field type="Integer" name="xhIndex" comment="星魂index" />
+		<field type="Integer" name="eqbagId" comment="装备背包id" />
+		<field type="Integer" name="eqbagIndex" comment="装备index" />
+		<field type="String" name="uuid" comment="佩戴者uuid" />
+	</message>
+	
+	<message type="CG_XINGHUN_RED" comment="取消镶嵌">
+		<field type="Integer" name="bagId" comment="星魂背包ID" />
+		<field type="Integer" name="Index" comment="星魂index" />
+		<field type="String" name="uuid" comment="佩戴者uuid" />
+		<field type="Integer" name="eqbagId" comment="装备背包id" />
+		<field type="Integer" name="eqbagIndex" comment="装备index" />
+	</message>
+	
+	<message type="CG_XINGHUN_PILIANG_XILIAN" comment="星魂批量洗练">
+		<field type="Integer" name="bagId" comment="背包ID" />
+		<field type="Integer" name="index" comment="背包内位置索引" />
+		<field type="Integer" name="prop1" comment="-1未激活，0锁定，1激活" />
+		<field type="Integer" name="prop2" comment="-1未激活，0锁定，1激活" />
+		<field type="Integer" name="prop3" comment="-1未激活，0锁定，1激活" />
+		<field type="Integer" name="eqbagId" comment="装备背包id" />
+		<field type="Integer" name="eqbagIndex" comment="装备index" />
+		<field type="String" name="uuid" comment="佩戴者uuid" />
+	</message>
+	<message type="GC_XINGHUN_PILIANG_XILIAN" comment="星魂批量洗练">
+		<field type="com.pwrd.war.common.model.xinghun.XinghunXilianInfo" 
+			clientType="XinghunXilianInfoData" name="xinghunXilianInfo" list="true" comment="星魂批量洗练信息" macro="XinghunXilianInfo"></field>
+	</message>
+	<message type="CG_XINGHUN_PILIANG_XILIAN_REMAIN" comment="保留星魂洗练结果">
+		<field type="Integer" name="bagId" comment="背包ID" />
+		<field type="Integer" name="index" comment="背包内位置索引" />
+		<field type="Integer" name="resultId" comment="结果id" />
+		<field type="String" name="uuid" comment="佩戴者uuid" />
+		<field type="Integer" name="eqbagId" comment="装备背包id" />
+		<field type="Integer" name="eqbagIndex" comment="装备index" />
+	</message>
+	
+	<message type="GC_XINGHUN_PILIANG_XILIAN_REMAIN" comment="激活结果">
+		<field type="Boolean" name="result" comment="结果" />
+		<field type="String" name="desc" comment="结果描述" />
+	</message>
+
+	<message type="CG_GET_REEL_INFO" comment="取得合成后应该有的属性">
+		<field type="Integer" name="bagId" comment="背包ID" />
+		<field type="Integer" name="index" comment="背包内位置索引" />
+		<field type="String" name="uuid" comment="佩戴者uuid" />
+		<field type="String" name="reelSN" comment="卷轴SN" />
+	</message>
+	<message type="GC_GET_REEL_INFO" comment="取得合成后应该有的属性">
+		<field type="com.pwrd.war.common.model.item.CommonItem"
+			clientType="CommonItem" name="item" comment="单个道具信息"	macro="CommonItem"> 
+		</field>
+	</message>
+</messages>
+

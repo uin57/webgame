@@ -1,0 +1,20 @@
+String itemSn;		//道具SN
+String name;		//道具名称
+int identityType;	//道具身份类型，一级类型
+;					//子类型，二级类型，由子类写名字
+int quantity;		//品质，颜色
+int tid;[minValue=0;notNull=false]	//背包分类id
+String desc;[notNull=false]		//文字描述
+int vocationLimit;[minValue=0;notNull=false]		//职业类型
+int figureLimit;[minValue=0;notNull=false]//武将形象限制
+int needLevel;[minValue=0;notNull=false]			//使用等级
+int sexLimit;[minValue=0;notNull=false]				//性别限制
+int currency;[minValue=0;notNull=false]				//钱币ID
+int sellPrice;[minValue=0;notNull=false]				//出售价格
+boolean canDiscard;	[notNull=false]	//可否丢弃
+boolean canSell;[notNull=false]		//可否出售 
+int bindModeId;[notNull=false]//绑定模式
+int maxOverlap;[minValue=0;notNull=false]			//叠加上限
+int coolDown;[minValue=0;notNull=false] //使用间隔
+int duration;[minValue=0;notNull=false]			//持续时间
+String img;[notNull=false]		//图标

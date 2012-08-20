@@ -1,0 +1,16 @@
+int logType not null default -100; //日志类型
+long logTime not null; //日志产生时间
+int regionId; // 服务器区ID
+int serverId; // 服务器ID
+String accountId  128 key; //玩家账号Id
+String accountName 128 key; //玩家的账号名
+String charId 128 key; //角色ID
+String charName 128 key; //玩家的角色名
+int level; //玩家等级
+int allianceId; //玩家阵营
+int vipLevel; //玩家VIP等级
+int reason; //原因
+String sceneId;//所在地图id
+int x;//x
+int y;//y
+String param 512; //其他参数

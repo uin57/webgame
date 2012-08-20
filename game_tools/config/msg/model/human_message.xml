@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<messages xmlns="http://com.pwrd.war.message" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://com.pwrd.war.message message.xsd" module="human">
+	
+	<!-- clientType="com.pwrd.war.common.data.HumanInfoData"  -->
+	<message type="GC_HUMAN_DETAIL_INFO" comment="服务器给客户端下发人物全信息">
+		<field type="com.pwrd.war.common.model.human.HumanInfo"
+			name="human" comment="玩家" macro="HumanDetailInfo">
+		</field>
+	</message>
+	
+	<message type="CG_ENTER_HOME" comment="客户端请求进入主城">
+	</message>
+	
+	<message type="CG_QUERY_HUMAN_INFO" comment="客户端请求角色的属性信息">
+	</message>
+	
+	<message type="CG_QUERY_OTHER_ROLE_INFO" comment="向服务器请求其他玩家角色信息">
+		<field type="String" name="UUID" comment="请求的角色UUID" />
+	</message>
+	
+	
+	<message type="GC_SCENE_UPDATE_ROLE" comment="玩家信息发生变化，告诉场景内其他人">
+		<field type="com.pwrd.war.common.model.human.HumanInfo"
+			clientType="HumanSimpleInfoData"
+			name="roleInfo"   comment="角色信息" macro="RoleSimpleInfo">
+		</field>
+	</message>
+	
+			 
+	<!-- 玩家第一此进入场景，发给玩家的其他玩家信息列表 -->
+	<message type="GC_SCENE_ROLE_LIST" comment="玩家第一此进入场景，发给玩家的其他玩家信息列表">
+		<field type="com.pwrd.war.common.model.human.HumanInfo"
+			clientType="HumanSimpleInfoData"
+			name="roleInfo" list="true"  comment="角色信息" macro="RoleSimpleInfo">
+		</field>
+	</message>
+	<!-- 发给其他玩家当前玩家进入消息 -->
+	<message type="GC_SCENE_ADD_ROLE" comment="发给其他玩家当前玩家进入消息">
+		<field type="com.pwrd.war.common.model.human.HumanInfo"
+			clientType="HumanSimpleInfoData"
+			name="roleInfo"   comment="角色信息" macro="RoleSimpleInfo">
+		</field>
+	</message>
+	<!-- 发给其他玩家当前玩家离开场景消息 -->
+	<message type="GC_SCENE_DEL_ROLE" comment="发给其他玩家当前玩家离开场景消息">
+		<field type="String" name="UUID" comment="角色UUID" />
+	</message>
+	
+	<message type="GC_PROPERTY_CHANGED_NUMBER" comment="用于发送数值类型的属性改变消息">
+		<field type="Short" name="roleType" comment="角色类型"></field>
+		<field type="String" name="roleUUID" comment="角色UUID"></field>
+		<field type="com.pwrd.war.core.util.KeyValuePair&lt;Integer,Integer&gt;"  
+			 clientType="KeyValuePairIntData"
+			name="properties" list="true" comment="所有变化的属性">
+			<field type="Integer" name="key" comment="属性索引" />
+			<field type="Integer" name="value" comment="属性值" />
+		</field>
+	</message>
+	 
+	<message type="GC_PROPERTY_CHANGED_STRING" comment="用于发送字符串类型的属性改变消息">
+		<field type="Short" name="roleType" comment="角色类型"></field>
+		<field type="String" name="roleUUID" comment="角色UUID"></field>
+		<field type="com.pwrd.war.core.util.KeyValuePair&lt;Integer,String&gt;"  
+		        clientType="KeyValuePairStringData"
+			name="properties" list="true" comment="所有变化的属性">
+			<field type="Integer" name="key" comment="属性索引" />
+			<field type="String" name="value" comment="属性值" />
+		</field>
+	</message>
+ 	
+ 	
+ 	<message type="GC_QUEUE_INFO" comment="冷却队列信息">
+		<field type="Integer" name="cdType" comment="队列类型"/>
+		<field type="Integer" name="index" comment="该类型的索引"/>
+		<field type="Integer" name="leftTime" comment="剩余时间，单位秒"/>
+		<field type="Short" name="isShow" comment="是否显示"/>
+	</message>
+	
+ 	<message type="CG_OPEN_EQUIPENHANCE_CDQUEUE" comment="开启新的强化队列">
+ 	</message>
+ 	<message type="CG_RELEASE_CDQUEUE" comment="使队列cd时间为0">
+		<field type="Integer" name="index" comment="队列序号"></field>
+		<field type="Integer" name="cdType" comment="队列类型,1强化装备，2属性成长"></field>
+	</message>
+ 
+	<message type="CG_ARCHIVE_LIST" comment="取得成就列表">
+	</message>
+	<message type="GC_ARCHIVE_LIST" comment="返回成就列表">
+		<field type="com.pwrd.war.gameserver.human.domain.Archive"  
+		        clientType="Archive" name="properties" list="true" comment="所有成就信息">
+			<field type="String" name="uuid" comment="uuid" />
+			<field type="String" name="humanUUID" comment="" />
+			<field type="String" name="type" comment="" />
+			<field type="Integer" name="number" comment="" />
+			<field type="String" name="title" comment="" />
+		</field>
+	</message>
+	
+	<message type="CG_JOIN_CHANNEL" comment="订阅某个频道，这样就可以获取该频道的所有消息">
+		<field type="String" name="channel" comment="类型(EQUIP_EHANCE，强化装备页面)" />
+	</message>
+	<message type="CG_UNJOIN_CHANNEL" comment="取消订阅某个频道，这样就可以获取该频道的所有消息">
+		<field type="String" name="channel" comment="类型(EQUIP_EHANCE，强化装备页面)" />
+	</message>
+	
+	<message type="CG_LEVELUP_GROW" comment="提升成长">
+		<field type="Integer" name="growType" comment="提升类型"></field>
+		<field type="String" name="targetUUID" comment="目标UUID"></field>
+		<field type="Boolean" name="coolDown" comment="是否立即消除冷却队列"></field>
+	</message> 
+	<message type="CG_GROW_PROPS" comment="取得成长变化对应属性增加">
+		<field type="String" name="targetUUID" comment="目标UUID"></field>
+	</message>
+	<message type="GC_GROW_PROPS" comment="返回成长变化对应属性增加">
+		 <field type="String" name="targetUUID" comment="目标UUID"></field>
+		 <field type="Integer" name="maxGrow" comment="最大成长值"></field>
+		 <field type="com.pwrd.war.gameserver.human.domain.GrowChange"  
+		        clientType="GrowChange" name="grows" list="true" comment="所有变化信息"> 
+			<field type="Integer" name="grow" comment="成长等级" /> 
+			<field type="Integer" name="needMoney" comment="需要铜钱" /> 
+			<field type="Integer" name="addAtk" comment="" /> 
+			<field type="Integer" name="addDef" comment="" /> 
+			<field type="Integer" name="addMaxHp" comment="" /> 
+			<field type="Integer" name="addAllAtk" comment="" /> 
+			<field type="Integer" name="addAllDef" comment="" /> 
+			<field type="Integer" name="addAllMaxHp" comment="" /> 
+		</field>
+	</message>
+	
+	<!-- 开始挂机修炼 -->
+	<message type="CG_START_XIULIAN" comment="开始挂机修炼"> 
+	</message>
+	<message type="GC_START_XIULIAN" comment="开始挂机修炼结果">
+		 <field type="Integer" name="leftTime" comment="剩余时间" /> 
+		 <field type="Integer" name="allExp" comment="累计经验" /> 
+		 <field type="Integer" name="zhandouli" comment="队伍战斗力" />  
+		 <field type="Integer" name="xiulianLevel" comment="修炼境界等级" /> 
+		 <field type="String" name="xiulianLevelName" comment="修炼境界等级名称" />  
+		 <field type="Integer" name="xiulianLevelNeedGold" comment="提升境界需要多少元宝" />  
+		 <field type="Integer" name="xiulianLevelDurTime" comment="提升到该境界可维持时间" />  
+		 <field type="Integer" name="xiulianCollectTimes" comment="修炼可采集次数" /> 
+		 <field type="Integer" name="nextRemainTime" comment="给予下次采集次数剩余多少秒" /> 
+		 <field type="Integer" name="xiulianBeCollectTimes" comment="修炼被采集次数" /> 
+		 <field type="Integer" name="xiulianBeCollectAllTimes" comment="修炼总被采集次数" /> 
+	</message>
+	<!-- 结束挂机修炼 -->
+	<message type="CG_END_XIULIAN" comment="结束挂机修炼"> 
+	</message>
+	<message type="GC_END_XIULIAN" comment="结束挂机修炼"> 
+		 <field type="Integer" name="allExp" comment="累计经验" />  
+	</message>
+ 	<!-- 提升修炼境界 -->
+ 	<message type="CG_XIULIAN_UP_LEVEL" comment="提升修炼境界">  
+	</message>
+	
+	<!-- 采集修炼标志 -->
+	<message type="CG_XIULIAN_COLLECT_SYMBOL" comment="采集修炼标志"> 
+		<field type="String" name="targetUUID" comment="目标UUID" />
+	</message>
+	<message type="GC_XIULIAN_COLLECT_SYMBOL" comment="采集修炼标志"> 
+		<field type="Integer" name="getExp" comment="获得经验" />
+		<field type="Integer" name="friendAddExp" comment="好友加成经验" />
+		<field type="String" name="randomSymbolId" comment="随机效果ID" />
+	</message>
+	<message type="GC_XIULIAN_BE_COLLECT_SYMBOL" comment="被采集修炼标志"> 
+		<field type="Integer" name="getExp" comment="获得经验" />
+		<field type="Integer" name="friendAddExp" comment="好友加成经验" />
+		<field type="String" name="randomSymbolId" comment="随机效果ID" />
+	</message>
+ 
+	
+	<message type="CG_MODIFY_PERSONSIGN" comment="修改个性签名"> 
+		<field type="String" name="sign" comment="个性签名" />
+	</message>
+	
+	<message type="GC_GOLD_GROW_CRI" comment="返还元宝成长暴击">
+		<field type="Integer" name="result" comment="元宝成长结果1:双倍成长2:五倍成长(暴击)" />
+	</message>
+	<message type="GC_JingJie_Props" comment="返还境界变化信息">
+		<field type="String" name="targetUUID" comment="目标UUID"></field>
+		<field type="String" name="nowName" comment="当前境界名称" /> 
+		<field type="Integer" name="addAtk" comment="下一境界增加攻击值" /> 
+		<field type="Integer" name="addDef" comment="下一境界增加防御值" /> 
+		<field type="Integer" name="addMaxHp" comment="下一境界增加血量值" />
+		<field type="Double" name="addDamage" comment="下一境界增加伤害值" />
+		<field type="Integer" name="jingjie" comment="当前境界值" />
+		<field type="Integer" name="nowNeedGrow" comment="当前境界值需要的成长值" />
+		<field type="Integer" name="nextNeedGrow" comment="下一境界需要的成长值" />      
+	</message>
+	<message type="CG_JingJie_Props" comment="请求境界变化信息">
+		<field type="String" name="targetUUID" comment="目标UUID"></field> 
+	</message>
+
+	<message type="GC_ONLINE_PRIZE" comment="在线奖励">
+		<field type="Integer" name="buzhou" comment="步骤" />
+		<field type="Integer" name="leftTime" comment="剩余可领取时间，秒" />
+		<field type="String" name="prizeTip" comment="奖励提示" />
+		<field type="String" name="tip" comment="提示" />
+	</message>	
+	<message type="CG_ONLINE_PRIZE" comment="领取奖励">
+		<field type="Integer" name="buzhou" comment="步骤" />
+	</message>
+	<message type="GC_ONLINE_PRIZE_RES" comment="领取奖励">
+		<field type="Boolean" name="res" comment="是否成功" />
+	</message>
+	
+	<message type="GC_LOGIN_PRIZE_SHOW" comment="是否显示登陆奖励">
+		<field type="Boolean" name="show" comment="true显示，false不显示" />  
+	</message>	
+	<message type="CG_GET_LOGIN_PRIZE" comment="取奖励信息"> 
+	</message>
+	<message type="GC_LOGIN_PRIZE" comment="登陆奖励">
+		<field type="String" name="gotDays" comment="已领取的天" /> 
+		<field type="String" name="canGetDays" comment="未领取的天" /> 
+	</message>	
+	<message type="CG_LOGIN_PRIZE" comment="领取登陆奖励">
+		<field type="Integer" name="day" comment="领取第几天的" />
+	</message>
+	<message type="GC_LOGIN_PRIZE_RES" comment="领取登陆奖励">
+		<field type="Boolean" name="res" comment="是否成功" />
+	</message>
+</messages>

@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<project name="exporter" default="jar" basedir=".">
+	<property name="root" value="../../" />
+	<target name="init">
+		<delete dir="bin">
+		</delete>
+		<mkdir dir="bin">
+		</mkdir>
+	</target>
+
+	<path id="classpath.local">
+		<pathelement location="${root}/lib/jdom-1.0.jar" />
+		<pathelement location="${root}/lib/poi-3.6-20091214.jar" />
+		<pathelement location="." />
+	</path>
+
+	<target name="compile" depends="init">
+		<javac destdir="bin" srcdir="${root}/src" includes="com/imop/tr/tools/data/">
+			<classpath refid="classpath.local" />
+		</javac>
+	</target>
+
+	<target name="jar" depends="compile">
+		<copy todir="bin/lib">
+			<fileset dir="${root}/lib">
+				<include name="jdom-1.0.jar" />
+				<include name="poi-3.6-20091214.jar" />
+			</fileset>
+		</copy>
+		<copy todir="bin/config/data">
+			<fileset dir="${root}/config/data">
+				<include name="config.xml" />
+			</fileset>
+		</copy>
+		<jar jarfile="bin/ExportExcel.jar" basedir="bin">
+			<manifest>
+				<attribute name="Main-class" value="com.imop.tr.tools.data.ExportExcel" />
+				<attribute name="Class-Path" value="lib/jdom-1.0.jar lib/poi-3.6-20091214.jar" />
+			</manifest>
+		</jar>
+		<delete dir="bin/com">
+		</delete>
+	</target>
+</project>

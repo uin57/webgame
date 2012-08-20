@@ -1,0 +1,5 @@
+message com.pwrd.war.logserver.model.QuestLog(
+	int flag;		//1接受2完成3取消
+	int questId;	//任务id
+	long completeTime;		// 完成时间
+)

@@ -1,0 +1,8 @@
+int reasonId;[notNull=true;minValue=101;maxValue=106]//触发原因
+;
+int behaviorId;[notNull=true;minValue=1;maxValue=3]//触发行为
+;
+int mailTitleLangId;[notNull=false]//邮件标题多语言
+String mailTitle;[notNull=true]//邮件标题多语言
+int mailContentLangId;[notNull=false]//邮件内容多语言
+String mailContent;[notNull=true]//邮件内容多语言

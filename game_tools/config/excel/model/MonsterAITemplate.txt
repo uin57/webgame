@@ -1,0 +1,2 @@
+String aISn;[notNull=true]//AI编号
+int aIStrategy;[notNull=false]//AI 策略

@@ -1,0 +1,11 @@
+int vocation;		//职业id
+int baseSpeed;		//职业特定速度值
+double atkVocationFactor;		//攻击系数
+double defVocationFactor;		//防御系数
+double hpVocationFactor;  		//血量系数
+double atkLevelFactorA;			//攻击属性A 1.1
+double atkLevelFactorB;			//攻击属性B 1.034
+double defLevelFactorA;			//防御属性A 0.66
+double defLevelFactorB;			//防御属性B 1.034
+double hpLevelFactorA;			//血量属性A 2.2
+double hpLevelFactorB;			//血量属性B 1.034

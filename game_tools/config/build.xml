@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<project name="mmo_tools" default="jar" basedir=".">
+	<property name="root.dir" value="../" />
+	<property name="core.dir" value="../../core/" />
+	<property name="temp" value="temp" />
+
+	<path id="classpath">
+		<fileset dir="${root.dir}/lib">
+			<include name="**/*.zip" />
+			<include name="**/*.jar" />
+		</fileset>
+		<fileset dir="${core.dir}/lib">
+			<include name="**/*.zip" />
+			<include name="**/*.jar" />
+		</fileset>
+		<pathelement location="." />
+	</path>
+
+	<target name="jar">
+		<mkdir dir="${temp}" />
+		<!-- compile project core -->
+		<javac destdir="${temp}" srcdir="${core.dir}/src">
+			<classpath refid="classpath" />
+		</javac>
+		<javac destdir="${temp}" srcdir="${root.dir}/src" excludes="com/imop/webzt/tools/properties/">
+			<classpath refid="classpath" />
+		</javac>
+		<jar jarfile="mmo_tools.jar" basedir="${temp}" />
+		<delete dir="${temp}" />
+	</target>
+</project>
